@@ -16,6 +16,98 @@ export interface Product {
 
 export const products: Product[] = [
   {
+    slug: "dashai",
+    name: "DashAI - Dashboard Intelligent",
+    shortDescription: "Upload ton fichier de ventes et génère instantanément un dashboard avec analyses IA de tes revenus, dépenses et rentabilité.",
+    problem: "Tu perds du temps à créer des tableaux de bord manuellement. Impossible de visualiser rapidement où part ton argent et si tu es rentable.",
+    solution: "Upload ton fichier Excel de ventes → Obtiens immédiatement un dashboard complet avec graphiques, analyses de rentabilité, répartition des dépenses et export PDF.",
+    inputs: [
+      "Fichier Excel/CSV de ventes",
+      "Colonnes : revenus, dépenses, catégories",
+      "Format automatiquement détecté"
+    ],
+    outputs: [
+      "Dashboard interactif avec KPIs",
+      "Graphiques de répartition des dépenses",
+      "Analyse de rentabilité automatique",
+      "Export PDF haute qualité",
+      "Résumé clair de la période"
+    ],
+    priceLabel: "1.99€ • 7 crédits à 9.9€ • 20 crédits à 19.9€",
+    gumroadUrl: "https://dashai-ochre.vercel.app/",
+    tags: ["dashboard", "analytics", "ia", "treso"],
+    screenshots: [
+      "https://placehold.co/800x450/0ea5e9/white?text=DashAI+Dashboard",
+      "https://placehold.co/800x450/0ea5e9/white?text=DashAI+Analytics"
+    ],
+    whatItReplaces: [
+      "Excel manuel chronophage",
+      "Outils de BI complexes (Tableau, Power BI)",
+      "Comptables pour analyses basiques",
+      "Outils SaaS d'analytics (50€+/mois)"
+    ],
+    faq: [
+      {
+        question: "Comment fonctionne le système de crédits ?",
+        answer: "1 crédit = 1 dashboard généré (jusqu'à 10K lignes). Les crédits n'expirent jamais. Essai gratuit avec 3 crédits offerts."
+      },
+      {
+        question: "Mes données sont-elles sécurisées ?",
+        answer: "Oui, traitement 100% sécurisé. Tes données ne sont jamais stockées sur nos serveurs."
+      },
+      {
+        question: "Quels formats sont acceptés ?",
+        answer: "Excel (.xlsx, .xls) et CSV. Ton fichier doit contenir au minimum des colonnes de revenus et dépenses."
+      }
+    ]
+  },
+  {
+    slug: "dashai-vinted",
+    name: "DashAI Vinted - Analytics pour Revendeurs",
+    shortDescription: "Tu revends sur Vinted ? Upload ton fichier de ventes → Vois immédiatement tes gains réels après frais Vinted.",
+    problem: "Tu ne sais pas si tu es vraiment rentable sur Vinted. Les frais de plateforme rendent difficile le calcul de tes marges réelles.",
+    solution: "Upload ton fichier de ventes Vinted et obtiens instantanément un dashboard détaillé : gains nets après frais, répartition des dépenses, analyse de rentabilité par catégorie.",
+    inputs: [
+      "Fichier de ventes Vinted (Excel/CSV)",
+      "Données : prix, frais plateforme, catégories",
+      "Import automatique des colonnes"
+    ],
+    outputs: [
+      "Dashboard avec gains nets après frais Vinted",
+      "Répartition des dépenses par catégorie",
+      "Analyse de rentabilité détaillée",
+      "Graphiques de performance",
+      "Export PDF pour tes comptes"
+    ],
+    priceLabel: "1.99€ • 7 crédits à 9.9€ • 20 crédits à 19.9€",
+    gumroadUrl: "https://dashai-ochre.vercel.app/vinted",
+    tags: ["dashboard", "vinted", "ecommerce", "analytics"],
+    screenshots: [
+      "https://placehold.co/800x450/0ea5e9/white?text=DashAI+Vinted",
+      "https://placehold.co/800x450/0ea5e9/white?text=Vinted+Analytics"
+    ],
+    whatItReplaces: [
+      "Calcul manuel des marges Vinted",
+      "Tableurs Excel désorganisés",
+      "Incertitude sur la rentabilité réelle",
+      "Outils de gestion e-commerce (30€+/mois)"
+    ],
+    faq: [
+      {
+        question: "Comment obtenir mon fichier de ventes Vinted ?",
+        answer: "Tu peux exporter tes ventes depuis ton compte Vinted ou noter manuellement tes ventes dans un fichier Excel avec colonnes : prix de vente, frais, catégorie."
+      },
+      {
+        question: "Les frais Vinted sont-ils calculés automatiquement ?",
+        answer: "Oui, si ton fichier inclut les frais. Sinon, l'outil peut les estimer selon les barèmes Vinted standards."
+      },
+      {
+        question: "Puis-je suivre plusieurs périodes ?",
+        answer: "Absolument. Génère un dashboard par période (mensuel, trimestriel) pour suivre ton évolution."
+      }
+    ]
+  },
+  {
     slug: "whatsapp-excel",
     name: "WhatsApp → Excel (Dashboard)",
     shortDescription: "Transformez vos conversations WhatsApp Business en rapports Excel exploitables et dashboards automatisés.",
