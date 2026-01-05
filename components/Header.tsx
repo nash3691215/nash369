@@ -9,7 +9,13 @@ export default function Header() {
             NASH369
           </Link>
 
-          <nav className="flex items-center gap-8">
+          <nav className="flex items-center gap-6">
+            <Link
+              href="/"
+              className="text-sm font-medium text-gray-700 hover:text-electric transition-colors"
+            >
+              Accueil
+            </Link>
             <Link
               href="/boutique"
               className="text-sm font-medium text-gray-700 hover:text-electric transition-colors"
@@ -18,7 +24,7 @@ export default function Header() {
             </Link>
             <Link
               href="/contact"
-              className="text-sm font-medium bg-electric text-white px-4 py-2 rounded-lg hover:bg-electric-dark transition-colors"
+              className="text-sm font-medium bg-electric text-white px-5 py-2.5 rounded-lg hover:bg-electric/90 transition-all transform hover:scale-105 shadow-md"
             >
               Contact
             </Link>

@@ -40,12 +40,12 @@ export default function Boutique() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-electric/5 via-white to-electric/5 py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-electric rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-electric rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-electric rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-electric rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-electric/10 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-electric/10 rounded-full mb-6 animate-bounce">
             <svg className="w-5 h-5 text-electric" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
@@ -189,16 +189,16 @@ export default function Boutique() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 cursor-pointer">
               <div className="text-2xl font-bold text-black mb-2">1 crédit</div>
               <div className="text-4xl font-bold text-electric mb-3">1.99€</div>
               <p className="text-gray-600 text-sm mb-4">1 dashboard généré</p>
               <p className="text-xs text-gray-500">Parfait pour tester</p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border-2 border-electric shadow-md hover:shadow-lg transition-all relative">
+            <div className="bg-white p-6 rounded-xl border-2 border-electric shadow-md hover:shadow-2xl transition-all relative transform hover:-translate-y-2 hover:scale-105 cursor-pointer">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="px-3 py-1 bg-electric text-white text-xs font-bold rounded-full">
+                <span className="px-3 py-1 bg-electric text-white text-xs font-bold rounded-full animate-pulse">
                   PLUS POPULAIRE
                 </span>
               </div>
@@ -208,7 +208,7 @@ export default function Boutique() {
               <p className="text-xs text-green-600 font-semibold">-29% d'économie</p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 cursor-pointer">
               <div className="text-xs font-bold text-electric mb-2">MEILLEURE OFFRE</div>
               <div className="text-2xl font-bold text-black mb-2">20 crédits</div>
               <div className="text-4xl font-bold text-electric mb-3">19.9€</div>
