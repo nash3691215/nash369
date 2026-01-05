@@ -11,16 +11,10 @@ export default function Header() {
 
           <nav className="flex items-center gap-8">
             <Link
-              href="/outils-pme"
+              href="/boutique"
               className="text-sm font-medium text-gray-700 hover:text-electric transition-colors"
             >
-              Outils PME
-            </Link>
-            <Link
-              href="/mini-saas"
-              className="text-sm font-medium text-gray-700 hover:text-electric transition-colors"
-            >
-              Mini-SaaS
+              Boutique
             </Link>
             <Link
               href="/contact"
