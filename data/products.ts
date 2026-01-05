@@ -37,8 +37,8 @@ export const products: Product[] = [
     gumroadUrl: "https://dashai-ochre.vercel.app/",
     tags: ["dashboard", "analytics", "ia", "treso"],
     screenshots: [
-      "https://placehold.co/800x450/0ea5e9/white?text=DashAI+Dashboard",
-      "https://placehold.co/800x450/0ea5e9/white?text=DashAI+Analytics"
+      "/screenshots/dashai-1.jpg",
+      "/screenshots/dashai-2.jpg"
     ],
     whatItReplaces: [
       "Excel manuel chronophage",
@@ -83,8 +83,8 @@ export const products: Product[] = [
     gumroadUrl: "https://dashai-ochre.vercel.app/vinted",
     tags: ["dashboard", "vinted", "ecommerce", "analytics"],
     screenshots: [
-      "https://placehold.co/800x450/0ea5e9/white?text=DashAI+Vinted",
-      "https://placehold.co/800x450/0ea5e9/white?text=Vinted+Analytics"
+      "/screenshots/dashai-vinted-1.jpg",
+      "/screenshots/dashai-vinted-2.jpg"
     ],
     whatItReplaces: [
       "Calcul manuel des marges Vinted",
