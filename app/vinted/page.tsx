@@ -12,12 +12,11 @@ export default function VintedLanding() {
               <span className="text-gray-400">/</span>
               <span className="text-xl text-cyan-600">Scanner Vinted</span>
             </Link>
-            <Link
-              href="/vinted/scanner"
+            <a href="https://dashai-ochre.vercel.app/" target="_blank" rel="noopener noreferrer"
               className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-teal-600 transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Essayer maintenant
-            </Link>
+            </a>
           </div>
         </div>
       </header>
@@ -45,12 +44,11 @@ export default function VintedLanding() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link
-                href="/vinted/scanner"
+              <a href="https://dashai-ochre.vercel.app/" target="_blank" rel="noopener noreferrer"
                 className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold rounded-xl hover:from-cyan-600 hover:to-teal-600 transition-all duration-200 shadow-lg hover:shadow-xl text-lg"
               >
                 Essayer gratuitement
-              </Link>
+              </a>
               <a
                 href="#features"
                 className="px-8 py-4 border-2 border-cyan-500 text-cyan-600 font-semibold rounded-xl hover:bg-cyan-50 transition-all duration-200 text-lg"
@@ -270,12 +268,11 @@ export default function VintedLanding() {
                     <span>Export Excel</span>
                   </li>
                 </ul>
-                <Link
-                  href="/vinted/scanner"
+                <a href="https://dashai-ochre.vercel.app/" target="_blank" rel="noopener noreferrer"
                   className="block w-full px-4 py-3 border-2 border-cyan-500 text-cyan-600 font-semibold rounded-lg hover:bg-cyan-50 transition-colors text-sm"
                 >
                   Commencer
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -314,12 +311,11 @@ export default function VintedLanding() {
                     <span>Support email</span>
                   </li>
                 </ul>
-                <Link
-                  href="/vinted/scanner"
+                <a href="https://dashai-ochre.vercel.app/" target="_blank" rel="noopener noreferrer"
                   className="block w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-teal-600 transition-all shadow-md text-sm"
                 >
                   Choisir
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -369,12 +365,11 @@ export default function VintedLanding() {
                     <span>Analyses historiques</span>
                   </li>
                 </ul>
-                <Link
-                  href="/vinted/scanner"
+                <a href="https://dashai-ochre.vercel.app/" target="_blank" rel="noopener noreferrer"
                   className="block w-full px-4 py-3 bg-white text-cyan-600 font-bold rounded-lg hover:bg-gray-100 transition-colors shadow-md text-sm"
                 >
                   Choisir Pro
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -425,12 +420,11 @@ export default function VintedLanding() {
                     <span>Features custom</span>
                   </li>
                 </ul>
-                <Link
-                  href="/vinted/scanner"
+                <a href="https://dashai-ochre.vercel.app/" target="_blank" rel="noopener noreferrer"
                   className="block w-full px-4 py-3 border-2 border-cyan-500 text-cyan-600 font-semibold rounded-lg hover:bg-cyan-50 transition-colors text-sm"
                 >
                   Choisir
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -531,12 +525,11 @@ export default function VintedLanding() {
           <p className="text-xl text-cyan-100 mb-12 max-w-2xl mx-auto">
             Commence avec 3 scans gratuits. Pas de carte bancaire requise.
           </p>
-          <Link
-            href="/vinted/scanner"
+          <a href="https://dashai-ochre.vercel.app/" target="_blank" rel="noopener noreferrer"
             className="inline-block px-10 py-5 bg-white text-cyan-600 font-bold rounded-xl hover:bg-gray-100 transition-all duration-200 shadow-2xl hover:shadow-3xl text-xl"
           >
             Essayer gratuitement maintenant
-          </Link>
+          </a>
           <p className="text-cyan-100 mt-6 text-sm">
             Rejoins des centaines de vendeurs qui gagnent du temps chaque jour
           </p>
@@ -559,9 +552,9 @@ export default function VintedLanding() {
               <Link href="/" className="text-gray-600 hover:text-cyan-600 transition-colors">
                 Accueil
               </Link>
-              <Link href="/vinted/scanner" className="text-gray-600 hover:text-cyan-600 transition-colors">
+              <a href="https://dashai-ochre.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-cyan-600 transition-colors">
                 Scanner
-              </Link>
+              </a>
             </div>
           </div>
         </div>

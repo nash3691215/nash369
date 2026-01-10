@@ -11,12 +11,14 @@ export default function Home() {
               <h1 className="text-3xl font-bold text-gray-900">NASH369</h1>
               <p className="text-sm text-gray-600 mt-1">Développeur & Créateur d'outils IA</p>
             </div>
-            <Link
-              href="/vinted/scanner"
+            <a
+              href="https://dashai-ochre.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-teal-600 transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Essayer DashAI Vinted
-            </Link>
+            </a>
           </div>
         </div>
       </header>
@@ -137,12 +139,14 @@ export default function Home() {
                     <span className="text-gray-600">pour 10 scans</span>
                   </div>
 
-                  <Link
-                    href="/vinted/scanner"
+                  <a
+                    href="https://dashai-ochre.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block w-full text-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold rounded-xl hover:from-cyan-600 hover:to-teal-600 transition-all duration-200 shadow-lg hover:shadow-xl text-lg"
                   >
                     Essayer gratuitement
-                  </Link>
+                  </a>
 
                   <Link
                     href="/dashai-vinted"
