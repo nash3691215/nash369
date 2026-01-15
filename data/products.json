@@ -16,7 +16,7 @@
     {
       "id": "burnout",
       "name": "Le Burnout du Battant",
-      "price": 9,
+      "price": 9.90,
       "currency": "eur",
       "type": "ebook",
       "file": "burnout-battant.pdf",
@@ -31,7 +31,7 @@
     {
       "id": "zero-vivre",
       "name": "De Zéro à Vivre de Ton Activité",
-      "price": 9,
+      "price": 9.90,
       "currency": "eur",
       "type": "ebook",
       "file": "zero-vivre.html",
@@ -46,7 +46,7 @@
     {
       "id": "site-ia",
       "name": "Créer un Site Pro avec l'IA",
-      "price": 49,
+      "price": 49.90,
       "currency": "eur",
       "type": "formation",
       "file": "site-ia.html",
