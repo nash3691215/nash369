@@ -2,13 +2,11 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import products from '@/data/products.json'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '')
-
 export async function POST(req: NextRequest) {
   try {
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '')
     const { productId } = await req.json()
 
-    // Trouver le produit
     const product = products.products.find(p => p.id === productId)
 
     if (!product || product.type === 'lead_magnet') {
@@ -18,7 +16,6 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    // Créer la session Stripe
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
@@ -29,7 +26,7 @@ export async function POST(req: NextRequest) {
               name: product.name,
               description: product.description,
             },
-            unit_amount: product.price * 100, // Stripe utilise les centimes
+            unit_amount: product.price * 100,
           },
           quantity: 1,
         },
