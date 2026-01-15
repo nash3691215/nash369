@@ -1,13 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import products from '@/data/products.json'
 
-export const dynamic = 'force-dynamic'
-
-export default function SuccessPage() {
+function SuccessContent() {
   const searchParams = useSearchParams()
   const sessionId = searchParams.get('session_id')
   const [loading, setLoading] = useState(true)
@@ -15,7 +13,6 @@ export default function SuccessPage() {
 
   useEffect(() => {
     if (sessionId) {
-      // Simuler une vérification (en prod, tu peux vérifier avec Stripe API)
       setTimeout(() => {
         setLoading(false)
       }, 1000)
@@ -138,5 +135,20 @@ export default function SuccessPage() {
         </div>
       </div>
     </main>
+  )
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={
+      <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex items-center justify-center px-4">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Chargement...</p>
+        </div>
+      </main>
+    }>
+      <SuccessContent />
+    </Suspense>
   )
 }
