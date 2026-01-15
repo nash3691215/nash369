@@ -20,7 +20,7 @@
       "currency": "eur",
       "type": "ebook",
       "file": "burnout-battant.pdf",
-      "stripe_price_id": "",
+      "stripe_price_id": "price_1SptPhRws3CXDdFEw22XJlFf",
       "description": "Comment éviter le burnout quand on est entrepreneur ambitieux",
       "benefits": [
         "Reconnaître les signes avant qu'il soit trop tard",
@@ -35,7 +35,7 @@
       "currency": "eur",
       "type": "ebook",
       "file": "zero-vivre.html",
-      "stripe_price_id": "",
+      "stripe_price_id": "price_1SptVQRws3CXDdFEpBC25JDU",
       "description": "Le guide complet pour lancer et monétiser ton activité en ligne",
       "benefits": [
         "Trouver ton idée rentable",
@@ -50,7 +50,7 @@
       "currency": "eur",
       "type": "formation",
       "file": "site-ia.html",
-      "stripe_price_id": "",
+      "stripe_price_id": "price_1SptTKRws3CXDdFEO1JTMGjD",
       "description": "Formation complète : crée ton site professionnel avec l'IA en quelques heures",
       "benefits": [
         "Pas besoin de coder",
