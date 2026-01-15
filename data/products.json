@@ -1,0 +1,77 @@
+{
+  "products": [
+    {
+      "id": "prompts",
+      "name": "100 Prompts ChatGPT",
+      "price": 0,
+      "type": "lead_magnet",
+      "file": "100_prompts_gpt.html",
+      "description": "100 prompts ChatGPT prêts à l'emploi pour booster ta productivité",
+      "benefits": [
+        "Gain de temps immédiat",
+        "Prompts testés et validés",
+        "Catégorisés par usage"
+      ]
+    },
+    {
+      "id": "burnout",
+      "name": "Le Burnout du Battant",
+      "price": 9,
+      "currency": "eur",
+      "type": "ebook",
+      "file": "Le Burnout du Battant.pdf",
+      "stripe_price_id": "",
+      "description": "Comment éviter le burnout quand on est entrepreneur ambitieux",
+      "benefits": [
+        "Reconnaître les signes avant qu'il soit trop tard",
+        "Stratégies concrètes de prévention",
+        "Retrouver l'équilibre sans sacrifier l'ambition"
+      ]
+    },
+    {
+      "id": "zero-vivre",
+      "name": "De Zéro à Vivre de Ton Activité",
+      "price": 9,
+      "currency": "eur",
+      "type": "ebook",
+      "file": "De Zéro à Vivre de Ton Activté .html",
+      "stripe_price_id": "",
+      "description": "Le guide complet pour lancer et monétiser ton activité en ligne",
+      "benefits": [
+        "Trouver ton idée rentable",
+        "Acquérir tes premiers clients",
+        "Générer tes premiers revenus"
+      ]
+    },
+    {
+      "id": "site-ia",
+      "name": "Créer un Site Pro avec l'IA",
+      "price": 49,
+      "currency": "eur",
+      "type": "formation",
+      "file": "guide-sites-ia-pro.html",
+      "stripe_price_id": "",
+      "description": "Formation complète : crée ton site professionnel avec l'IA en quelques heures",
+      "benefits": [
+        "Pas besoin de coder",
+        "Site pro en moins de 24h",
+        "Économise 1000€+ d'agence"
+      ]
+    },
+    {
+      "id": "vinted-vision",
+      "name": "Vinted Vision",
+      "price": 9,
+      "price_premium": 19,
+      "currency": "eur",
+      "type": "saas",
+      "external_url": "https://dashai-ochre.vercel.app/vinted",
+      "description": "Analyse automatique de tes ventes Vinted avec IA",
+      "benefits": [
+        "Dashboard temps réel",
+        "Statistiques avancées",
+        "Insights IA pour optimiser tes ventes"
+      ]
+    }
+  ]
+}
