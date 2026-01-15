@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { sendLeadMagnetEmail } from '@/lib/stripe'
 
 export default function PromptsPage() {
   const [email, setEmail] = useState('')
@@ -12,11 +13,14 @@ export default function PromptsPage() {
     e.preventDefault()
     setLoading(true)
 
-    // TODO: Appel API pour envoyer email
-    setTimeout(() => {
+    try {
+      await sendLeadMagnetEmail(email)
       setSuccess(true)
+    } catch (error) {
+      alert('Erreur lors de l\'envoi. Réessaye ou contacte-moi.')
+    } finally {
       setLoading(false)
-    }, 1000)
+    }
   }
 
   if (success) {

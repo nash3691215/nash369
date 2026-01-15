@@ -2,16 +2,14 @@
 
 import Link from 'next/link'
 import products from '@/data/products.json'
+import { createCheckoutSession } from '@/lib/stripe'
 
 export default function BurnoutPage() {
   const product = products.products.find(p => p.id === 'burnout')
 
   if (!product) return null
 
-  const handleBuy = async () => {
-    // TODO: Appel API Stripe checkout
-    alert('Stripe checkout à intégrer')
-  }
+  const handleBuy = () => createCheckoutSession('burnout')
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -21,7 +19,6 @@ export default function BurnoutPage() {
         </Link>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Left: Product Info */}
           <div>
             <div className="text-6xl mb-6">📚</div>
             <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
@@ -45,7 +42,6 @@ export default function BurnoutPage() {
             </div>
           </div>
 
-          {/* Right: Sticky Buy Box */}
           <div>
             <div className="bg-white rounded-xl p-8 shadow-xl sticky top-8">
               <div className="text-4xl font-bold text-indigo-600 mb-6">
@@ -77,7 +73,6 @@ export default function BurnoutPage() {
           </div>
         </div>
 
-        {/* Testimonials */}
         <div className="mt-20 bg-white rounded-xl p-8 shadow-lg">
           <h2 className="text-2xl font-bold mb-6 text-center">Ce qu'ils en disent</h2>
           <div className="grid md:grid-cols-3 gap-6">
