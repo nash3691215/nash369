@@ -5,7 +5,7 @@
       "name": "100 Prompts ChatGPT",
       "price": 0,
       "type": "lead_magnet",
-      "file": "100_prompts_gpt.html",
+      "file": "100-prompts-ia.html",
       "description": "100 prompts ChatGPT prêts à l'emploi pour booster ta productivité",
       "benefits": [
         "Gain de temps immédiat",
@@ -19,7 +19,7 @@
       "price": 9,
       "currency": "eur",
       "type": "ebook",
-      "file": "Le Burnout du Battant.pdf",
+      "file": "burnout-battant.pdf",
       "stripe_price_id": "",
       "description": "Comment éviter le burnout quand on est entrepreneur ambitieux",
       "benefits": [
@@ -34,7 +34,7 @@
       "price": 9,
       "currency": "eur",
       "type": "ebook",
-      "file": "De Zéro à Vivre de Ton Activté .html",
+      "file": "zero-vivre.html",
       "stripe_price_id": "",
       "description": "Le guide complet pour lancer et monétiser ton activité en ligne",
       "benefits": [
@@ -49,7 +49,7 @@
       "price": 49,
       "currency": "eur",
       "type": "formation",
-      "file": "guide-sites-ia-pro.html",
+      "file": "site-ia.html",
       "stripe_price_id": "",
       "description": "Formation complète : crée ton site professionnel avec l'IA en quelques heures",
       "benefits": [
