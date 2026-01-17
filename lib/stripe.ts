@@ -6,17 +6,31 @@ export async function createCheckoutSession(productId: string) {
       body: JSON.stringify({ productId }),
     })
 
-    const { sessionId, error } = await res.json()
+    if (!res.ok) {
+      const errorText = await res.text()
+      console.error('Stripe API Error:', errorText)
+      throw new Error('Erreur de configuration du paiement. Contactez le support.')
+    }
 
-    if (error) {
-      throw new Error(error)
+    const data = await res.json()
+
+    if (data.error) {
+      throw new Error(data.error)
+    }
+
+    if (!data.sessionId) {
+      throw new Error('Session Stripe invalide')
     }
 
     // Rediriger vers Stripe Checkout
     const stripe = (window as any).Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
-    await stripe.redirectToCheckout({ sessionId })
+    if (!stripe) {
+      throw new Error('Stripe non chargé. Rechargez la page.')
+    }
+
+    await stripe.redirectToCheckout({ sessionId: data.sessionId })
   } catch (err: any) {
-    console.error(err)
+    console.error('Stripe checkout error:', err)
     alert('Erreur lors du paiement: ' + err.message)
   }
 }
