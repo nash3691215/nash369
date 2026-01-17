@@ -16,18 +16,18 @@ export async function POST(req: NextRequest) {
       )
     }
 
+    if (!product.stripe_price_id) {
+      return NextResponse.json(
+        { error: 'Price ID Stripe manquant' },
+        { status: 400 }
+      )
+    }
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
         {
-          price_data: {
-            currency: product.currency || 'eur',
-            product_data: {
-              name: product.name,
-              description: product.description,
-            },
-            unit_amount: product.price * 100,
-          },
+          price: product.stripe_price_id,
           quantity: 1,
         },
       ],
