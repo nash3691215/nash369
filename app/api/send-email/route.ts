@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { saveLeadMagnetEmail } from '@/lib/db'
 
 export async function POST(req: NextRequest) {
   try {
@@ -14,6 +15,10 @@ export async function POST(req: NextRequest) {
     }
 
     if (type === 'lead_magnet') {
+      // Enregistrer l'email dans la base de données
+      await saveLeadMagnetEmail(email, type)
+
+      // Envoyer l'email
       await resend.emails.send({
         from: 'NASH369 <noreply@nash369.com>',
         to: email,
@@ -22,7 +27,7 @@ export async function POST(req: NextRequest) {
           <h1>Salut !</h1>
           <p>Voici tes 100 prompts ChatGPT prêts à l'emploi pour booster ta productivité.</p>
 
-          <a href="${process.env.NEXT_PUBLIC_BASE_URL}/products/100_prompts_gpt.html"
+          <a href="${process.env.NEXT_PUBLIC_BASE_URL}/products/100-prompts-ia.html"
              style="display: inline-block; background: #6366f1; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; margin: 20px 0;">
             Télécharger les 100 Prompts
           </a>

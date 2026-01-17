@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/nash3691215/nash369#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^2.90.1",
     "@types/node": "^25.0.8",
     "@types/react": "^19.2.8",
     "next": "^16.1.2",
