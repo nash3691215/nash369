@@ -61,8 +61,8 @@
     {
       "id": "vinted-vision",
       "name": "Vinted Vision",
-      "price": 9,
-      "price_premium": 19,
+      "price": 9.90,
+      "price_premium": 19.90,
       "currency": "eur",
       "type": "saas",
       "external_url": "https://vintedvisionbynash369.vercel.app",

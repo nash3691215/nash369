@@ -44,15 +44,20 @@ export default function Home() {
       </section>
 
       {/* Produits Premium - REPOSITIONNÉ EN HAUT */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-green-100 border border-green-200 rounded-full text-green-700 text-sm font-semibold animate-pulse">
-              <span className="w-2 h-2 bg-green-600 rounded-full animate-pulse"></span>
-              🔥 Prix de lancement - Dernières places disponibles
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 border-2 border-green-300 rounded-full text-green-700 text-sm font-bold shadow-lg animate-pulse">
+              <span className="w-2 h-2 bg-green-600 rounded-full animate-ping"></span>
+              <span className="w-2 h-2 bg-green-600 rounded-full absolute"></span>
+              🔥 OFFRE LIMITÉE - Plus que quelques places à ce prix
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900">Mes Systèmes Prêts à l'Emploi</h2>
-            <p className="text-lg md:text-xl text-gray-600">Choisis ton arme et génère du cash dès aujourd'hui</p>
+            <h2 className="text-3xl md:text-5xl font-black mb-4 text-gray-900">
+              Mes Systèmes <span className="bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">Clés en Main</span>
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+              Choisis ton arme et commence à générer du cash <span className="font-bold text-indigo-600">dès aujourd'hui</span>
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto mb-12">
@@ -60,8 +65,22 @@ export default function Home() {
               <Link
                 key={product.id}
                 href={product.type === 'saas' ? product.external_url || '#' : `/produits/${product.id}`}
-                className="group relative bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-indigo-500 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
+                className="group relative bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-indigo-500 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl overflow-hidden"
               >
+                {/* Badge "Best Seller" pour la formation */}
+                {product.price >= 40 && (
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">
+                    ⭐ BEST SELLER
+                  </div>
+                )}
+
+                {/* Badge "Populaire" pour les ebooks */}
+                {product.price < 15 && product.type === 'ebook' && (
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">
+                    🔥 POPULAIRE
+                  </div>
+                )}
+
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
                 <div className="relative z-10">
@@ -89,18 +108,23 @@ export default function Home() {
                   </div>
 
                   <div className="pt-4 border-t border-gray-200">
-                    <div className="flex items-baseline gap-2 mb-3">
-                      <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">
-                        {product.price}€
-                      </span>
-                      {product.price_premium && (
-                        <span className="text-gray-500 text-sm">ou {product.price_premium}€/mois</span>
-                      )}
+                    <div className="mb-4">
+                      <div className="flex items-baseline gap-2 mb-1">
+                        <span className="text-3xl md:text-4xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">
+                          {product.price}€
+                        </span>
+                        {product.price_premium && (
+                          <span className="text-gray-500 text-sm line-through">ou {product.price_premium}€/mois</span>
+                        )}
+                      </div>
+                      <p className="text-xs text-green-600 font-semibold">💳 Paiement sécurisé • Accès immédiat</p>
                     </div>
 
-                    <div className="inline-flex items-center gap-2 text-indigo-600 font-semibold group-hover:gap-3 transition-all">
-                      <span>Accéder maintenant</span>
-                      <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center py-3 px-4 rounded-xl font-bold group-hover:from-indigo-500 group-hover:to-purple-500 transition-all shadow-lg">
+                      <div className="flex items-center justify-center gap-2">
+                        <span>Accéder maintenant</span>
+                        <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -110,23 +134,41 @@ export default function Home() {
 
           {/* Lead Magnet CTA - Après les produits */}
           {leadMagnet && (
-            <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl p-1 max-w-3xl mx-auto shadow-2xl shadow-indigo-500/20">
-              <div className="bg-white rounded-xl p-6 md:p-8">
-                <div className="flex flex-col md:flex-row items-center justify-center gap-3 mb-4">
-                  <span className="text-3xl md:text-4xl">⚡</span>
-                  <h3 className="text-xl md:text-3xl font-bold text-gray-900 text-center md:text-left">
-                    Pas encore prêt ? Commence par mes {leadMagnet.name}
-                  </h3>
-                </div>
-                <p className="text-gray-600 mb-6 text-base md:text-lg text-center md:text-left">{leadMagnet.description}</p>
-                <div className="text-center">
-                  <Link
-                    href="/prompts"
-                    className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg transition-all transform hover:scale-105 shadow-lg shadow-indigo-600/30"
-                  >
-                    Récupère-les maintenant (100% Gratuit)
-                  </Link>
-                  <p className="text-gray-500 text-xs md:text-sm mt-4">✓ Aucune CB requise • ✓ Accès immédiat • ✓ 100% actionnable</p>
+            <div className="relative max-w-4xl mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl blur-xl opacity-20"></div>
+              <div className="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-1 shadow-2xl">
+                <div className="bg-white rounded-xl p-6 md:p-10">
+                  <div className="flex flex-col md:flex-row items-center justify-center gap-3 mb-4">
+                    <span className="text-4xl md:text-5xl">⚡</span>
+                    <h3 className="text-2xl md:text-4xl font-black text-gray-900 text-center md:text-left">
+                      Pas encore prêt ? <span className="bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">Commence gratuitement</span>
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 mb-8 text-base md:text-xl text-center md:text-left leading-relaxed">
+                    {leadMagnet.description} - <span className="font-bold text-indigo-600">100% offerts pour démarrer</span>
+                  </p>
+                  <div className="text-center">
+                    <Link
+                      href="/prompts"
+                      className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white px-10 md:px-14 py-5 md:py-6 rounded-xl font-black text-lg md:text-xl transition-all transform hover:scale-105 shadow-2xl shadow-indigo-600/40"
+                    >
+                      🎁 Télécharger maintenant (GRATUIT)
+                    </Link>
+                    <p className="text-gray-500 text-sm md:text-base mt-6 flex items-center justify-center gap-6 flex-wrap">
+                      <span className="flex items-center gap-2">
+                        <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                        <span className="font-semibold">Aucune CB</span>
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                        <span className="font-semibold">Accès instantané</span>
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                        <span className="font-semibold">Testés & validés</span>
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -184,52 +226,108 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Garantie Section */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl p-8 md:p-12 text-center">
+              <div className="text-6xl md:text-7xl mb-6">🛡️</div>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+                Garantie Satisfait ou Remboursé <span className="text-green-600">30 jours</span>
+              </h2>
+              <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
+                Si tu n'es pas satisfait à 100%, je te rembourse intégralement. Sans questions. Sans complications.
+                <span className="font-bold text-green-600"> C'est aussi simple que ça.</span>
+              </p>
+              <p className="text-base text-gray-600">
+                ✓ Remboursement en 24-48h • ✓ Aucune justification nécessaire • ✓ Tu gardes les bonus
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-gray-900">Ils ont lancé leurs systèmes</h2>
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+                Ils ont <span className="bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">transformé leur vie</span>
+              </h2>
+              <p className="text-lg text-gray-600">Rejoins les 500+ entrepreneurs qui génèrent du cash en automatique</p>
+            </div>
             <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-              <div className="bg-white rounded-xl p-8 border-2 border-gray-200 shadow-lg">
+              <div className="bg-white rounded-xl p-8 border-2 border-indigo-100 hover:border-indigo-300 shadow-lg hover:shadow-2xl transition-all">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white">M</div>
+                  <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center font-bold text-white text-xl shadow-lg">M</div>
                   <div>
                     <div className="font-bold text-gray-900">Marc L.</div>
                     <div className="text-gray-600 text-sm">Freelance Dev</div>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                      ))}
+                    </div>
                   </div>
                 </div>
-                <p className="text-gray-700 mb-4">
-                  "J'ai automatisé toute ma prospection. +4.2K€/mois en revenus passifs. Le système tourne 24/7."
+                <p className="text-gray-700 mb-4 leading-relaxed italic">
+                  "J'ai automatisé toute ma prospection. <span className="font-bold text-indigo-600">+4.2K€/mois</span> en revenus passifs. Le système tourne 24/7."
                 </p>
-                <div className="text-green-600 font-bold">ROI: 840%</div>
+                <div className="flex items-center gap-2 text-green-600 font-bold bg-green-50 px-3 py-2 rounded-lg">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                  <span>ROI: 840%</span>
+                </div>
               </div>
 
-              <div className="bg-white rounded-xl p-8 border-2 border-gray-200 shadow-lg">
+              <div className="bg-white rounded-xl p-8 border-2 border-purple-100 hover:border-purple-300 shadow-lg hover:shadow-2xl transition-all">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white">S</div>
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center font-bold text-white text-xl shadow-lg">S</div>
                   <div>
                     <div className="font-bold text-gray-900">Sarah K.</div>
                     <div className="text-gray-600 text-sm">E-commerce</div>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                      ))}
+                    </div>
                   </div>
                 </div>
-                <p className="text-gray-700 mb-4">
-                  "Le framework Vinted Vision m'a permis de scaler à 15K€/mois. Je travaille 2h/jour max."
+                <p className="text-gray-700 mb-4 leading-relaxed italic">
+                  "Le framework Vinted Vision m'a permis de scaler à <span className="font-bold text-purple-600">15K€/mois</span>. Je travaille 2h/jour max."
                 </p>
-                <div className="text-green-600 font-bold">15K€/mois</div>
+                <div className="flex items-center gap-2 text-green-600 font-bold bg-green-50 px-3 py-2 rounded-lg">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                  <span>15K€/mois</span>
+                </div>
               </div>
 
-              <div className="bg-white rounded-xl p-8 border-2 border-gray-200 shadow-lg">
+              <div className="bg-white rounded-xl p-8 border-2 border-pink-100 hover:border-pink-300 shadow-lg hover:shadow-2xl transition-all">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center font-bold text-white">T</div>
+                  <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center font-bold text-white text-xl shadow-lg">T</div>
                   <div>
                     <div className="font-bold text-gray-900">Thomas R.</div>
                     <div className="text-gray-600 text-sm">Creator</div>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                      ))}
+                    </div>
                   </div>
                 </div>
-                <p className="text-gray-700 mb-4">
-                  "Évité le burnout grâce au guide. Maintenant je construis sereinement. Game changer total."
+                <p className="text-gray-700 mb-4 leading-relaxed italic">
+                  "Évité le burnout grâce au guide. Maintenant je construis sereinement. <span className="font-bold text-pink-600">Game changer total.</span>"
                 </p>
-                <div className="text-green-600 font-bold">Santé mentale sauvée</div>
+                <div className="flex items-center gap-2 text-green-600 font-bold bg-green-50 px-3 py-2 rounded-lg">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                  <span>Équilibre retrouvé</span>
+                </div>
               </div>
             </div>
           </div>
