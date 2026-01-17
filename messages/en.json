@@ -1,0 +1,116 @@
+{
+  "common": {
+    "currency": "$"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Automated Systems Architect",
+    "title": "Build systems that",
+    "titleGradient": "print money",
+    "subtitle": "Zero fluff. Battle-tested frameworks to automate your income and scale without the burnout.",
+    "cta": "Access My Systems Now",
+    "stats": {
+      "entrepreneurs": "Entrepreneurs trained",
+      "systems": "Automated systems built",
+      "roi": "Average ROI"
+    }
+  },
+  "products": {
+    "badge": "🔥 LIMITED OFFER - Only a few spots left at this price",
+    "title": "My",
+    "titleGradient": "Ready-to-Use Systems",
+    "subtitle": "Choose your weapon and start generating cash",
+    "subtitleBold": "today",
+    "badges": {
+      "bestSeller": "⭐ BEST SELLER",
+      "popular": "🔥 POPULAR"
+    },
+    "cta": "Get Access Now",
+    "features": {
+      "secure": "💳 Secure Payment • Instant Access"
+    }
+  },
+  "leadMagnet": {
+    "title": "Not ready yet?",
+    "titleGradient": "Start for free",
+    "subtitle": "100% free to get started",
+    "cta": "🎁 Download Now (FREE)",
+    "features": {
+      "noCard": "No Credit Card",
+      "instant": "Instant Access",
+      "tested": "Tested & Validated"
+    }
+  },
+  "problem": {
+    "badge": "The Problem",
+    "title": "You're grinding 80h/week but your bank account doesn't reflect it",
+    "items": {
+      "time": "You're trading time for money (zero leverage, zero scale)",
+      "operational": "You're drowning in operations instead of building assets",
+      "start": "You have no clue where to start automating your revenue"
+    }
+  },
+  "solution": {
+    "badge": "The Solution",
+    "title": "Build systems that print money while you sleep",
+    "items": {
+      "automate": "Automate acquisition, sales and delivery (the entire funnel)",
+      "scale": "Scale revenue without scaling your hours (true leverage)",
+      "frameworks": "Battle-tested frameworks that actually work in the real world"
+    }
+  },
+  "guarantee": {
+    "title": "100% Money-Back Guarantee",
+    "days": "30 days",
+    "description": "Not satisfied? I'll refund you 100%. Zero questions asked. Zero hassle.",
+    "simple": "It's that simple.",
+    "features": {
+      "refund": "Refund processed in 24-48h max",
+      "noQuestions": "Zero justification needed",
+      "keepBonus": "Keep all bonuses anyway"
+    }
+  },
+  "testimonials": {
+    "title": "They",
+    "titleGradient": "10x'd their revenue",
+    "subtitle": "Join 500+ entrepreneurs printing cash on autopilot",
+    "items": {
+      "marc": {
+        "name": "Marc L.",
+        "role": "Freelance Dev",
+        "quote": "Automated my entire prospecting system. +$4.5K/month passive. Runs 24/7 without me touching it.",
+        "result": "ROI: 840%"
+      },
+      "sarah": {
+        "name": "Sarah K.",
+        "role": "E-commerce",
+        "quote": "Vinted Vision helped me hit $16K/month. I literally work 2 hours a day now. Insane.",
+        "result": "$16K/month"
+      },
+      "thomas": {
+        "name": "Thomas R.",
+        "role": "Creator",
+        "quote": "Dodged burnout completely. Building my empire calmly now. Absolute game changer.",
+        "result": "Balance restored"
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Ready to build your money-printing system?",
+    "subtitle": "Join 500+ entrepreneurs who automated their revenue streams",
+    "cta": "Start Now (100% FREE)"
+  },
+  "footer": {
+    "tagline": "Automated systems architect that generate cash",
+    "links": {
+      "twitter": "Twitter/X",
+      "contact": "Contact"
+    },
+    "copyright": "© 2024 NASH369. All rights reserved."
+  }
+}

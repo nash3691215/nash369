@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "id": "prompts",
+      "name": "100 Prompts ChatGPT",
+      "description": "100 prompts prêts à l'emploi pour exploser ta productivité avec ChatGPT",
+      "benefits": [
+        "Gain de temps immédiat (économise 10h/semaine)",
+        "Prompts testés et validés qui marchent vraiment",
+        "Organisés par cas d'usage pour une utilisation directe"
+      ]
+    },
+    {
+      "id": "burnout",
+      "name": "Le Burnout de l'Hustler",
+      "description": "Comment éviter le burnout quand tu es un entrepreneur ambitieux qui veut tout défoncer",
+      "benefits": [
+        "Reconnais les signaux avant qu'il soit trop tard",
+        "Stratégies concrètes de prévention (pas du développement personnel bullshit)",
+        "Retrouve ton équilibre sans sacrifier ton ambition"
+      ]
+    },
+    {
+      "id": "zero-vivre",
+      "name": "De Zéro à Vivre de ton Business",
+      "description": "Le guide complet pour lancer et monétiser ton business en ligne sans bullshit",
+      "benefits": [
+        "Trouve ton idée rentable (framework validé)",
+        "Acquiers tes premiers clients en 30 jours",
+        "Génère tes premiers revenus rapidement"
+      ]
+    },
+    {
+      "id": "site-ia",
+      "name": "Crée ton Site Pro avec l'IA",
+      "description": "Formation complète : crée ton site professionnel avec l'IA en quelques heures (pas des semaines)",
+      "benefits": [
+        "Zéro code nécessaire (même si tu débutes)",
+        "Site pro en moins de 24h (pas de blabla)",
+        "Économise 1000€+ en frais d'agence"
+      ]
+    },
+    {
+      "id": "vinted-vision",
+      "name": "Vinted Vision",
+      "description": "Analyse automatique de tes ventes Vinted avec l'IA pour scaler ton business",
+      "benefits": [
+        "Dashboard en temps réel de toutes tes métriques",
+        "Statistiques avancées pour optimiser tes prix",
+        "Insights IA pour maximiser tes ventes"
+      ]
+    }
+  ]
+}

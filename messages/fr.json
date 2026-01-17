@@ -1,0 +1,116 @@
+{
+  "common": {
+    "currency": "€"
+  },
+  "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Architecte de systèmes autonomes",
+    "title": "Construis des systèmes qui",
+    "titleGradient": "génèrent du cash",
+    "subtitle": "Pas de bullshit. Des frameworks concrets pour automatiser tes revenus et scaler sans cramer.",
+    "cta": "Découvrir mes systèmes",
+    "stats": {
+      "entrepreneurs": "Entrepreneurs formés",
+      "systems": "Systèmes autonomes",
+      "roi": "En moyenne"
+    }
+  },
+  "products": {
+    "badge": "🔥 OFFRE LIMITÉE - Plus que quelques places à ce prix",
+    "title": "Mes Systèmes",
+    "titleGradient": "Clés en Main",
+    "subtitle": "Choisis ton arme et commence à générer du cash",
+    "subtitleBold": "dès aujourd'hui",
+    "badges": {
+      "bestSeller": "⭐ BEST SELLER",
+      "popular": "🔥 POPULAIRE"
+    },
+    "cta": "Accéder maintenant",
+    "features": {
+      "secure": "💳 Paiement sécurisé • Accès immédiat"
+    }
+  },
+  "leadMagnet": {
+    "title": "Pas encore prêt ?",
+    "titleGradient": "Commence gratuitement",
+    "subtitle": "100% offerts pour démarrer",
+    "cta": "🎁 Télécharger maintenant (GRATUIT)",
+    "features": {
+      "noCard": "Aucune CB",
+      "instant": "Accès instantané",
+      "tested": "Testés & validés"
+    }
+  },
+  "problem": {
+    "badge": "Le problème",
+    "title": "Tu bosses 80h/semaine mais ton compte en banque ne suit pas",
+    "items": {
+      "time": "Tu échanges ton temps contre de l'argent (pas scalable)",
+      "operational": "Tu es bloqué dans l'opérationnel au lieu de construire",
+      "start": "Tu sais pas par où commencer pour automatiser"
+    }
+  },
+  "solution": {
+    "badge": "La solution",
+    "title": "Construis des systèmes qui tournent sans toi",
+    "items": {
+      "automate": "Automatise ton acquisition, ta vente et ta livraison",
+      "scale": "Scale tes revenus sans scaler ton temps",
+      "frameworks": "Des frameworks testés et validés sur le terrain"
+    }
+  },
+  "guarantee": {
+    "title": "Garantie Satisfait ou Remboursé",
+    "days": "30 jours",
+    "description": "Si tu n'es pas satisfait à 100%, je te rembourse intégralement. Sans questions. Sans complications.",
+    "simple": "C'est aussi simple que ça.",
+    "features": {
+      "refund": "Remboursement en 24-48h",
+      "noQuestions": "Aucune justification nécessaire",
+      "keepBonus": "Tu gardes les bonus"
+    }
+  },
+  "testimonials": {
+    "title": "Ils ont",
+    "titleGradient": "transformé leur vie",
+    "subtitle": "Rejoins les 500+ entrepreneurs qui génèrent du cash en automatique",
+    "items": {
+      "marc": {
+        "name": "Marc L.",
+        "role": "Freelance Dev",
+        "quote": "J'ai automatisé toute ma prospection. +4.2K€/mois en revenus passifs. Le système tourne 24/7.",
+        "result": "ROI: 840%"
+      },
+      "sarah": {
+        "name": "Sarah K.",
+        "role": "E-commerce",
+        "quote": "Le framework Vinted Vision m'a permis de scaler à 15K€/mois. Je travaille 2h/jour max.",
+        "result": "15K€/mois"
+      },
+      "thomas": {
+        "name": "Thomas R.",
+        "role": "Creator",
+        "quote": "Évité le burnout grâce au guide. Maintenant je construis sereinement. Game changer total.",
+        "result": "Équilibre retrouvé"
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Prêt à construire ton système ?",
+    "subtitle": "Rejoins les 500+ entrepreneurs qui ont automatisé leurs revenus",
+    "cta": "Commencer maintenant (100% gratuit)"
+  },
+  "footer": {
+    "tagline": "Architecte de systèmes autonomes qui génèrent du cash",
+    "links": {
+      "twitter": "Twitter/X",
+      "contact": "Contact"
+    },
+    "copyright": "© 2024 NASH369. Tous droits réservés."
+  }
+}
