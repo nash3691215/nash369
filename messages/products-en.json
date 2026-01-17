@@ -1,53 +1,33 @@
 {
   "products": [
     {
-      "id": "prompts",
-      "name": "100 ChatGPT Prompts",
-      "description": "100 battle-tested ChatGPT prompts that actually work to skyrocket your productivity",
+      "id": "zero-vivre",
+      "name": "From Zero to Living Off Your Business",
+      "description": "The complete system to build a business that generates revenue without trading your time for money",
       "benefits": [
-        "Instant time savings (save 10h/week minimum)",
-        "Proven prompts that deliver results every time",
-        "Organized by use case for immediate implementation"
+        "Validated framework to identify your profitable system",
+        "Concrete method to acquire your first clients",
+        "Architecture to generate recurring revenue"
       ]
     },
     {
       "id": "burnout",
       "name": "The Hustler's Burnout",
-      "description": "How to avoid burnout when you're an ambitious entrepreneur crushing it 24/7",
+      "description": "How to build sustainably when you're an ambitious entrepreneur",
       "benefits": [
-        "Spot the warning signs before it's too late",
-        "Concrete prevention strategies (not fluffy self-help BS)",
-        "Keep your edge without sacrificing your health"
+        "Identify the signals before the breaking point",
+        "Proven strategies to build without burning out",
+        "Maintain performance without sacrificing health"
       ]
     },
     {
-      "id": "zero-vivre",
-      "name": "From Zero to Living Off Your Business",
-      "description": "The no-BS complete guide to launch and monetize your online business fast",
+      "id": "prompts",
+      "name": "100 ChatGPT Prompts",
+      "description": "100 battle-tested prompts to automate your repetitive tasks",
       "benefits": [
-        "Find your profitable idea (validated framework)",
-        "Land your first paying clients in 30 days",
-        "Generate real revenue quickly"
-      ]
-    },
-    {
-      "id": "site-ia",
-      "name": "Build a Pro Website with AI",
-      "description": "Complete training: build your professional website with AI in hours (not weeks)",
-      "benefits": [
-        "Zero coding required (total beginner friendly)",
-        "Pro website live in under 24h (no excuses)",
-        "Save $1000+ in agency fees"
-      ]
-    },
-    {
-      "id": "vinted-vision",
-      "name": "Vinted Vision",
-      "description": "AI-powered automatic analysis of your Vinted sales to scale your reselling business",
-      "benefits": [
-        "Real-time dashboard with all your metrics",
-        "Advanced analytics to optimize pricing",
-        "AI-driven insights to maximize your revenue"
+        "Immediate productivity gain",
+        "Field-validated prompts",
+        "Organized by use case"
       ]
     }
   ]

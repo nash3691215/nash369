@@ -10,36 +10,37 @@
   },
   "hero": {
     "badge": "Architecte de systèmes autonomes",
-    "title": "Construis des systèmes qui",
-    "titleGradient": "génèrent du cash",
-    "subtitle": "Pas de bullshit. Des frameworks concrets pour automatiser tes revenus et scaler sans cramer.",
-    "cta": "Découvrir mes systèmes",
+    "title": "Construis une activité qui",
+    "titleGradient": "génère des revenus",
+    "subtitle": "Sans échanger ton temps contre de l'argent. Un système, pas un job.",
+    "cta": "Accéder au système",
     "stats": {
       "entrepreneurs": "Entrepreneurs formés",
-      "systems": "Systèmes autonomes",
+      "systems": "Systèmes déployés",
       "roi": "En moyenne"
     }
   },
   "products": {
-    "badge": "🔥 OFFRE LIMITÉE - Plus que quelques places à ce prix",
-    "title": "Mes Systèmes",
-    "titleGradient": "Clés en Main",
-    "subtitle": "Choisis ton arme et commence à générer du cash",
-    "subtitleBold": "dès aujourd'hui",
-    "badges": {
-      "bestSeller": "⭐ BEST SELLER",
-      "popular": "🔥 POPULAIRE"
-    },
+    "badge": "Le système pour générer des revenus",
+    "title": "De Zéro à Vivre",
+    "titleGradient": "de Ton Activité",
+    "subtitle": "Le framework complet pour construire une activité rentable",
+    "subtitleBold": "sans échanger ton temps",
+    "price": "9,90€",
     "cta": "Accéder maintenant",
     "features": {
       "secure": "💳 Paiement sécurisé • Accès immédiat"
+    },
+    "secondary": {
+      "title": "Construire sans s'épuiser",
+      "badge": "Complément recommandé"
     }
   },
   "leadMagnet": {
     "title": "Pas encore prêt ?",
     "titleGradient": "Commence gratuitement",
-    "subtitle": "100% offerts pour démarrer",
-    "cta": "🎁 Télécharger maintenant (GRATUIT)",
+    "subtitle": "100 prompts pour automatiser tes tâches",
+    "cta": "Télécharger gratuitement",
     "features": {
       "noCard": "Aucune CB",
       "instant": "Accès instantané",
@@ -48,20 +49,20 @@
   },
   "problem": {
     "badge": "Le problème",
-    "title": "Tu bosses 80h/semaine mais ton compte en banque ne suit pas",
+    "title": "Tu échanges ton temps contre de l'argent",
     "items": {
-      "time": "Tu échanges ton temps contre de l'argent (pas scalable)",
-      "operational": "Tu es bloqué dans l'opérationnel au lieu de construire",
-      "start": "Tu sais pas par où commencer pour automatiser"
+      "time": "Chaque euro demande une heure de ton temps",
+      "operational": "Tu es bloqué dans l'exécution au lieu de construire",
+      "start": "Tu ne sais pas par où commencer pour créer un système"
     }
   },
   "solution": {
     "badge": "La solution",
-    "title": "Construis des systèmes qui tournent sans toi",
+    "title": "Construis un système qui génère des revenus",
     "items": {
-      "automate": "Automatise ton acquisition, ta vente et ta livraison",
-      "scale": "Scale tes revenus sans scaler ton temps",
-      "frameworks": "Des frameworks testés et validés sur le terrain"
+      "automate": "Architecture validée pour créer ton activité",
+      "scale": "Génère des revenus sans scaler ton temps",
+      "frameworks": "Méthode testée et documentée"
     }
   },
   "guarantee": {
@@ -77,36 +78,36 @@
   },
   "testimonials": {
     "title": "Ils ont",
-    "titleGradient": "transformé leur vie",
-    "subtitle": "Rejoins les 500+ entrepreneurs qui génèrent du cash en automatique",
+    "titleGradient": "construit leur système",
+    "subtitle": "Rejoins les 500+ entrepreneurs qui ont construit une activité rentable",
     "items": {
       "marc": {
         "name": "Marc L.",
         "role": "Freelance Dev",
-        "quote": "J'ai automatisé toute ma prospection. +4.2K€/mois en revenus passifs. Le système tourne 24/7.",
+        "quote": "J'ai structuré mon activité comme un système. +4.2K€/mois en revenus récurrents.",
         "result": "ROI: 840%"
       },
       "sarah": {
         "name": "Sarah K.",
         "role": "E-commerce",
-        "quote": "Le framework Vinted Vision m'a permis de scaler à 15K€/mois. Je travaille 2h/jour max.",
+        "quote": "Le framework m'a permis de passer de 0 à 15K€/mois avec une structure claire.",
         "result": "15K€/mois"
       },
       "thomas": {
         "name": "Thomas R.",
         "role": "Creator",
-        "quote": "Évité le burnout grâce au guide. Maintenant je construis sereinement. Game changer total.",
+        "quote": "J'ai évité le burnout en construisant un système durable dès le départ.",
         "result": "Équilibre retrouvé"
       }
     }
   },
   "finalCta": {
     "title": "Prêt à construire ton système ?",
-    "subtitle": "Rejoins les 500+ entrepreneurs qui ont automatisé leurs revenus",
-    "cta": "Commencer maintenant (100% gratuit)"
+    "subtitle": "Rejoins les 500+ entrepreneurs qui ont construit une activité rentable",
+    "cta": "Accéder maintenant (9,90€)"
   },
   "footer": {
-    "tagline": "Architecte de systèmes autonomes qui génèrent du cash",
+    "tagline": "Architecte de systèmes autonomes qui génèrent des revenus",
     "links": {
       "twitter": "Twitter/X",
       "contact": "Contact"

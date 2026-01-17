@@ -1,16 +1,19 @@
 {
   "products": [
     {
-      "id": "prompts",
-      "name": "100 Prompts ChatGPT",
-      "price": 0,
-      "type": "lead_magnet",
-      "file": "100-prompts-ia.html",
-      "description": "100 prompts ChatGPT prêts à l'emploi pour booster ta productivité",
+      "id": "zero-vivre",
+      "name": "De Zéro à Vivre de Ton Activité",
+      "price": 9.90,
+      "currency": "eur",
+      "type": "ebook",
+      "priority": "core",
+      "file": "zero-vivre.html",
+      "stripe_price_id": "price_1SptVQRws3CXDdFEpBC25JDU",
+      "description": "Le système complet pour construire une activité qui génère des revenus sans échanger ton temps contre de l'argent",
       "benefits": [
-        "Gain de temps immédiat",
-        "Prompts testés et validés",
-        "Catégorisés par usage"
+        "Framework validé pour identifier ton système rentable",
+        "Méthode concrète pour acquérir tes premiers clients",
+        "Architecture pour générer des revenus récurrents"
       ]
     },
     {
@@ -19,58 +22,28 @@
       "price": 9.90,
       "currency": "eur",
       "type": "ebook",
+      "priority": "secondary",
       "file": "burnout-battant.pdf",
       "stripe_price_id": "price_1SptPhRws3CXDdFEw22XJlFf",
-      "description": "Comment éviter le burnout quand on est entrepreneur ambitieux",
+      "description": "Comment construire de manière durable quand tu es entrepreneur ambitieux",
       "benefits": [
-        "Reconnaître les signes avant qu'il soit trop tard",
-        "Stratégies concrètes de prévention",
-        "Retrouver l'équilibre sans sacrifier l'ambition"
+        "Identifier les signaux avant le point de rupture",
+        "Stratégies éprouvées pour construire sans s'épuiser",
+        "Maintenir la performance sans sacrifier la santé"
       ]
     },
     {
-      "id": "zero-vivre",
-      "name": "De Zéro à Vivre de Ton Activité",
-      "price": 9.90,
-      "currency": "eur",
-      "type": "ebook",
-      "file": "zero-vivre.html",
-      "stripe_price_id": "price_1SptVQRws3CXDdFEpBC25JDU",
-      "description": "Le guide complet pour lancer et monétiser ton activité en ligne",
+      "id": "prompts",
+      "name": "100 Prompts ChatGPT",
+      "price": 0,
+      "type": "lead_magnet",
+      "priority": "lead",
+      "file": "100-prompts-ia.html",
+      "description": "100 prompts testés pour automatiser tes tâches répétitives",
       "benefits": [
-        "Trouver ton idée rentable",
-        "Acquérir tes premiers clients",
-        "Générer tes premiers revenus"
-      ]
-    },
-    {
-      "id": "site-ia",
-      "name": "Créer un Site Pro avec l'IA",
-      "price": 49.90,
-      "currency": "eur",
-      "type": "formation",
-      "file": "site-ia.html",
-      "stripe_price_id": "price_1SptTKRws3CXDdFEO1JTMGjD",
-      "description": "Formation complète : crée ton site professionnel avec l'IA en quelques heures",
-      "benefits": [
-        "Pas besoin de coder",
-        "Site pro en moins de 24h",
-        "Économise 1000€+ d'agence"
-      ]
-    },
-    {
-      "id": "vinted-vision",
-      "name": "Vinted Vision",
-      "price": 9.90,
-      "price_premium": 19.90,
-      "currency": "eur",
-      "type": "saas",
-      "external_url": "https://vintedvisionbynash369.vercel.app",
-      "description": "Analyse automatique de tes ventes Vinted avec IA",
-      "benefits": [
-        "Dashboard temps réel",
-        "Statistiques avancées",
-        "Insights IA pour optimiser tes ventes"
+        "Gain immédiat de productivité",
+        "Prompts validés sur le terrain",
+        "Organisés par cas d'usage"
       ]
     }
   ]
