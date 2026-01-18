@@ -1,139 +1,294 @@
-# NASH369 - Site E-commerce Produits Digitaux
+# NASH369 - Plateforme de Vente de Produits Numériques
 
-Site Next.js 14 pour vendre des produits digitaux (eBooks, formations, SaaS).
+Plateforme e-commerce Next.js pour la vente d'eBooks, formations et SaaS avec paiement Stripe, email automation et capture de leads.
 
-## 🚀 Quick Start
+---
 
-```bash
-# Installer les dépendances
-npm install
+## 🚀 Stack Technique
 
-# Lancer en dev
-npm run dev
+- **Framework**: Next.js 16.1 (React 19.2)
+- **Langage**: TypeScript 5.9
+- **Styling**: Tailwind CSS 3.4
+- **Paiement**: Stripe (Live mode)
+- **Email**: Resend (transactionnel)
+- **Base de données**: Supabase (leads)
+- **Analytics**: Google Analytics 4
+- **Hosting**: Vercel
 
-# Build production
-npm run build
-npm start
+---
+
+## 📁 Structure du Projet
+
+```
+/app
+  /api
+    /create-checkout-session   → Stripe checkout initialization
+    /webhooks/stripe           → Webhook post-achat + envoi produit
+    /send-email                → Resend email pour lead magnet
+    /emails                    → [INUTILISÉ] GET emails database
+    /init-db                   → [INUTILISÉ] Init Supabase
+  /produits
+    /[id]/page.tsx             → Pages produits dynamiques
+  /prompts/page.tsx            → Lead magnet (100 prompts IA)
+  /success/page.tsx            → Confirmation post-achat
+  page.tsx                     → Homepage (450 lignes)
+  layout.tsx                   → Root layout + GA4
+
+/lib
+  stripe.ts                    → Logique Stripe + emails
+  db.ts                        → Opérations Supabase
+  analytics.ts                 → Events GA4
+
+/components
+  LanguageSelector.tsx         → [NON UTILISÉ] Sélecteur FR/EN
+
+/data
+  products.json                → Config produits + Price IDs Stripe
+
+/messages                      → [SYSTÈME I18N MORT]
+  en.json
+  fr.json
+  products-en.json
+  products-fr.json
+
+/i18n
+  request.ts                   → [NON UTILISÉ] Config i18n
+
+/public/products
+  100-prompts-ia.html          → Lead magnet gratuit
+  burnout-battant.pdf          → eBook 9€
+  zero-vivre.html              → eBook 9€
+  site-ia.html                 → Formation 49€
 ```
 
-Le site sera accessible sur `http://localhost:3000`
+---
 
-## 📂 Structure
+## 🛍️ Produits
 
-```
-/
-├── app/
-│   ├── page.tsx                    # Homepage
-│   ├── prompts/page.tsx            # Lead magnet gratuit
-│   ├── produits/
-│   │   ├── burnout/page.tsx        # LP Burnout (9€)
-│   │   ├── zero-vivre/page.tsx     # LP Zero à Vivre (9€)
-│   │   └── site-ia/page.tsx        # LP Site IA (49€)
-│   └── layout.tsx
-├── data/
-│   └── products.json               # Config produits
-├── public/
-│   └── products/                   # Fichiers produits (PDFs, HTMLs)
-└── .env.example
-```
+| Produit | Type | Prix | Stripe Price ID |
+|---------|------|------|-----------------|
+| **Burnout du Battant** | eBook PDF | 9€ | `price_1QlWlHD32lTEYcOu5jd0sVoq` |
+| **De Zéro à Vivre** | eBook HTML | 9€ | `price_1QlWlsD32lTEYcOu7GRgA6J3` |
+| **Site avec IA** | Formation HTML | 49€ | `price_1QlWmKD32lTEYcOuSvSsPgXy` |
+| **100 Prompts IA** | Lead Magnet | Gratuit | N/A |
+
+---
 
 ## ⚙️ Configuration
 
-### 1. Variables d'environnement
+### Variables d'environnement requises
 
-Copier `.env.example` vers `.env.local` :
+Créer `.env.local` :
 
 ```bash
-cp .env.example .env.local
-```
-
-Puis remplir les clés API :
-
-```env
-# Stripe
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_xxx
-STRIPE_SECRET_KEY=sk_test_xxx
-STRIPE_WEBHOOK_SECRET=whsec_xxx
+# Stripe (LIVE MODE)
+STRIPE_SECRET_KEY=sk_live_xxxxx
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_xxxxx
+STRIPE_WEBHOOK_SECRET=whsec_xxxxx
 
 # Resend
-RESEND_API_KEY=re_xxx
+RESEND_API_KEY=re_xxxxx
 
-# URLs
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=eyJxxxxx
+
+# Site
+NEXT_PUBLIC_BASE_URL=https://nash369.com
+
+# Google Analytics
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
-### 2. Stripe Setup
+### Installation
 
-1. Créer compte sur [stripe.com](https://stripe.com)
-2. Aller dans **Developers > API keys**
-3. Copier la Publishable key et Secret key
-4. Créer les produits dans Stripe Dashboard
-5. Récupérer les `price_id` pour chaque produit
-6. Mettre à jour `data/products.json` avec les `stripe_price_id`
+```bash
+npm install
+npm run dev
+```
 
-### 3. Resend Setup
+Site accessible sur `http://localhost:3000`
 
-1. Créer compte sur [resend.com](https://resend.com)
-2. Obtenir API key
-3. Ajouter dans `.env.local`
+---
 
-## 📦 Produits
+## 🔄 Flux de Conversion
 
-Éditer `data/products.json` pour gérer les produits :
+### 1. Achat Produit Payant
+```
+Visiteur → Page Produit → Clic "Acheter"
+  → API /create-checkout-session (Stripe Checkout)
+  → Paiement réussi
+  → Webhook /api/webhooks/stripe
+  → Envoi email Resend avec lien produit
+  → Redirect /success
+  → GA4 event 'purchase'
+```
 
-```json
+### 2. Lead Magnet
+```
+Visiteur → /prompts → Formulaire email
+  → API /send-email
+  → Supabase insert (table lead_magnets)
+  → Email Resend avec 100-prompts-ia.html
+  → Message confirmation
+```
+
+---
+
+## 📧 Système Email
+
+**Provider**: Resend
+**Domaine**: `nash369.com`
+**Expéditeur**: `noreply@nash369.com`
+
+### DNS configurés (Namecheap)
+- SPF: `v=spf1 include:amazonses.com ~all`
+- DKIM: 3 clés CNAME Amazon SES
+- DMARC: `v=DMARC1; p=none;`
+- MX: `send` → Amazon SES (envoi)
+- MX: `@` → Amazon SES (réception)
+
+### Templates
+- **Lead Magnet**: HTML inline dans `/api/send-email`
+- **Produits**: HTML inline dans `/lib/stripe.ts`
+
+---
+
+## 💳 Stripe
+
+**Mode**: LIVE (Production)
+**Webhooks actifs**: `checkout.session.completed`
+
+### Configuration Stripe Dashboard
+1. Créer produits + prices
+2. Ajouter webhook endpoint: `https://nash369.com/api/webhooks/stripe`
+3. Copier signing secret → `STRIPE_WEBHOOK_SECRET`
+
+### Metadata utilisée
+```typescript
 {
-  "products": [
-    {
-      "id": "burnout",
-      "name": "Le Burnout du Battant",
-      "price": 9,
-      "stripe_price_id": "price_xxx",
-      ...
-    }
-  ]
+  productId: 'burnout' | 'zero-vivre' | 'site-ia',
+  customerEmail: string,
+  productUrl: string
 }
 ```
 
-## 🚧 TODO - Intégrations à faire
+---
 
-### Stripe Checkout
-- [ ] Créer `/app/api/create-checkout-session/route.ts`
-- [ ] Créer `/app/api/webhooks/stripe/route.ts`
-- [ ] Créer `/app/success/page.tsx`
+## 📊 Analytics
 
-### Email Automation
-- [ ] Créer `/app/api/send-email/route.ts`
-- [ ] Templates email pour chaque produit
-- [ ] Auto-delivery après paiement
+**Google Analytics 4** configuré avec :
+- Page views automatiques
+- Event `purchase` avec transaction_id, value, items
+- Tag ajouté dans `app/layout.tsx`
 
-### Lead Magnet
-- [ ] Intégrer formulaire email dans `/prompts`
-- [ ] Auto-send du fichier gratuit
+---
 
-## 🚀 Déploiement Vercel
+## 🗄️ Base de Données
 
-```bash
-# Push sur GitHub
-git add .
-git commit -m "Initial commit"
-git push
+### Supabase - Table `lead_magnets`
 
-# Déployer sur Vercel
-npm i -g vercel
-vercel
-
-# Configurer les variables d'env sur Vercel Dashboard
+```sql
+CREATE TABLE lead_magnets (
+  id SERIAL PRIMARY KEY,
+  email TEXT UNIQUE NOT NULL,
+  type TEXT DEFAULT 'prompts-ia',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
 ```
 
-## 📝 Notes
+**Opérations**:
+- `insertLeadMagnetEmail()` dans `/lib/db.ts`
+- Gestion duplicates (unique constraint sur email)
 
-- Tous les fichiers produits sont dans `public/products/`
-- Vinted Vision redirige vers https://dashai-ochre.vercel.app/vinted
-- Le site build et compile sans erreur ✅
+---
 
-## 🔗 Links
+## 🧹 FICHIERS À NETTOYER
 
-- **Repo GitHub** : https://github.com/nash3691215/nash369
-- **X/Twitter** : [@nash3691215](https://twitter.com/nash3691215)
-- **Email** : contact@nash369.com
+### ❌ À SUPPRIMER (Code mort)
+
+```bash
+# Système i18n inutilisé (commit 1f4b1ea: "Suppression i18n")
+/messages/en.json
+/messages/fr.json
+/messages/products-en.json
+/messages/products-fr.json
+/i18n/request.ts
+
+# Composant non utilisé
+/components/LanguageSelector.tsx
+
+# API routes inutiles
+/app/api/emails/route.ts       # Pas d'auth, exposé
+/app/api/init-db/route.ts      # Utilitaire one-shot
+```
+
+**Voir CLEANUP.md pour le plan détaillé**
+
+---
+
+## 🚨 Notes de Sécurité
+
+### ✅ Sécurisé
+- Clés Stripe en `.env.local` (pas dans Git)
+- Webhook signature validation
+- Supabase RLS (à vérifier/configurer)
+
+### ⚠️ Attention
+- `/api/emails` exposé sans auth → **À supprimer ou sécuriser**
+- Pas de rate limiting sur `/api/send-email` → Risque spam
+
+---
+
+## 📝 Scripts NPM
+
+```json
+{
+  "dev": "next dev",           // Dev server
+  "build": "next build",       // Build production
+  "start": "next start",       // Start prod server
+  "lint": "next lint"          // ESLint
+}
+```
+
+---
+
+## 🎯 Prochaines Étapes Recommandées
+
+### Court terme (1-2h)
+1. Supprimer fichiers i18n morts
+2. Retirer `LanguageSelector.tsx`
+3. Simplifier `next.config.js`
+4. Supprimer `/api/emails` et `/api/init-db`
+
+### Moyen terme (1 semaine)
+1. Extraire composants de la homepage
+2. Ajouter rate limiting (Vercel Edge Config ou Upstash)
+3. Configurer Supabase RLS
+4. Ajouter tests E2E (Playwright)
+
+### Long terme
+1. Dashboard admin pour voir leads
+2. A/B testing sur CTA
+3. Produits additionnels
+4. Programme d'affiliation
+
+---
+
+## 📞 Support
+
+**Email**: noreply@nash369.com
+**Domaine**: https://nash369.com
+**Git**: Privé (local)
+
+---
+
+## 📄 Licence
+
+Propriétaire - Tous droits réservés
+
+---
+
+**Dernière mise à jour**: Janvier 2026
+**Version**: 1.0.0
+**Statut**: Production (LIVE)
