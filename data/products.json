@@ -26,7 +26,7 @@
       "type": "formation",
       "priority": "core",
       "file": "site-vitrine.html",
-      "stripe_price_id": "price_XXXXXX_VITRINE",
+      "stripe_price_id": "price_1SptTKRws3CXDdFE01JTMGjD",
       "description": "Formation complète pour créer ton site vitrine professionnel avec l'IA, sans coder",
       "benefits": [
         "Crée ton site avec ChatGPT/Claude en quelques heures",
@@ -44,7 +44,7 @@
       "type": "formation",
       "priority": "core",
       "file": "site-ia.html",
-      "stripe_price_id": "price_1QlWmKD32lTEYcOuSvSsPgXy",
+      "stripe_price_id": "price_1SptPhRws3CXDdFEw22XJIff",
       "description": "Formation complète pour créer ton site e-commerce avec paiements intégrés, sans Shopify ni abonnement",
       "benefits": [
         "Crée ton site Next.js avec ChatGPT/Claude",
