@@ -17,19 +17,20 @@
       ]
     },
     {
-      "id": "burnout",
-      "name": "Le Burnout du Battant",
-      "price": 9.90,
+      "id": "site-ia",
+      "name": "Crée ton site avec IA sans compétence technique",
+      "price": 49,
       "currency": "eur",
-      "type": "ebook",
-      "priority": "secondary",
-      "file": "burnout-battant.pdf",
-      "stripe_price_id": "price_1SptPhRws3CXDdFEw22XJlFf",
-      "description": "Comment construire de manière durable quand tu es entrepreneur ambitieux",
+      "type": "formation",
+      "priority": "core",
+      "file": "site-ia.html",
+      "stripe_price_id": "price_1QlWmKD32lTEYcOuSvSsPgXy",
+      "description": "Formation complète pour créer ton site e-commerce professionnel avec l'IA, même sans savoir coder",
       "benefits": [
-        "Identifier les signaux avant le point de rupture",
-        "Stratégies éprouvées pour construire sans s'épuiser",
-        "Maintenir la performance sans sacrifier la santé"
+        "Crée ton site Next.js avec ChatGPT/Claude en 10h",
+        "Intègre Stripe pour les paiements automatiques",
+        "Configure l'email automation et analytics",
+        "0€/mois de coûts - Stack moderne et gratuite"
       ]
     },
     {
