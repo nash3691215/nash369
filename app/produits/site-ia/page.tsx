@@ -82,34 +82,50 @@ export default function SiteIAPage() {
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900">Ils ont lancé leur site en 24h</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Déjà +120 sites créés avec cette méthode</h3>
               <div className="space-y-4">
-                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg">
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white">M</div>
+                    <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white">A</div>
                     <div>
-                      <div className="font-bold text-gray-900">Maxime D.</div>
-                      <div className="text-gray-600 text-sm">Coach</div>
+                      <div className="font-bold text-gray-900">Alexandre R.</div>
+                      <div className="text-gray-600 text-sm">Formateur</div>
+                      <div className="flex gap-0.5 mt-1">
+                        {[...Array(5)].map((_, i) => (
+                          <span key={i} className="text-yellow-400 text-sm">★</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  <p className="text-gray-700 italic">
-                    "J'ai créé mon site en une journée. L'IA a fait 90% du taff. Économisé 1200€ d'agence. Formation rentabilisée x24."
+                  <p className="text-gray-700 italic leading-relaxed">
+                    "48h après l'achat, mon site vendait mes formations. <span className="font-bold text-purple-600">2.1K€ la première semaine.</span> J'ai économisé 3 mois de galère et 1500€ d'agence. Meilleur investissement de 2024."
                   </p>
-                  <div className="text-green-600 font-bold mt-2">1200€ économisés</div>
+                  <div className="text-green-600 font-bold mt-3 flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                    2.1K€ en 7 jours
+                  </div>
                 </div>
 
-                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg">
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white">C</div>
+                    <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white">M</div>
                     <div>
-                      <div className="font-bold text-gray-900">Clara L.</div>
-                      <div className="text-gray-600 text-sm">Infopreneure</div>
+                      <div className="font-bold text-gray-900">Marie C.</div>
+                      <div className="text-gray-600 text-sm">Créatrice de contenu</div>
+                      <div className="flex gap-0.5 mt-1">
+                        {[...Array(5)].map((_, i) => (
+                          <span key={i} className="text-yellow-400 text-sm">★</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  <p className="text-gray-700 italic">
-                    "Formation ultra claire. J'avais 0 compétence tech. Mon site est en ligne et je vends mes produits. Dingue."
+                  <p className="text-gray-700 italic leading-relaxed">
+                    "Zéro ligne de code écrite. L'IA a tout fait. <span className="font-bold text-indigo-600">Site en ligne en 1 journée.</span> Je vends mes ebooks H24 maintenant. Si j'avais su que c'était aussi simple..."
                   </p>
-                  <div className="text-green-600 font-bold mt-2">Site pro en 1 jour</div>
+                  <div className="text-green-600 font-bold mt-3 flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                    Ventes 24/7 automatiques
+                  </div>
                 </div>
               </div>
             </div>

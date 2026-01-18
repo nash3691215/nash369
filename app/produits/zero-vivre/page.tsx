@@ -60,34 +60,50 @@ export default function ZeroVivrePage() {
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900">Ils ont lancé et vivent de leur activité</h3>
+              <h3 className="text-2xl font-bold text-gray-900">+180 personnes vivent maintenant de leur activité</h3>
               <div className="space-y-4">
-                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg">
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white">A</div>
+                    <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white">S</div>
                     <div>
-                      <div className="font-bold text-gray-900">Alex M.</div>
-                      <div className="text-gray-600 text-sm">Ex-salarié</div>
+                      <div className="font-bold text-gray-900">Sophie B.</div>
+                      <div className="text-gray-600 text-sm">Ex-RH → Créatrice</div>
+                      <div className="flex gap-0.5 mt-1">
+                        {[...Array(5)].map((_, i) => (
+                          <span key={i} className="text-yellow-400 text-sm">★</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  <p className="text-gray-700 italic">
-                    "J'ai suivi le framework étape par étape. 1er client en 2 semaines, 1.2K€/mois en 90 jours. Je vis enfin de mon activité."
+                  <p className="text-gray-700 italic leading-relaxed">
+                    "J'étais en CDI à crever d'ennui. Le framework m'a montré exactement quoi faire. <span className="font-bold text-indigo-600">Premier client semaine 3. 2.8K€/mois au mois 4.</span> J'ai quitté mon job. Ma seule regret ? Pas l'avoir fait avant."
                   </p>
-                  <div className="text-green-600 font-bold mt-2">1.2K€/mois</div>
+                  <div className="text-green-600 font-bold mt-3 flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                    Liberté en 4 mois
+                  </div>
                 </div>
 
-                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg">
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white">L</div>
+                    <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white">K</div>
                     <div>
-                      <div className="font-bold text-gray-900">Laura P.</div>
-                      <div className="text-gray-600 text-sm">Freelance</div>
+                      <div className="font-bold text-gray-900">Karim T.</div>
+                      <div className="text-gray-600 text-sm">Coach</div>
+                      <div className="flex gap-0.5 mt-1">
+                        {[...Array(5)].map((_, i) => (
+                          <span key={i} className="text-yellow-400 text-sm">★</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  <p className="text-gray-700 italic">
-                    "Le chapitre sur la monétisation m'a débloquée. 3 clients payants dès le 1er mois. Enfin des revenus stables."
+                  <p className="text-gray-700 italic leading-relaxed">
+                    "9€ pour un framework qui t'explique comment trouver ton modèle rentable. <span className="font-bold text-purple-600">J'ai trouvé mon système en 48h.</span> Aujourd'hui 5.2K€/mois récurrent. ROI x577. Achète les yeux fermés."
                   </p>
-                  <div className="text-green-600 font-bold mt-2">3 clients en 30j</div>
+                  <div className="text-green-600 font-bold mt-3 flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                    5.2K€/mois récurrent
+                  </div>
                 </div>
               </div>
             </div>

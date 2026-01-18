@@ -259,8 +259,8 @@ export default function Home() {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center font-bold text-white text-xl shadow-lg">M</div>
                   <div>
-                    <div className="font-bold text-gray-900">Marc L.</div>
-                    <div className="text-gray-600 text-sm">Freelance Dev</div>
+                    <div className="font-bold text-gray-900">Marc T.</div>
+                    <div className="text-gray-600 text-sm">Coach business</div>
                     <div className="flex gap-1 mt-1">
                       {[...Array(5)].map((_, i) => (
                         <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -271,20 +271,20 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-700 mb-4 leading-relaxed italic">
-                  "J'ai automatisé toute ma prospection. <span className="font-bold text-indigo-600">+4.2K€/mois</span> en revenus passifs. Le système tourne 24/7."
+                  "J'étais sceptique au début. 3 semaines plus tard : mon site tourne H24, paiements automatiques, <span className="font-bold text-indigo-600">+6.8K€ le premier mois</span>. Je regrette juste de pas avoir commencé avant."
                 </p>
                 <div className="flex items-center gap-2 text-green-600 font-bold bg-green-50 px-3 py-2 rounded-lg">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                  <span>ROI: 840%</span>
+                  <span>6.8K€ en 30 jours</span>
                 </div>
               </div>
 
               <div className="bg-white rounded-xl p-8 border-2 border-purple-100 hover:border-purple-300 shadow-lg hover:shadow-2xl transition-all">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center font-bold text-white text-xl shadow-lg">S</div>
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center font-bold text-white text-xl shadow-lg">L</div>
                   <div>
-                    <div className="font-bold text-gray-900">Sarah K.</div>
-                    <div className="text-gray-600 text-sm">E-commerce</div>
+                    <div className="font-bold text-gray-900">Laura D.</div>
+                    <div className="text-gray-600 text-sm">Infopreneure</div>
                     <div className="flex gap-1 mt-1">
                       {[...Array(5)].map((_, i) => (
                         <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -295,20 +295,20 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-700 mb-4 leading-relaxed italic">
-                  "Le framework Vinted Vision m'a permis de scaler à <span className="font-bold text-purple-600">15K€/mois</span>. Je travaille 2h/jour max."
+                  "J'ai créé mon site e-commerce en 48h avec la formation. Zéro compétence technique. Aujourd'hui <span className="font-bold text-purple-600">12K€/mois</span> en dormant. Mon seul regret ? Avoir perdu 2 ans avec Shopify avant."
                 </p>
                 <div className="flex items-center gap-2 text-green-600 font-bold bg-green-50 px-3 py-2 rounded-lg">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                  <span>15K€/mois</span>
+                  <span>12K€/mois passif</span>
                 </div>
               </div>
 
               <div className="bg-white rounded-xl p-8 border-2 border-pink-100 hover:border-pink-300 shadow-lg hover:shadow-2xl transition-all">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center font-bold text-white text-xl shadow-lg">T</div>
+                  <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center font-bold text-white text-xl shadow-lg">J</div>
                   <div>
-                    <div className="font-bold text-gray-900">Thomas R.</div>
-                    <div className="text-gray-600 text-sm">Creator</div>
+                    <div className="font-bold text-gray-900">Julien M.</div>
+                    <div className="text-gray-600 text-sm">Freelance</div>
                     <div className="flex gap-1 mt-1">
                       {[...Array(5)].map((_, i) => (
                         <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -319,11 +319,11 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-700 mb-4 leading-relaxed italic">
-                  "Évité le burnout grâce au guide. Maintenant je construis sereinement. <span className="font-bold text-pink-600">Game changer total.</span>"
+                  "Avant j'échangeais mon temps contre de l'argent. Maintenant mon système génère pendant que je dors. <span className="font-bold text-pink-600">+18.5K€ ce mois.</span> J'ai enfin ma liberté."
                 </p>
                 <div className="flex items-center gap-2 text-green-600 font-bold bg-green-50 px-3 py-2 rounded-lg">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                  <span>Équilibre retrouvé</span>
+                  <span>Liberté totale</span>
                 </div>
               </div>
             </div>
