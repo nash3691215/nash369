@@ -1,43 +1,46 @@
 import Link from 'next/link'
 import products from '@/data/products.json'
+import Header from '@/components/Header'
 
 export default function Home() {
-  const paidProducts = products.products.filter(p => p.id !== 'prompts')
-  const leadMagnet = products.products.find(p => p.id === 'prompts')
+  const paidProducts = products.products.filter(p => p.id !== 'guide-sites-5min' && p.priority !== 'hidden')
+  const leadMagnet = products.products.find(p => p.id === 'guide-sites-5min')
 
   return (
     <main className="min-h-screen bg-white">
+      <Header />
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-purple-50 to-white">
+      <section id="hero" className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-purple-50 to-white">
         <div className="container mx-auto px-4 py-20 md:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block mb-6 px-4 py-2 bg-indigo-100 border border-indigo-200 rounded-full text-indigo-700 text-sm font-semibold">
               NASH369
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight text-gray-900">
-              Construire des systèmes utiles.
-              <span className="block bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-transparent bg-clip-text">
-                Les rendre simples.
+              Reprends ton temps.
+              <span className="block bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">
+                Gagne ta liberté.
               </span>
-              <span className="block mt-2">Les rendre rentables.</span>
+              <span className="block mt-2">Grâce à l'IA.</span>
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Je partage des méthodes concrètes pour créer des sites et des offres capables de vendre sans complexité inutile.
+              Je te montre comment créer des systèmes IA qui bossent pour toi 24/7, sans échanger ton temps contre de l'argent.
             </p>
 
             {/* Stats Section */}
             <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto mb-12">
               <div className="text-center p-4 md:p-6 bg-white rounded-xl shadow-sm">
-                <div className="text-2xl md:text-4xl font-bold text-indigo-600 mb-1 md:mb-2">+500</div>
-                <div className="text-gray-600 text-xs md:text-sm">Entrepreneurs formés</div>
+                <div className="text-2xl md:text-4xl font-bold text-indigo-600 mb-1 md:mb-2">24/7</div>
+                <div className="text-gray-600 text-xs md:text-sm">L'IA travaille</div>
               </div>
               <div className="text-center p-4 md:p-6 bg-white rounded-xl shadow-sm">
-                <div className="text-2xl md:text-4xl font-bold text-purple-600 mb-1 md:mb-2">24/7</div>
-                <div className="text-gray-600 text-xs md:text-sm">Systèmes autonomes</div>
+                <div className="text-2xl md:text-4xl font-bold text-emerald-600 mb-1 md:mb-2">0h</div>
+                <div className="text-gray-600 text-xs md:text-sm">De ton temps</div>
               </div>
               <div className="text-center p-4 md:p-6 bg-white rounded-xl shadow-sm">
-                <div className="text-2xl md:text-4xl font-bold text-pink-600 mb-1 md:mb-2">ROI x10</div>
-                <div className="text-gray-600 text-xs md:text-sm">En moyenne</div>
+                <div className="text-2xl md:text-4xl font-bold text-indigo-600 mb-1 md:mb-2">100%</div>
+                <div className="text-gray-600 text-xs md:text-sm">Liberté</div>
               </div>
             </div>
           </div>
@@ -45,7 +48,7 @@ export default function Home() {
       </section>
 
       {/* Produits Premium - REPOSITIONNÉ EN HAUT */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+      <section id="produits" className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
             <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 border-2 border-green-300 rounded-full text-green-700 text-sm font-bold shadow-lg animate-pulse">
@@ -54,14 +57,14 @@ export default function Home() {
               🔥 OFFRE LIMITÉE - Plus que quelques places à ce prix
             </div>
             <h2 className="text-3xl md:text-5xl font-black mb-4 text-gray-900">
-              Mes Systèmes <span className="bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">Clés en Main</span>
+              Mes Systèmes <span className="bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">IA Automatisés</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-              Choisis ton arme et commence à générer du cash <span className="font-bold text-indigo-600">dès aujourd'hui</span>
+              L'IA fait le boulot. Tu récupères ton temps. <span className="font-bold text-indigo-600">Et ta liberté.</span>
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto mb-12">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto mb-12">
             {paidProducts.map((product) => (
               <Link
                 key={product.id}
@@ -110,15 +113,24 @@ export default function Home() {
 
                   <div className="pt-4 border-t border-gray-200">
                     <div className="mb-4">
+                      {product.originalPrice && (
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-lg text-gray-400 line-through">{product.originalPrice.toFixed(2).replace('.', ',')}€</span>
+                          <span className="px-2 py-0.5 bg-red-500 text-white text-xs font-bold rounded">-50%</span>
+                        </div>
+                      )}
                       <div className="flex items-baseline gap-2 mb-1">
-                        <span className="text-3xl md:text-4xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">
-                          {product.price}€
+                        <span className="text-3xl md:text-4xl font-black bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">
+                          {product.price.toFixed(2).replace('.', ',')}€
                         </span>
+                        {product.originalPrice && (
+                          <span className="text-sm text-red-600 font-bold">Prix de lancement</span>
+                        )}
                       </div>
                       <p className="text-xs text-green-600 font-semibold">💳 Paiement sécurisé • Accès immédiat</p>
                     </div>
 
-                    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center py-3 px-4 rounded-xl font-bold group-hover:from-indigo-500 group-hover:to-purple-500 transition-all shadow-lg">
+                    <div className="bg-gradient-to-r from-indigo-600 to-emerald-600 text-white text-center py-3 px-4 rounded-xl font-bold group-hover:from-indigo-500 group-hover:to-emerald-500 transition-all shadow-lg">
                       <div className="flex items-center justify-center gap-2">
                         <span>Accéder maintenant</span>
                         <span className="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -130,47 +142,74 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Lead Magnet CTA - Après les produits */}
+          {/* Lead Magnet - Juste après les produits */}
           {leadMagnet && (
-            <div className="relative max-w-4xl mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl blur-xl opacity-20"></div>
-              <div className="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-1 shadow-2xl">
-                <div className="bg-white rounded-xl p-6 md:p-10">
-                  <div className="flex flex-col md:flex-row items-center justify-center gap-3 mb-4">
-                    <span className="text-4xl md:text-5xl">⚡</span>
-                    <h3 className="text-2xl md:text-4xl font-black text-gray-900 text-center md:text-left">
-                      Pas encore prêt ? <span className="bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">Commence gratuitement</span>
+            <div className="w-full">
+              <div className="bg-gradient-to-br from-indigo-600 to-emerald-600 rounded-2xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
+                {/* Badge GRATUIT en haut à droite */}
+                <div className="absolute top-6 right-6 bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-black text-lg shadow-xl animate-pulse">
+                  🎁 GRATUIT
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div className="text-center md:text-left">
+                    <div className="text-5xl md:text-6xl mb-4">⚡</div>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
+                      {leadMagnet.name}
                     </h3>
-                  </div>
-                  <p className="text-gray-600 mb-8 text-base md:text-xl text-center md:text-left leading-relaxed">
-                    {leadMagnet.description} - <span className="font-bold text-indigo-600">100% offerts pour démarrer</span>
-                  </p>
-                  <div className="text-center">
-                    <Link
-                      href="/prompts"
-                      className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white px-10 md:px-14 py-5 md:py-6 rounded-xl font-black text-lg md:text-xl transition-all transform hover:scale-105 shadow-2xl shadow-indigo-600/40"
-                    >
-                      🎁 Télécharger maintenant (GRATUIT)
-                    </Link>
-                    <p className="text-gray-500 text-sm md:text-base mt-6 flex items-center justify-center gap-6 flex-wrap">
-                      <span className="flex items-center gap-2">
-                        <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                        <span className="font-semibold">Aucune CB</span>
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                        <span className="font-semibold">Accès instantané</span>
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                        <span className="font-semibold">Testés & validés</span>
-                      </span>
+                    <p className="text-base md:text-lg text-indigo-100 mb-6 leading-relaxed">
+                      {leadMagnet.description}
                     </p>
+                    <div className="space-y-2 mb-6">
+                      {leadMagnet.benefits.map((benefit, i) => (
+                        <div key={i} className="flex items-start gap-2 text-sm text-white">
+                          <span className="text-yellow-300 text-lg flex-shrink-0">✓</span>
+                          <span>{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-white/20">
+                      <p className="text-yellow-300 font-bold text-sm uppercase tracking-wide mb-3">Guide Gratuit</p>
+                      <p className="text-4xl font-black mb-6">100% OFFERT</p>
+                      <Link
+                        href="/guide-sites-5min"
+                        className="inline-block w-full bg-white text-indigo-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl mb-4"
+                      >
+                        Télécharger maintenant
+                      </Link>
+                      <p className="text-xs text-indigo-100">
+                        ✓ Aucune CB • ✓ Accès immédiat • ✓ Méthode complète
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           )}
+
+          {/* CTA Site Clé en Main */}
+          <div className="max-w-4xl mx-auto mt-12">
+            <div className="bg-white rounded-2xl p-8 md:p-10 border-2 border-gray-200 hover:border-indigo-300 transition-all shadow-lg text-center">
+              <div className="text-5xl mb-4">🎯</div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+                Besoin d'un <span className="bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">site clé en main</span> ?
+              </h3>
+              <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+                Tu veux un site professionnel prêt à vendre sans te prendre la tête ? Je m'occupe de tout.
+              </p>
+              <Link
+                href="/devis"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-indigo-600 to-emerald-600 hover:from-indigo-500 hover:to-emerald-500 text-white rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg"
+              >
+                Demander un devis gratuit →
+              </Link>
+              <p className="text-sm text-gray-500 mt-4">
+                Vitrine à partir de 299€ · E-commerce à partir de 999€
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -180,42 +219,42 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="space-y-4 md:space-y-6 bg-red-50 border border-red-200 rounded-2xl p-6 md:p-8">
-                <div className="text-red-600 text-xs md:text-sm font-bold uppercase tracking-wider">Le problème</div>
+                <div className="text-red-600 text-xs md:text-sm font-bold uppercase tracking-wider">Sans IA</div>
                 <h2 className="text-2xl md:text-4xl font-bold leading-tight text-gray-900">
-                  Tu bosses 80h/semaine mais ton compte en banque ne suit pas
+                  Esclave de ton agenda et de tes clients
                 </h2>
                 <ul className="space-y-3 md:space-y-4 text-sm md:text-base text-gray-700">
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 text-lg md:text-xl mt-1 flex-shrink-0">✗</span>
-                    <span>Tu échanges ton temps contre de l'argent (pas scalable)</span>
+                    <span>Tu échanges ton temps contre de l'argent (jamais libre)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 text-lg md:text-xl mt-1 flex-shrink-0">✗</span>
-                    <span>Tu es bloqué dans l'opérationnel au lieu de construire</span>
+                    <span>Tu cours après les deadlines au lieu de vivre</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 text-lg md:text-xl mt-1 flex-shrink-0">✗</span>
-                    <span>Tu sais pas par où commencer pour automatiser</span>
+                    <span>Impossible de partir en vacances sans tout arrêter</span>
                   </li>
                 </ul>
               </div>
               <div className="space-y-4 md:space-y-6 bg-green-50 border border-green-200 rounded-2xl p-6 md:p-8">
-                <div className="text-green-600 text-xs md:text-sm font-bold uppercase tracking-wider">La solution</div>
+                <div className="text-green-600 text-xs md:text-sm font-bold uppercase tracking-wider">Avec l'IA</div>
                 <h2 className="text-2xl md:text-4xl font-bold leading-tight text-gray-900">
-                  Construis des systèmes qui tournent sans toi
+                  L'IA travaille pendant que tu vis
                 </h2>
                 <ul className="space-y-3 md:space-y-4 text-sm md:text-base text-gray-700">
                   <li className="flex items-start gap-3">
                     <span className="text-green-500 text-lg md:text-xl mt-1 flex-shrink-0">✓</span>
-                    <span>Automatise ton acquisition, ta vente et ta livraison</span>
+                    <span>L'IA gère tout automatiquement 24/7 (ventes, support, livraison)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-green-500 text-lg md:text-xl mt-1 flex-shrink-0">✓</span>
-                    <span>Scale tes revenus sans scaler ton temps</span>
+                    <span>Tu choisis ton emploi du temps et tes projets</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-green-500 text-lg md:text-xl mt-1 flex-shrink-0">✓</span>
-                    <span>Des frameworks testés et validés sur le terrain</span>
+                    <span>Revenus qui tournent même quand tu dors</span>
                   </li>
                 </ul>
               </div>
@@ -251,9 +290,9 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
-                Ils ont <span className="bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">transformé leur vie</span>
+                Ils ont <span className="bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">repris leur liberté</span>
               </h2>
-              <p className="text-lg text-gray-600">Rejoins les 500+ entrepreneurs qui génèrent du cash en automatique</p>
+              <p className="text-lg text-gray-600">L'IA fait le boulot. Ils profitent de leur vie.</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               <div className="bg-white rounded-xl p-8 border-2 border-indigo-100 hover:border-indigo-300 shadow-lg hover:shadow-2xl transition-all">
@@ -333,17 +372,17 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-indigo-600 to-purple-700">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-indigo-600 to-emerald-600">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">Prêt à construire ton système ?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">Prêt à reprendre ta liberté ?</h2>
           <p className="text-lg md:text-xl text-indigo-100 mb-8 md:mb-12 max-w-2xl mx-auto">
-            Rejoins les 500+ entrepreneurs qui ont automatisé leurs revenus
+            Laisse l'IA bosser pour toi pendant que tu vis ta vie
           </p>
           <Link
-            href="/prompts"
+            href="/guide-sites-5min"
             className="inline-block bg-white text-indigo-900 px-8 md:px-12 py-4 md:py-6 rounded-xl font-bold text-lg md:text-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl"
           >
-            Commencer maintenant (100% gratuit)
+            Découvrir la méthode (100% gratuit)
           </Link>
         </div>
       </section>
@@ -354,9 +393,9 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
               <h3 className="text-2xl font-bold mb-2 text-white">
-                NASH<span className="bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">369</span>
+                NASH<span className="bg-gradient-to-r from-indigo-400 to-emerald-400 text-transparent bg-clip-text">369</span>
               </h3>
-              <p className="text-gray-400">Architecte de systèmes autonomes qui génèrent du cash</p>
+              <p className="text-gray-400">L'IA travaille. Tu vis. C'est simple.</p>
             </div>
             <div className="flex gap-8">
               <a

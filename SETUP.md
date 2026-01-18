@@ -4,8 +4,8 @@
 
 ✅ Architecture Next.js complète
 ✅ Design Tailwind responsive
-✅ 5 pages créées (/, /prompts, /produits/...)
-✅ 3 APIs créées (checkout, webhook, email)
+✅ 8 pages créées (/, /guide-sites-5min, /produits/..., /devis, /tarifs)
+✅ 3 APIs créées (checkout, webhook, lead-magnet, quote-request)
 ✅ Page /success
 ✅ Boutons "Acheter" connectés à Stripe
 ✅ Lead magnet email configuré
@@ -35,19 +35,19 @@ Pour rendre le site **100% fonctionnel**, il faut ajouter les clés API Stripe e
 1. Va sur https://dashboard.stripe.com/test/products
 2. Clique "Add product" pour chaque produit :
 
-**Produit 1 : Le Burnout du Battant**
-- Name: `Le Burnout du Battant`
-- Description: `eBook PDF sur le burnout entrepreneurial`
-- Pricing: One-time payment
-- Price: `9 EUR`
-
-**Produit 2 : De Zéro à Vivre**
+**Produit 1 : De Zéro à Vivre de Ton Activité**
 - Name: `De Zéro à Vivre de Ton Activité`
-- Price: `9 EUR`
+- Description: `Le système complet pour construire une activité rentable`
+- Pricing: One-time payment
+- Price: `9.90 EUR`
 
-**Produit 3 : Créer un Site Pro avec l'IA**
-- Name: `Créer un Site Pro avec l'IA`
-- Price: `49 EUR`
+**Produit 2 : Crée ton Site Vitrine Simple avec l'IA**
+- Name: `Crée ton Site Vitrine Simple avec l'IA`
+- Price: `49.90 EUR`
+
+**Produit 3 : Crée ton Site Prêt à Vendre sans Shopify**
+- Name: `Crée ton Site Prêt à Vendre sans Shopify`
+- Price: `199.90 EUR`
 
 ### Étape 4 : Configurer le Webhook
 
@@ -135,10 +135,11 @@ vercel --prod
 
 ### Test 1 : Lead Magnet (Gratuit)
 
-1. Va sur https://nash369.com/prompts
+1. Va sur https://nash369.com/guide-sites-5min
 2. Entre ton email
-3. Clique "Recevoir les 100 Prompts"
+3. Clique "Recevoir le guide gratuit"
 4. Vérifie ton email (peut être dans spam)
+5. Tu devrais recevoir le guide "Comment je crée des sites en 5 min"
 
 ### Test 2 : Achat produit
 

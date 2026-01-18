@@ -4,6 +4,7 @@
       "id": "zero-vivre",
       "name": "De Zéro à Vivre de Ton Activité",
       "price": 9.90,
+      "originalPrice": 19.90,
       "currency": "eur",
       "type": "ebook",
       "priority": "core",
@@ -17,34 +18,71 @@
       ]
     },
     {
+      "id": "site-vitrine",
+      "name": "Crée ton Site Vitrine Simple avec l'IA",
+      "price": 49.90,
+      "originalPrice": 99.90,
+      "currency": "eur",
+      "type": "formation",
+      "priority": "core",
+      "file": "site-vitrine.html",
+      "stripe_price_id": "price_XXXXXX_VITRINE",
+      "description": "Formation complète pour créer ton site vitrine professionnel avec l'IA, sans coder",
+      "benefits": [
+        "Crée ton site avec ChatGPT/Claude en quelques heures",
+        "Design moderne et responsive automatiquement",
+        "Formulaire de contact et Google Maps intégrés",
+        "Déploiement gratuit sur Vercel"
+      ]
+    },
+    {
       "id": "site-ia",
-      "name": "Crée ton site avec IA sans compétence technique",
-      "price": 49,
+      "name": "Crée ton Site Prêt à Vendre sans Shopify",
+      "price": 199.90,
+      "originalPrice": 399.90,
       "currency": "eur",
       "type": "formation",
       "priority": "core",
       "file": "site-ia.html",
       "stripe_price_id": "price_1QlWmKD32lTEYcOuSvSsPgXy",
-      "description": "Formation complète pour créer ton site e-commerce professionnel avec l'IA, même sans savoir coder",
+      "description": "Formation complète pour créer ton site e-commerce avec paiements intégrés, sans Shopify ni abonnement",
       "benefits": [
-        "Crée ton site Next.js avec ChatGPT/Claude en 10h",
+        "Crée ton site Next.js avec ChatGPT/Claude",
         "Intègre Stripe pour les paiements automatiques",
         "Configure l'email automation et analytics",
         "0€/mois de coûts - Stack moderne et gratuite"
       ]
     },
     {
-      "id": "prompts",
-      "name": "100 Prompts ChatGPT",
+      "id": "site-cle-en-main",
+      "name": "Site E-Commerce Clé en Main",
+      "price": 2500,
+      "currency": "eur",
+      "type": "service",
+      "priority": "hidden",
+      "stripe_price_id": "price_XXXXXX",
+      "description": "Ton site e-commerce professionnel livré en 7 jours, prêt à vendre tes produits numériques",
+      "benefits": [
+        "Site Next.js moderne déployé sur Vercel",
+        "Paiements Stripe configurés et testés",
+        "Email automation avec Resend intégré",
+        "Analytics + capture de leads opérationnels",
+        "Formation complète pour gérer ton site",
+        "Support 30 jours inclus"
+      ]
+    },
+    {
+      "id": "guide-sites-5min",
+      "name": "Comment je crée des sites en 5 min pour mes clients",
       "price": 0,
       "type": "lead_magnet",
       "priority": "lead",
-      "file": "100-prompts-ia.html",
-      "description": "100 prompts testés pour automatiser tes tâches répétitives",
+      "file": "guide-sites-5min.html",
+      "description": "Le guide gratuit qui révèle ma méthode exacte pour créer des sites pros en quelques minutes avec Claude + Hostinger",
       "benefits": [
-        "Gain immédiat de productivité",
-        "Prompts validés sur le terrain",
-        "Organisés par cas d'usage"
+        "La stack complète que j'utilise (Claude AI + Hostinger)",
+        "Le process étape par étape sans prise de tête",
+        "Les astuces pour livrer rapidement et bien facturer"
       ]
     }
   ]

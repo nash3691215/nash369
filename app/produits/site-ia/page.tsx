@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import products from '@/data/products.json'
 import { createCheckoutSession } from '@/lib/stripe'
+import Header from '@/components/Header'
 
 export default function SiteIAPage() {
   const product = products.products.find(p => p.id === 'site-ia')
@@ -12,16 +13,13 @@ export default function SiteIAPage() {
 
   return (
     <main className="min-h-screen bg-white">
+      <Header />
       <div className="container mx-auto px-4 py-12 max-w-6xl">
-        <Link href="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-indigo-600 mb-12 transition-colors">
-          <span>←</span>
-          <span>Retour</span>
-        </Link>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-8">
             <div>
-              <div className="inline-block mb-4 px-3 py-1 bg-purple-100 border border-purple-200 rounded-full text-purple-700 text-sm font-semibold">
+              <div className="inline-block mb-4 px-3 py-1 bg-emerald-100 border border-emerald-200 rounded-full text-emerald-700 text-sm font-semibold">
                 Formation Premium
               </div>
               <div className="text-6xl mb-6">🚀</div>
@@ -59,23 +57,23 @@ export default function SiteIAPage() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-indigo-50 border-2 border-purple-200 rounded-2xl p-8">
-              <h3 className="text-purple-700 font-bold mb-4">Stack technique moderne :</h3>
+            <div className="bg-gradient-to-br from-indigo-50 to-emerald-50 border-2 border-emerald-200 rounded-2xl p-8">
+              <h3 className="text-emerald-700 font-bold mb-4">Stack technique moderne :</h3>
               <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
                 <div className="flex items-center gap-2">
-                  <span className="text-purple-600">▸</span>
+                  <span className="text-emerald-600">▸</span>
                   <span>Next.js 14 App Router</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-purple-600">▸</span>
+                  <span className="text-emerald-600">▸</span>
                   <span>Tailwind CSS</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-purple-600">▸</span>
+                  <span className="text-emerald-600">▸</span>
                   <span>Stripe Payments</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-purple-600">▸</span>
+                  <span className="text-emerald-600">▸</span>
                   <span>Vercel Hosting</span>
                 </div>
               </div>
@@ -86,7 +84,7 @@ export default function SiteIAPage() {
               <div className="space-y-4">
                 <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white">A</div>
+                    <div className="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center font-bold text-white">A</div>
                     <div>
                       <div className="font-bold text-gray-900">Alexandre R.</div>
                       <div className="text-gray-600 text-sm">Formateur</div>
@@ -98,7 +96,7 @@ export default function SiteIAPage() {
                     </div>
                   </div>
                   <p className="text-gray-700 italic leading-relaxed">
-                    "48h après l'achat, mon site vendait mes formations. <span className="font-bold text-purple-600">2.1K€ la première semaine.</span> J'ai économisé 3 mois de galère et 1500€ d'agence. Meilleur investissement de 2024."
+                    "48h après l'achat, mon site vendait mes formations. <span className="font-bold text-emerald-600">2.1K€ la première semaine.</span> J'ai économisé 3 mois de galère et 1500€ d'agence. Meilleur investissement de 2024."
                   </p>
                   <div className="text-green-600 font-bold mt-3 flex items-center gap-2">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
@@ -132,11 +130,11 @@ export default function SiteIAPage() {
           </div>
 
           <div className="lg:sticky lg:top-8">
-            <div className="bg-gradient-to-br from-purple-600 to-indigo-700 rounded-2xl p-1 shadow-2xl">
+            <div className="bg-gradient-to-br from-indigo-600 to-emerald-700 rounded-2xl p-1 shadow-2xl">
               <div className="bg-white rounded-xl p-8">
                 <div className="mb-6">
                   <div className="text-gray-500 line-through text-lg mb-2">Prix agence: 1000€+</div>
-                  <div className="text-6xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text mb-2">
+                  <div className="text-6xl font-black bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text mb-2">
                     {product.price}€
                   </div>
                   <p className="text-gray-600">Investissement unique. Accès à vie.</p>
@@ -144,7 +142,7 @@ export default function SiteIAPage() {
 
                 <button
                   onClick={handleBuy}
-                  className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white py-5 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg mb-6"
+                  className="w-full bg-gradient-to-r from-indigo-600 to-emerald-600 hover:from-indigo-500 hover:to-emerald-500 text-white py-5 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg mb-6"
                 >
                   Créer mon site pro maintenant
                 </button>
@@ -179,11 +177,11 @@ export default function SiteIAPage() {
               </div>
             </div>
 
-            <div className="mt-6 bg-purple-50 border-2 border-purple-300 rounded-xl p-4">
+            <div className="mt-6 bg-emerald-50 border-2 border-emerald-300 rounded-xl p-4">
               <div className="flex items-start gap-3">
                 <span className="text-2xl">⚡</span>
                 <div>
-                  <p className="font-bold text-purple-700 mb-1">Bonus inclus :</p>
+                  <p className="font-bold text-emerald-700 mb-1">Bonus inclus :</p>
                   <ul className="text-sm text-gray-700 space-y-1">
                     <li>• Templates Next.js prêts à l'emploi</li>
                     <li>• Checklist déploiement Vercel</li>

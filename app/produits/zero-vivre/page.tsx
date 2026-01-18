@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import products from '@/data/products.json'
 import { createCheckoutSession } from '@/lib/stripe'
+import Header from '@/components/Header'
 
 export default function ZeroVivrePage() {
   const product = products.products.find(p => p.id === 'zero-vivre')
@@ -12,11 +13,8 @@ export default function ZeroVivrePage() {
 
   return (
     <main className="min-h-screen bg-white">
+      <Header />
       <div className="container mx-auto px-4 py-12 max-w-6xl">
-        <Link href="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-indigo-600 mb-12 transition-colors">
-          <span>←</span>
-          <span>Retour</span>
-        </Link>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-8">
@@ -86,7 +84,7 @@ export default function ZeroVivrePage() {
 
                 <div className="bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white">K</div>
+                    <div className="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center font-bold text-white">K</div>
                     <div>
                       <div className="font-bold text-gray-900">Karim T.</div>
                       <div className="text-gray-600 text-sm">Coach</div>
@@ -98,7 +96,7 @@ export default function ZeroVivrePage() {
                     </div>
                   </div>
                   <p className="text-gray-700 italic leading-relaxed">
-                    "9€ pour un framework qui t'explique comment trouver ton modèle rentable. <span className="font-bold text-purple-600">J'ai trouvé mon système en 48h.</span> Aujourd'hui 5.2K€/mois récurrent. ROI x577. Achète les yeux fermés."
+                    "9€ pour un framework qui t'explique comment trouver ton modèle rentable. <span className="font-bold text-emerald-600">J'ai trouvé mon système en 48h.</span> Aujourd'hui 5.2K€/mois récurrent. ROI x577. Achète les yeux fermés."
                   </p>
                   <div className="text-green-600 font-bold mt-3 flex items-center gap-2">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
@@ -110,11 +108,11 @@ export default function ZeroVivrePage() {
           </div>
 
           <div className="lg:sticky lg:top-8">
-            <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl p-1 shadow-2xl">
+            <div className="bg-gradient-to-br from-indigo-600 to-emerald-600 rounded-2xl p-1 shadow-2xl">
               <div className="bg-white rounded-xl p-8">
                 <div className="mb-6">
                   <div className="text-gray-500 line-through text-lg mb-2">Valeur réelle: 97€</div>
-                  <div className="text-6xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text mb-2">
+                  <div className="text-6xl font-black bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text mb-2">
                     {product.price}€
                   </div>
                   <p className="text-gray-600">Investissement unique. Accès à vie.</p>
@@ -122,7 +120,7 @@ export default function ZeroVivrePage() {
 
                 <button
                   onClick={handleBuy}
-                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white py-5 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg mb-6"
+                  className="w-full bg-gradient-to-r from-indigo-600 to-emerald-600 hover:from-indigo-500 hover:to-emerald-500 text-white py-5 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg mb-6"
                 >
                   Générer mes premiers 1K€/mois
                 </button>

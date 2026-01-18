@@ -29,7 +29,9 @@ Plateforme e-commerce Next.js pour la vente d'eBooks, formations et SaaS avec pa
     /init-db                   → [INUTILISÉ] Init Supabase
   /produits
     /[id]/page.tsx             → Pages produits dynamiques
-  /prompts/page.tsx            → Lead magnet (100 prompts IA)
+  /guide-sites-5min/page.tsx   → Lead magnet (Guide création sites 5min)
+  /devis                       → Système de qualification prospects
+  /tarifs                      → Page tarifs transparents
   /success/page.tsx            → Confirmation post-achat
   page.tsx                     → Homepage (450 lignes)
   layout.tsx                   → Root layout + GA4
@@ -55,10 +57,10 @@ Plateforme e-commerce Next.js pour la vente d'eBooks, formations et SaaS avec pa
   request.ts                   → [NON UTILISÉ] Config i18n
 
 /public/products
-  100-prompts-ia.html          → Lead magnet gratuit
-  burnout-battant.pdf          → eBook 9€
-  zero-vivre.html              → eBook 9€
-  site-ia.html                 → Formation 49€
+  guide-sites-5min.html        → Lead magnet gratuit
+  zero-vivre.html              → eBook 9.90€
+  site-vitrine.html            → Formation 49.90€
+  site-ia.html                 → Formation 199.90€
 ```
 
 ---
@@ -67,10 +69,10 @@ Plateforme e-commerce Next.js pour la vente d'eBooks, formations et SaaS avec pa
 
 | Produit | Type | Prix | Stripe Price ID |
 |---------|------|------|-----------------|
-| **Burnout du Battant** | eBook PDF | 9€ | `price_1QlWlHD32lTEYcOu5jd0sVoq` |
-| **De Zéro à Vivre** | eBook HTML | 9€ | `price_1QlWlsD32lTEYcOu7GRgA6J3` |
-| **Site avec IA** | Formation HTML | 49€ | `price_1QlWmKD32lTEYcOuSvSsPgXy` |
-| **100 Prompts IA** | Lead Magnet | Gratuit | N/A |
+| **De Zéro à Vivre de Ton Activité** | eBook HTML | 9.90€ | `price_1SptVQRws3CXDdFEpBC25JDU` |
+| **Crée ton Site Vitrine Simple avec l'IA** | Formation HTML | 49.90€ | `price_XXXXXX_VITRINE` |
+| **Crée ton Site Prêt à Vendre sans Shopify** | Formation HTML | 199.90€ | `price_1QlWmKD32lTEYcOuSvSsPgXy` |
+| **Comment je crée des sites en 5 min** | Lead Magnet | Gratuit | N/A |
 
 ---
 
@@ -126,11 +128,11 @@ Visiteur → Page Produit → Clic "Acheter"
 
 ### 2. Lead Magnet
 ```
-Visiteur → /prompts → Formulaire email
-  → API /send-email
+Visiteur → /guide-sites-5min → Formulaire email
+  → API /send-lead-magnet
   → Supabase insert (table lead_magnets)
-  → Email Resend avec 100-prompts-ia.html
-  → Message confirmation
+  → Email Resend avec guide complet (méthode Claude + Hostinger)
+  → Message confirmation + CTA vers formations
 ```
 
 ---
@@ -149,8 +151,9 @@ Visiteur → /prompts → Formulaire email
 - MX: `@` → Amazon SES (réception)
 
 ### Templates
-- **Lead Magnet**: HTML inline dans `/api/send-email`
+- **Lead Magnet**: HTML inline dans `/api/send-lead-magnet`
 - **Produits**: HTML inline dans `/lib/stripe.ts`
+- **Devis**: HTML inline dans `/api/send-quote-request`
 
 ---
 
@@ -192,7 +195,7 @@ Visiteur → /prompts → Formulaire email
 CREATE TABLE lead_magnets (
   id SERIAL PRIMARY KEY,
   email TEXT UNIQUE NOT NULL,
-  type TEXT DEFAULT 'prompts-ia',
+  type TEXT DEFAULT 'guide-sites-5min',
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 ```
