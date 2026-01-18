@@ -12,16 +12,17 @@ export default function Home() {
         <div className="container mx-auto px-4 py-20 md:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block mb-6 px-4 py-2 bg-indigo-100 border border-indigo-200 rounded-full text-indigo-700 text-sm font-semibold">
-              Architecte de systèmes autonomes
+              NASH369
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight text-gray-900">
-              Construis des systèmes qui
+              Construire des systèmes utiles.
               <span className="block bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-transparent bg-clip-text">
-                génèrent du cash
+                Les rendre simples.
               </span>
+              <span className="block mt-2">Les rendre rentables.</span>
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Pas de bullshit. Juste des frameworks concrets pour automatiser tes revenus et scaler sans cramer.
+              Je partage des méthodes concrètes pour créer des sites et des offres capables de vendre sans complexité inutile.
             </p>
 
             {/* Stats Section */}
