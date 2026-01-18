@@ -1,6 +1,8 @@
 # NASH369 - Plateforme de Vente de Produits Numériques
 
-Plateforme e-commerce Next.js pour la vente d'eBooks, formations et SaaS avec paiement Stripe, email automation et capture de leads.
+Plateforme e-commerce Next.js pour la vente d'eBooks et formations IA avec paiement Stripe, système de devis qualifié, email automation et capture de leads.
+
+**Live**: https://nash369.com
 
 ---
 
@@ -24,25 +26,31 @@ Plateforme e-commerce Next.js pour la vente d'eBooks, formations et SaaS avec pa
   /api
     /create-checkout-session   → Stripe checkout initialization
     /webhooks/stripe           → Webhook post-achat + envoi produit
-    /send-email                → Resend email pour lead magnet
+    /send-lead-magnet          → Lead magnet "Sites en 5min"
+    /send-quote-request        → Demandes de devis prospects
+    /send-email                → [ANCIEN] Resend email lead magnet
     /emails                    → [INUTILISÉ] GET emails database
     /init-db                   → [INUTILISÉ] Init Supabase
   /produits
-    /[id]/page.tsx             → Pages produits dynamiques
+    /zero-vivre/page.tsx       → eBook 9.90€
+    /site-vitrine/page.tsx     → Formation 49.90€
+    /site-ia/page.tsx          → Formation 199.90€
+    /site-cle-en-main/page.tsx → Service 2500€ (hidden)
   /guide-sites-5min/page.tsx   → Lead magnet (Guide création sites 5min)
-  /devis                       → Système de qualification prospects
-  /tarifs                      → Page tarifs transparents
+  /devis/page.tsx              → Qualification prospects (2 paths)
+  /devis/projet-valide/page.tsx → Formulaire devis complet
+  /tarifs/page.tsx             → Page tarifs transparents
   /success/page.tsx            → Confirmation post-achat
-  page.tsx                     → Homepage (450 lignes)
+  page.tsx                     → Homepage avec 3 produits + lead magnet
   layout.tsx                   → Root layout + GA4
+
+/components
+  Header.tsx                   → Navigation unifiée (Accueil, Produits, Tarifs, Devis)
 
 /lib
   stripe.ts                    → Logique Stripe + emails
   db.ts                        → Opérations Supabase
   analytics.ts                 → Events GA4
-
-/components
-  LanguageSelector.tsx         → [NON UTILISÉ] Sélecteur FR/EN
 
 /data
   products.json                → Config produits + Price IDs Stripe
@@ -67,12 +75,14 @@ Plateforme e-commerce Next.js pour la vente d'eBooks, formations et SaaS avec pa
 
 ## 🛍️ Produits
 
-| Produit | Type | Prix | Stripe Price ID |
-|---------|------|------|-----------------|
-| **De Zéro à Vivre de Ton Activité** | eBook HTML | 9.90€ | `price_1SptVQRws3CXDdFEpBC25JDU` |
-| **Crée ton Site Vitrine Simple avec l'IA** | Formation HTML | 49.90€ | `price_XXXXXX_VITRINE` |
-| **Crée ton Site Prêt à Vendre sans Shopify** | Formation HTML | 199.90€ | `price_1QlWmKD32lTEYcOuSvSsPgXy` |
-| **Comment je crée des sites en 5 min** | Lead Magnet | Gratuit | N/A |
+| Produit | Type | Prix | Prix Original | Stripe Price ID |
+|---------|------|------|---------------|-----------------|
+| **De Zéro à Vivre de Ton Activité** | eBook HTML | 9.90€ | ~~19.90€~~ (-50%) | `price_1SptVQRws3CXDdFEpBC25JDU` |
+| **Crée ton Site Vitrine Simple avec l'IA** | Formation HTML | 49.90€ | ~~99.90€~~ (-50%) | `price_XXXXXX_VITRINE` |
+| **Crée ton Site Prêt à Vendre sans Shopify** | Formation HTML | 199.90€ | ~~399.90€~~ (-50%) | `price_1QlWmKD32lTEYcOuSvSsPgXy` |
+| **Comment je crée des sites en 5 min** | Lead Magnet | **GRATUIT** | - | N/A |
+
+**Note**: Les prix de lancement à -50% sont affichés sur le site avec badge rouge et mention "Prix de lancement".
 
 ---
 
@@ -126,13 +136,41 @@ Visiteur → Page Produit → Clic "Acheter"
   → GA4 event 'purchase'
 ```
 
-### 2. Lead Magnet
+### 2. Lead Magnet (Gratuit)
 ```
 Visiteur → /guide-sites-5min → Formulaire email
   → API /send-lead-magnet
-  → Supabase insert (table lead_magnets)
-  → Email Resend avec guide complet (méthode Claude + Hostinger)
-  → Message confirmation + CTA vers formations
+  → Email Resend à l'utilisateur avec guide complet (méthode Claude + Hostinger)
+  → Email notification à nash3691215@gmail.com avec l'email du lead
+  → Supabase insert (table lead_magnets) - optionnel
+  → Page confirmation + CTA vers formations
+```
+
+**Contenu du guide envoyé**:
+- Stack technique (Claude AI + Hostinger + Next.js)
+- Process en 5 étapes (consultation → prompt → customisation → déploiement → livraison)
+- Grille tarifaire (299€-2500€)
+- Exemples de prompts concrets
+- CTA vers formations payantes
+
+### 3. Système de Devis (Qualification Prospects)
+```
+Visiteur → /devis → Choix du path:
+
+  Path A (Projet validé):
+    → /devis/projet-valide
+    → Formulaire complet (nom, email, téléphone, type projet, budget, timeline, description)
+    → API /send-quote-request
+    → Email à nash3691215@gmail.com avec détails complets du prospect
+    → Email confirmation au prospect
+    → Page confirmation "Réponse sous 24h"
+
+  Path B (Curieux):
+    → /tarifs
+    → Affichage grille tarifaire transparente
+    → Pack Vitrine: 299€ départ
+    → Pack E-commerce: 999€ départ
+    → CTA vers devis personnalisé
 ```
 
 ---
@@ -206,6 +244,38 @@ CREATE TABLE lead_magnets (
 
 ---
 
+## ✨ Fonctionnalités Principales
+
+### 🏠 Homepage
+- Hero section avec proposition de valeur IA/Liberté/Temps
+- Stats 24/7, 0h, 100%
+- 3 produits alignés en grid avec badges (-50%, Best Seller)
+- Lead magnet pleine largeur avec badge "GRATUIT" animé
+- Section problème/solution (Sans IA vs Avec l'IA)
+- Témoignages clients
+- CTA final vers lead magnet
+- Header unifié sur toutes les pages
+
+### 📩 Lead Magnet
+- Landing page optimisée conversion
+- Formulaire email simple
+- Guide envoyé automatiquement par email
+- Notification au propriétaire
+- CTA vers formations payantes
+
+### 💼 Système Devis
+- Qualification automatique prospects
+- 2 paths (projet validé / curieux)
+- Collecte infos complètes (budget, timeline)
+- Email détaillé au propriétaire
+- Confirmation prospect sous 24h
+
+### 💳 E-commerce
+- 3 produits avec prix de lancement -50%
+- Checkout Stripe
+- Livraison automatique par email
+- Pages produits détaillées
+
 ## 🧹 FICHIERS À NETTOYER
 
 ### ❌ À SUPPRIMER (Code mort)
@@ -218,15 +288,11 @@ CREATE TABLE lead_magnets (
 /messages/products-fr.json
 /i18n/request.ts
 
-# Composant non utilisé
-/components/LanguageSelector.tsx
-
 # API routes inutiles
 /app/api/emails/route.ts       # Pas d'auth, exposé
 /app/api/init-db/route.ts      # Utilitaire one-shot
+/app/api/send-email/route.ts   # Ancien système lead magnet
 ```
-
-**Voir CLEANUP.md pour le plan détaillé**
 
 ---
 
