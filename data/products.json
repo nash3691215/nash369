@@ -19,7 +19,7 @@
     },
     {
       "id": "site-vitrine",
-      "name": "Crée ton Site Vitrine Simple avec l'IA",
+      "name": "Créer un Site Pro avec l'IA",
       "price": 49.90,
       "originalPrice": 99.90,
       "currency": "eur",
@@ -27,6 +27,7 @@
       "priority": "core",
       "file": "site-vitrine.html",
       "stripe_price_id": "price_15ptTKRws3CXDdFE01JTMGjD",
+      "stripe_product_id": "prod_TnUSMoIEZVxHe5",
       "description": "Formation complète pour créer ton site vitrine professionnel avec l'IA, sans coder",
       "benefits": [
         "Crée ton site avec ChatGPT/Claude en quelques heures",
@@ -45,6 +46,7 @@
       "priority": "core",
       "file": "site-ia.html",
       "stripe_price_id": "price_15ptPhRws3CXDdFEw22XJIff",
+      "stripe_product_id": "prod_TnUOSYSsbiwQS2",
       "description": "Formation complète pour créer ton site e-commerce avec paiements intégrés, sans Shopify ni abonnement",
       "benefits": [
         "Crée ton site Next.js avec ChatGPT/Claude",

@@ -1,3 +1,5 @@
+import { STRIPE_PUBLISHABLE_KEY } from './stripe-config'
+
 export async function createCheckoutSession(productId: string) {
   try {
     const res = await fetch('/api/create-checkout-session', {
@@ -23,12 +25,16 @@ export async function createCheckoutSession(productId: string) {
     }
 
     // Rediriger vers Stripe Checkout
-    const stripe = (window as any).Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
-    if (!stripe) {
-      throw new Error('Stripe non chargé. Rechargez la page.')
+    if (!(window as any).Stripe) {
+      throw new Error('Stripe.js non chargé. Rechargez la page.')
     }
 
-    await stripe.redirectToCheckout({ sessionId: data.sessionId })
+    const stripe = (window as any).Stripe(STRIPE_PUBLISHABLE_KEY)
+    const { error } = await stripe.redirectToCheckout({ sessionId: data.sessionId })
+
+    if (error) {
+      throw new Error(error.message)
+    }
   } catch (err: any) {
     console.error('Stripe checkout error:', err)
     alert('Erreur lors du paiement: ' + err.message)
