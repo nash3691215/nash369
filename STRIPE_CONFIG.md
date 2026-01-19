@@ -26,8 +26,8 @@ STRIPE_WEBHOOK_SECRET=whsec_xxxxx
 | Produit | Prix | Stripe Product ID | Stripe Price ID | Statut |
 |---------|------|-------------------|-----------------|--------|
 | **De Zéro à Vivre de Ton Activité** | 9.90€ | `prod_xxxxx` | `price_1SptVQRws3CXDdFEpBC25JDU` | ✅ Actif |
-| **Créer un Site Pro avec l'IA** | 49.90€ | `prod_TnUSMoIEZVxHe5` | `price_15ptTKRws3CXDdFE01JTMGjD` | ✅ Actif |
-| **Crée ton Site Prêt à Vendre sans Shopify** | 199.90€ | `prod_TnUOSYSsbiwQS2` | `price_15ptPhRws3CXDdFEw22XJIff` | ✅ Actif |
+| **Créer un Site Pro avec l'IA** | 49.90€ | `prod_TnUSMoIEZVxHe5` | `price_1SptTKRws3CXDdFEO1JTMGjD` | ✅ Actif |
+| **Crée ton Site Prêt à Vendre sans Shopify** | 199.90€ | `prod_TnUOSYSsbiwQS2` | `price_1SptPhRws3CXDdFEw22XJlFf` | ✅ Actif |
 
 ### ⚠️ Anciennes configurations (INVALIDES)
 
