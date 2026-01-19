@@ -78,8 +78,8 @@ Plateforme e-commerce Next.js pour la vente d'eBooks et formations IA avec paiem
 | Produit | Type | Prix | Prix Original | Stripe Price ID |
 |---------|------|------|---------------|-----------------|
 | **De Zéro à Vivre de Ton Activité** | eBook HTML | 9.90€ | ~~19.90€~~ (-50%) | `price_1SptVQRws3CXDdFEpBC25JDU` |
-| **Crée ton Site Vitrine Simple avec l'IA** | Formation HTML | 49.90€ | ~~99.90€~~ (-50%) | `price_XXXXXX_VITRINE` |
-| **Crée ton Site Prêt à Vendre sans Shopify** | Formation HTML | 199.90€ | ~~399.90€~~ (-50%) | `price_1QlWmKD32lTEYcOuSvSsPgXy` |
+| **Crée ton Site Vitrine Simple avec l'IA** | Formation HTML | 49.90€ | ~~99.90€~~ (-50%) | `price_15ptTKRws3CXDdFE01JTMGjD` ✅ |
+| **Crée ton Site Prêt à Vendre sans Shopify** | Formation HTML | 199.90€ | ~~399.90€~~ (-50%) | `price_15ptPhRws3CXDdFEw22XJIff` ✅ |
 | **Comment je crée des sites en 5 min** | Lead Magnet | **GRATUIT** | - | N/A |
 
 **Note**: Les prix de lancement à -50% sont affichés sur le site avec badge rouge et mention "Prix de lancement".
@@ -358,6 +358,43 @@ Propriétaire - Tous droits réservés
 
 ---
 
-**Dernière mise à jour**: Janvier 2026
-**Version**: 1.0.0
+**Dernière mise à jour**: 19 Janvier 2026
+**Version**: 1.1.0
 **Statut**: Production (LIVE)
+
+---
+
+## 📋 Changelog
+
+### Version 1.1.0 - 19 Janvier 2026
+**Corrections Stripe & Pages Produits**
+
+✅ **Ajouts**
+- Création page produit manquante `/app/produits/site-vitrine/page.tsx` (Formation 49.90€)
+- Page avec design cohérent, badge "BEST SELLER", testimonials
+- Intégration complète du checkout Stripe
+
+✅ **Corrections Stripe Price IDs**
+- **site-vitrine**: Corrigé `price_1Spt...` → `price_15pt...` (typo dans data/products.json:29)
+- **site-ia**: Corrigé `price_1Spt...` → `price_15pt...` (typo dans data/products.json:47)
+- Les deux produits redirigent maintenant correctement vers Stripe Checkout
+
+🔧 **Fichiers modifiés**
+- `data/products.json` - Stripe Price IDs corrigés
+- `app/produits/site-vitrine/page.tsx` - Page créée
+- `README.md` - Documentation mise à jour
+
+🐛 **Bugs corrigés**
+- ❌ Erreur 404 sur `/produits/site-vitrine` → ✅ Page fonctionnelle
+- ❌ Erreur "Stripe configuration error" → ✅ Checkout fonctionnel
+- ❌ Price IDs invalides → ✅ Price IDs validés et testés
+
+📦 **Commits**
+- `5c34e15` - feat: Add missing site-vitrine product page
+- `0467c22` - fix: Correct Stripe Price IDs for site-vitrine and site-ia
+
+### Version 1.0.0 - Janvier 2026
+- Refonte complète: Lead magnet + système devis
+- Hébergement Vercel en production
+- Stripe live mode configuré
+- Email automation Resend opérationnel
