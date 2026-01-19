@@ -1,6 +1,6 @@
-# NASH369 - Plateforme de Vente de Produits Numériques
+# NASH369 - Plateforme E-commerce Produits Numériques
 
-Plateforme e-commerce Next.js pour la vente d'eBooks et formations IA avec paiement Stripe, système de devis qualifié, email automation et capture de leads.
+Site e-commerce Next.js pour vente de formations IA avec Stripe, email automation Resend, capture de leads Supabase et système de devis.
 
 **Live**: https://nash369.com
 
@@ -8,102 +8,77 @@ Plateforme e-commerce Next.js pour la vente d'eBooks et formations IA avec paiem
 
 ## 🚀 Stack Technique
 
-- **Framework**: Next.js 16.1 (React 19.2)
+- **Framework**: Next.js 16.1.2 (React 19.2, App Router)
 - **Langage**: TypeScript 5.9
 - **Styling**: Tailwind CSS 3.4
-- **Paiement**: Stripe (Live mode)
-- **Email**: Resend (transactionnel)
-- **Base de données**: Supabase (leads)
+- **Paiement**: Stripe Live Mode (checkout + webhooks)
+- **Email**: Resend (transactionnel via noreply@nash369.com)
+- **Database**: Supabase (leads table)
 - **Analytics**: Google Analytics 4
-- **Hosting**: Vercel
+- **Hosting**: Vercel (auto-deploy depuis GitHub)
 
 ---
 
-## 📁 Structure du Projet
+## 📦 Produits Actifs
+
+| ID | Nom | Prix | Stripe Price ID | Statut |
+|----|-----|------|----------------|--------|
+| `zero-vivre` | De Zéro à Vivre de Ton Activité | 9.90€ | `price_1SptVQRws3CXDdFEpBC25JDU` | ✅ |
+| `site-vitrine` | Créer un Site Pro avec l'IA | 49.90€ | `price_1SptTKRws3CXDdFEO1JTMGjD` | ✅ |
+| `site-ia` | Crée ton Site Prêt à Vendre sans Shopify | 199.90€ | `price_1SptPhRws3CXDdFEw22XJlFf` | ✅ |
+| `guide-sites-5min` | Lead Magnet (Guide gratuit) | GRATUIT | N/A | ✅ |
+
+**Mode de livraison actuel** : Manuel sous 24H (mode test)
+
+---
+
+## 📁 Structure Projet
 
 ```
 /app
   /api
-    /create-checkout-session   → Stripe checkout initialization
-    /webhooks/stripe           → Webhook post-achat + envoi produit
-    /send-lead-magnet          → Lead magnet "Sites en 5min"
-    /send-quote-request        → Demandes de devis prospects
-    /send-email                → [ANCIEN] Resend email lead magnet
-    /emails                    → [INUTILISÉ] GET emails database
-    /init-db                   → [INUTILISÉ] Init Supabase
+    /create-checkout-session   → Création session Stripe Checkout
+    /webhooks/stripe           → Webhook post-paiement (email confirmation)
+    /send-email                → Emails lead magnet + confirmation achat
+    /send-lead-magnet          → [LEGACY] Ancien endpoint lead magnet
+    /send-quote-request        → Emails demandes de devis
   /produits
-    /zero-vivre/page.tsx       → eBook 9.90€
-    /site-vitrine/page.tsx     → Formation 49.90€
-    /site-ia/page.tsx          → Formation 199.90€
-    /site-cle-en-main/page.tsx → Service 2500€ (hidden)
-  /guide-sites-5min/page.tsx   → Lead magnet (Guide création sites 5min)
-  /devis/page.tsx              → Qualification prospects (2 paths)
-  /devis/projet-valide/page.tsx → Formulaire devis complet
-  /tarifs/page.tsx             → Page tarifs transparents
+    /zero-vivre/page.tsx       → Page produit 9.90€
+    /site-vitrine/page.tsx     → Page produit 49.90€
+    /site-ia/page.tsx          → Page produit 199.90€
+  /guide-sites-5min/page.tsx   → Landing page lead magnet
+  /devis/page.tsx              → Qualification prospects
   /success/page.tsx            → Confirmation post-achat
-  page.tsx                     → Homepage avec 3 produits + lead magnet
-  layout.tsx                   → Root layout + GA4
-
-/components
-  Header.tsx                   → Navigation unifiée (Accueil, Produits, Tarifs, Devis)
+  page.tsx                     → Homepage
+  layout.tsx                   → Layout root + Stripe.js
 
 /lib
-  stripe.ts                    → Logique Stripe + emails
+  stripe.ts                    → Logique Stripe checkout
+  stripe-config.ts             → [SUPPRIMÉ] Config Stripe (causait erreurs)
   db.ts                        → Opérations Supabase
-  analytics.ts                 → Events GA4
 
 /data
-  products.json                → Config produits + Price IDs Stripe
-
-/messages                      → [SYSTÈME I18N MORT]
-  en.json
-  fr.json
-  products-en.json
-  products-fr.json
-
-/i18n
-  request.ts                   → [NON UTILISÉ] Config i18n
-
-/public/products
-  guide-sites-5min.html        → Lead magnet gratuit
-  zero-vivre.html              → eBook 9.90€
-  site-vitrine.html            → Formation 49.90€
-  site-ia.html                 → Formation 199.90€
+  products.json                → Configuration produits + Price IDs
 ```
 
 ---
 
-## 🛍️ Produits
+## ⚙️ Variables d'Environnement
 
-| Produit | Type | Prix | Prix Original | Stripe Price ID |
-|---------|------|------|---------------|-----------------|
-| **De Zéro à Vivre de Ton Activité** | eBook HTML | 9.90€ | ~~19.90€~~ (-50%) | `price_1SptVQRws3CXDdFEpBC25JDU` |
-| **Crée ton Site Vitrine Simple avec l'IA** | Formation HTML | 49.90€ | ~~99.90€~~ (-50%) | `price_15ptTKRws3CXDdFE01JTMGjD` ✅ |
-| **Crée ton Site Prêt à Vendre sans Shopify** | Formation HTML | 199.90€ | ~~399.90€~~ (-50%) | `price_15ptPhRws3CXDdFEw22XJIff` ✅ |
-| **Comment je crée des sites en 5 min** | Lead Magnet | **GRATUIT** | - | N/A |
-
-**Note**: Les prix de lancement à -50% sont affichés sur le site avec badge rouge et mention "Prix de lancement".
-
----
-
-## ⚙️ Configuration
-
-### Variables d'environnement requises
-
-Créer `.env.local` :
+Fichier `.env.local` requis :
 
 ```bash
-# Stripe (LIVE MODE)
-STRIPE_SECRET_KEY=sk_live_xxxxx
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_xxxxx
-STRIPE_WEBHOOK_SECRET=whsec_xxxxx
+# Stripe LIVE MODE
+STRIPE_SECRET_KEY=sk_live_51SlWquRws3CXDdFE...
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_51SlWquRws3CXDdFE...
+STRIPE_WEBHOOK_SECRET=whsec_...
 
 # Resend
-RESEND_API_KEY=re_xxxxx
+RESEND_API_KEY=re_T9G2BjR8_...
 
 # Supabase
-NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=eyJxxxxx
+NEXT_PUBLIC_SUPABASE_URL=https://jtwraawwjhexunviyyji.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 # Site
 NEXT_PUBLIC_BASE_URL=https://nash369.com
@@ -112,122 +87,130 @@ NEXT_PUBLIC_BASE_URL=https://nash369.com
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
-### Installation
-
-```bash
-npm install
-npm run dev
-```
-
-Site accessible sur `http://localhost:3000`
-
 ---
 
-## 🔄 Flux de Conversion
+## 🔄 Flux Utilisateur
 
-### 1. Achat Produit Payant
+### 1. Achat Produit (Mode Test - Livraison Manuelle)
+
 ```
 Visiteur → Page Produit → Clic "Acheter"
-  → API /create-checkout-session (Stripe Checkout)
-  → Paiement réussi
-  → Webhook /api/webhooks/stripe
-  → Envoi email Resend avec lien produit
-  → Redirect /success
-  → GA4 event 'purchase'
+  ↓
+API /create-checkout-session
+  ↓
+Stripe Checkout (Paiement)
+  ↓
+Webhook /api/webhooks/stripe (checkout.session.completed)
+  ↓
+Email automatique via Resend:
+  - Sujet: "✅ Merci pour ton achat - Livraison sous 24H"
+  - Contenu: Paiement confirmé + Mode test (livraison manuelle 24H)
+  - Référence commande incluse
+  ↓
+Redirect → /success
 ```
 
-### 2. Lead Magnet (Gratuit)
+### 2. Lead Magnet (Guide Gratuit)
+
 ```
 Visiteur → /guide-sites-5min → Formulaire email
-  → API /send-lead-magnet
-  → Email Resend à l'utilisateur avec guide complet (méthode Claude + Hostinger)
-  → Email notification à nash3691215@gmail.com avec l'email du lead
-  → Supabase insert (table lead_magnets) - optionnel
-  → Page confirmation + CTA vers formations
+  ↓
+API /send-email (type: 'lead_magnet')
+  ↓
+Email automatique Resend:
+  - Sujet: "🎁 Ton guide gratuit est prêt !"
+  - Contenu: "Livraison sous 24H max"
+  - Cross-sell vers formations payantes
+  ↓
+Supabase insert (table: lead_magnets)
+  ↓
+Notification Supabase au propriétaire
 ```
 
-**Contenu du guide envoyé**:
-- Stack technique (Claude AI + Hostinger + Next.js)
-- Process en 5 étapes (consultation → prompt → customisation → déploiement → livraison)
-- Grille tarifaire (299€-2500€)
-- Exemples de prompts concrets
-- CTA vers formations payantes
+### 3. Système Devis
 
-### 3. Système de Devis (Qualification Prospects)
 ```
-Visiteur → /devis → Choix du path:
-
-  Path A (Projet validé):
-    → /devis/projet-valide
-    → Formulaire complet (nom, email, téléphone, type projet, budget, timeline, description)
-    → API /send-quote-request
-    → Email à nash3691215@gmail.com avec détails complets du prospect
-    → Email confirmation au prospect
-    → Page confirmation "Réponse sous 24h"
-
-  Path B (Curieux):
-    → /tarifs
-    → Affichage grille tarifaire transparente
-    → Pack Vitrine: 299€ départ
-    → Pack E-commerce: 999€ départ
-    → CTA vers devis personnalisé
+Visiteur → /devis → Formulaire
+  ↓
+API /send-quote-request
+  ↓
+Email notification au propriétaire
+  ↓
+Email confirmation au prospect
 ```
 
 ---
 
-## 📧 Système Email
+## 📧 Configuration Email
 
-**Provider**: Resend
-**Domaine**: `nash369.com`
-**Expéditeur**: `noreply@nash369.com`
+### Resend Setup
 
-### DNS configurés (Namecheap)
-- SPF: `v=spf1 include:amazonses.com ~all`
-- DKIM: 3 clés CNAME Amazon SES
-- DMARC: `v=DMARC1; p=none;`
-- MX: `send` → Amazon SES (envoi)
-- MX: `@` → Amazon SES (réception)
+**Domaine vérifié**: `nash369.com`
+**Expéditeur**: `NASH369 <noreply@nash369.com>`
 
-### Templates
-- **Lead Magnet**: HTML inline dans `/api/send-lead-magnet`
-- **Produits**: HTML inline dans `/lib/stripe.ts`
-- **Devis**: HTML inline dans `/api/send-quote-request`
+### DNS Records (Namecheap)
+
+```
+Type  | Host           | Value
+------|----------------|------------------
+TXT   | @              | SPF record
+CNAME | resend1._domainkey | DKIM key 1
+CNAME | resend2._domainkey | DKIM key 2
+```
+
+### Templates Email
+
+#### Lead Magnet
+- Fichier: `/app/api/send-email/route.ts`
+- Type: `lead_magnet`
+- Contenu: Message livraison 24H + cross-sell formations
+
+#### Confirmation Achat
+- Fichier: `/app/api/webhooks/stripe/route.ts`
+- Déclencheur: Webhook `checkout.session.completed`
+- Contenu: Paiement confirmé + mode test + livraison 24H
+
+**Tous les emails sont signés : NASH369**
 
 ---
 
-## 💳 Stripe
+## 💳 Configuration Stripe
 
-**Mode**: LIVE (Production)
-**Webhooks actifs**: `checkout.session.completed`
+### Mode Actuel
+**LIVE MODE** - Paiements réels encaissés
 
-### Configuration Stripe Dashboard
-1. Créer produits + prices
-2. Ajouter webhook endpoint: `https://nash369.com/api/webhooks/stripe`
-3. Copier signing secret → `STRIPE_WEBHOOK_SECRET`
+### Webhook Configuration
 
-### Metadata utilisée
+**URL**: `https://nash369.com/api/webhooks/stripe`
+**Événements**: `checkout.session.completed`
+**Signing Secret**: Stocké dans `STRIPE_WEBHOOK_SECRET`
+
+### Produits Stripe
+
+Créer 3 produits dans Stripe Dashboard avec prices correspondants :
+
+| Produit | Prix | Price ID Stripe |
+|---------|------|-----------------|
+| De Zéro à Vivre | 9.90€ | `price_1SptVQRws3CXDdFEpBC25JDU` |
+| Créer un Site Pro | 49.90€ | `price_1SptTKRws3CXDdFEO1JTMGjD` |
+| Site sans Shopify | 199.90€ | `price_1SptPhRws3CXDdFEw22XJlFf` |
+
+**⚠️ IMPORTANT** : Les Price IDs doivent correspondre EXACTEMENT à ceux dans `data/products.json`
+
+### Metadata Stripe Sessions
+
 ```typescript
 {
-  productId: 'burnout' | 'zero-vivre' | 'site-ia',
-  customerEmail: string,
-  productUrl: string
+  productId: string,     // ID du produit (ex: "site-vitrine")
+  productFile: string    // Nom fichier (ex: "site-vitrine.html")
 }
 ```
 
 ---
 
-## 📊 Analytics
+## 🗄️ Base de Données Supabase
 
-**Google Analytics 4** configuré avec :
-- Page views automatiques
-- Event `purchase` avec transaction_id, value, items
-- Tag ajouté dans `app/layout.tsx`
-
----
-
-## 🗄️ Base de Données
-
-### Supabase - Table `lead_magnets`
+### Table: `lead_magnets`
 
 ```sql
 CREATE TABLE lead_magnets (
@@ -238,163 +221,232 @@ CREATE TABLE lead_magnets (
 );
 ```
 
-**Opérations**:
-- `insertLeadMagnetEmail()` dans `/lib/db.ts`
-- Gestion duplicates (unique constraint sur email)
+**Notifications** : Edge Function configurée pour notifier lors d'un nouveau lead
 
 ---
 
-## ✨ Fonctionnalités Principales
+## 🚀 Installation & Déploiement
 
-### 🏠 Homepage
-- Hero section avec proposition de valeur IA/Liberté/Temps
-- Stats 24/7, 0h, 100%
-- 3 produits alignés en grid avec badges (-50%, Best Seller)
-- Lead magnet pleine largeur avec badge "GRATUIT" animé
-- Section problème/solution (Sans IA vs Avec l'IA)
-- Témoignages clients
-- CTA final vers lead magnet
-- Header unifié sur toutes les pages
-
-### 📩 Lead Magnet
-- Landing page optimisée conversion
-- Formulaire email simple
-- Guide envoyé automatiquement par email
-- Notification au propriétaire
-- CTA vers formations payantes
-
-### 💼 Système Devis
-- Qualification automatique prospects
-- 2 paths (projet validé / curieux)
-- Collecte infos complètes (budget, timeline)
-- Email détaillé au propriétaire
-- Confirmation prospect sous 24h
-
-### 💳 E-commerce
-- 3 produits avec prix de lancement -50%
-- Checkout Stripe
-- Livraison automatique par email
-- Pages produits détaillées
-
-## 🧹 FICHIERS À NETTOYER
-
-### ❌ À SUPPRIMER (Code mort)
+### Installation Locale
 
 ```bash
-# Système i18n inutilisé (commit 1f4b1ea: "Suppression i18n")
-/messages/en.json
-/messages/fr.json
-/messages/products-en.json
-/messages/products-fr.json
-/i18n/request.ts
+# Cloner le repo
+git clone <repo-url>
+cd nash369
 
-# API routes inutiles
-/app/api/emails/route.ts       # Pas d'auth, exposé
-/app/api/init-db/route.ts      # Utilitaire one-shot
-/app/api/send-email/route.ts   # Ancien système lead magnet
+# Installer dépendances
+npm install
+
+# Créer .env.local avec les variables ci-dessus
+
+# Lancer dev server
+npm run dev
 ```
+
+Site accessible sur `http://localhost:3000`
+
+### Build Production
+
+```bash
+npm run build
+npm start
+```
+
+### Déploiement Vercel
+
+Le site est configuré pour auto-deploy :
+1. Push sur `main` → Vercel build automatique
+2. Variables d'env configurées dans Vercel Dashboard
+3. Déploiement sur `https://nash369.com`
 
 ---
 
-## 🚨 Notes de Sécurité
+## 🐛 Problèmes Connus & Solutions
+
+### Erreur: "Stripe configuration error"
+
+**Cause** : Price ID invalide dans `data/products.json`
+
+**Solution** :
+1. Aller sur Stripe Dashboard → Products → Prices
+2. Copier le Price ID exact (format: `price_1AbCdEf...`)
+3. Mettre à jour dans `data/products.json`
+4. Redéployer
+
+### Emails non reçus
+
+**Checklist** :
+1. Vérifier DNS Resend (DKIM, SPF)
+2. Vérifier RESEND_API_KEY dans `.env.local`
+3. Checker logs dans Resend Dashboard
+4. Vérifier spam folder
+
+### Paiement ne redirige pas vers Stripe
+
+**Cause possible** : Script Stripe.js non chargé
+
+**Solution** :
+1. Vérifier `app/layout.tsx` ligne 29 : `<script src="https://js.stripe.com/v3/" async></script>`
+2. Vérifier clé publique Stripe dans `lib/stripe.ts` ligne 26
+3. Tester en navigation privée (cache)
+
+---
+
+## 📝 Modifications Récentes (Jan 2026)
+
+### ✅ Corrections Stripe (Commit: `fde360e`, `1d7fe7d`, `ef9e622`)
+
+**Problème** :
+- Fichier `lib/stripe-config.ts` cassait le chargement Stripe côté client
+- Price IDs incorrects pour `site-vitrine` et `site-ia`
+
+**Solution** :
+1. ✅ Supprimé `lib/stripe-config.ts`
+2. ✅ Restauré version simple de `lib/stripe.ts`
+3. ✅ Corrigé Price IDs dans `data/products.json` :
+   - `site-vitrine`: `price_1SptTKRws3CXDdFEO1JTMGjD`
+   - `site-ia`: `price_1SptPhRws3CXDdFEw22XJlFf`
+4. ✅ Nettoyé fichiers documentation inutiles (CHANGELOG.md, SETUP.md, etc.)
+
+### ✅ Système Email Automatique (Commit: `6d6d778`)
+
+**Ajouté** :
+- Email confirmation achat automatique via webhook Stripe
+- Email lead magnet avec livraison 24H
+- Mode test explicite : "Validation manuelle pour garantir qualité"
+- Templates HTML stylés inline
+- Signature NASH369 sur tous les emails
+
+---
+
+## 🔒 Sécurité
 
 ### ✅ Sécurisé
-- Clés Stripe en `.env.local` (pas dans Git)
-- Webhook signature validation
-- Supabase RLS (à vérifier/configurer)
+- Clés API en `.env.local` (jamais committées)
+- Validation signature webhook Stripe
+- Paiements via Stripe (PCI compliant)
+- HTTPS obligatoire (Vercel)
 
-### ⚠️ Attention
-- `/api/emails` exposé sans auth → **À supprimer ou sécuriser**
-- Pas de rate limiting sur `/api/send-email` → Risque spam
+### ⚠️ À Améliorer
+- Rate limiting sur `/api/send-email` (risque spam)
+- Supabase RLS à configurer pour leads table
+- CORS sur API routes (actuellement ouvert)
 
 ---
 
-## 📝 Scripts NPM
+## 📊 Métriques & Monitoring
 
-```json
-{
-  "dev": "next dev",           // Dev server
-  "build": "next build",       // Build production
-  "start": "next start",       // Start prod server
-  "lint": "next lint"          // ESLint
-}
+### Google Analytics 4
+- Page views automatiques
+- Event `purchase` avec transaction_id + montant
+- Tracking conversion lead magnet
+
+### Stripe Dashboard
+- Paiements en temps réel
+- Webhooks logs
+- Analytics revenus
+
+### Supabase Notifications
+- Nouveau lead → Notification temps réel
+- Email dashboard accessible
+
+---
+
+## 🧹 Fichiers Nettoyés
+
+### ❌ Supprimés (Commit: `fde360e`)
+- `CHANGELOG.md`
+- `CLEANUP.md`
+- `EMAIL_FLOW_CONFIG.md`
+- `SETUP.md`
+- `lib/stripe-config.ts`
+
+### 📄 Conservés
+- `README.md` (ce fichier)
+- `STRIPE_CONFIG.md` (référence Stripe)
+
+---
+
+## 🔧 Pour les Développeurs
+
+### Ajouter un Nouveau Produit
+
+1. **Créer le produit dans Stripe Dashboard**
+   - Aller sur Products → Create Product
+   - Ajouter price → Copier Price ID
+
+2. **Mettre à jour `data/products.json`**
+   ```json
+   {
+     "id": "nouveau-produit",
+     "name": "Nom du Produit",
+     "price": 99.90,
+     "stripe_price_id": "price_XXXXX",
+     "description": "Description",
+     "benefits": ["Bénéfice 1", "Bénéfice 2"]
+   }
+   ```
+
+3. **Créer la page produit**
+   ```bash
+   cp app/produits/zero-vivre/page.tsx app/produits/nouveau-produit/page.tsx
+   ```
+   Modifier le `productId` dans `find(p => p.id === 'nouveau-produit')`
+
+4. **Tester le checkout**
+   ```bash
+   npm run dev
+   # Visiter /produits/nouveau-produit
+   # Tester avec carte test: 4242 4242 4242 4242
+   ```
+
+### Modifier les Emails
+
+**Email Lead Magnet** :
+- Fichier: `app/api/send-email/route.ts`
+- Ligne 22-47 : Template HTML
+
+**Email Confirmation Achat** :
+- Fichier: `app/api/webhooks/stripe/route.ts`
+- Ligne 47-86 : Template HTML
+
+**⚠️ Important** : Emails en HTML inline (pas de CSS externe)
+
+### Debug Webhook Stripe
+
+```bash
+# Installer Stripe CLI
+brew install stripe/stripe-cli/stripe
+
+# Login
+stripe login
+
+# Écouter webhooks en local
+stripe listen --forward-to localhost:3000/api/webhooks/stripe
+
+# Tester événement
+stripe trigger checkout.session.completed
 ```
 
 ---
 
-## 🎯 Prochaines Étapes Recommandées
-
-### Court terme (1-2h)
-1. Supprimer fichiers i18n morts
-2. Retirer `LanguageSelector.tsx`
-3. Simplifier `next.config.js`
-4. Supprimer `/api/emails` et `/api/init-db`
-
-### Moyen terme (1 semaine)
-1. Extraire composants de la homepage
-2. Ajouter rate limiting (Vercel Edge Config ou Upstash)
-3. Configurer Supabase RLS
-4. Ajouter tests E2E (Playwright)
-
-### Long terme
-1. Dashboard admin pour voir leads
-2. A/B testing sur CTA
-3. Produits additionnels
-4. Programme d'affiliation
-
----
-
-## 📞 Support
+## 📞 Contact & Support
 
 **Email**: noreply@nash369.com
-**Domaine**: https://nash369.com
-**Git**: Privé (local)
+**Site**: https://nash369.com
+**Stripe Dashboard**: https://dashboard.stripe.com
+**Resend Dashboard**: https://resend.com/emails
+**Supabase Dashboard**: https://supabase.com/dashboard
 
 ---
 
 ## 📄 Licence
 
-Propriétaire - Tous droits réservés
+Propriétaire - Tous droits réservés © 2026 NASH369
 
 ---
 
-**Dernière mise à jour**: 19 Janvier 2026
-**Version**: 1.1.0
-**Statut**: Production (LIVE)
-
----
-
-## 📋 Changelog
-
-### Version 1.1.0 - 19 Janvier 2026
-**Corrections Stripe & Pages Produits**
-
-✅ **Ajouts**
-- Création page produit manquante `/app/produits/site-vitrine/page.tsx` (Formation 49.90€)
-- Page avec design cohérent, badge "BEST SELLER", testimonials
-- Intégration complète du checkout Stripe
-
-✅ **Corrections Stripe Price IDs**
-- **site-vitrine**: Corrigé `price_1Spt...` → `price_15pt...` (typo dans data/products.json:29)
-- **site-ia**: Corrigé `price_1Spt...` → `price_15pt...` (typo dans data/products.json:47)
-- Les deux produits redirigent maintenant correctement vers Stripe Checkout
-
-🔧 **Fichiers modifiés**
-- `data/products.json` - Stripe Price IDs corrigés
-- `app/produits/site-vitrine/page.tsx` - Page créée
-- `README.md` - Documentation mise à jour
-
-🐛 **Bugs corrigés**
-- ❌ Erreur 404 sur `/produits/site-vitrine` → ✅ Page fonctionnelle
-- ❌ Erreur "Stripe configuration error" → ✅ Checkout fonctionnel
-- ❌ Price IDs invalides → ✅ Price IDs validés et testés
-
-📦 **Commits**
-- `5c34e15` - feat: Add missing site-vitrine product page
-- `0467c22` - fix: Correct Stripe Price IDs for site-vitrine and site-ia
-
-### Version 1.0.0 - Janvier 2026
-- Refonte complète: Lead magnet + système devis
-- Hébergement Vercel en production
-- Stripe live mode configuré
-- Email automation Resend opérationnel
+**Dernière mise à jour** : 19 Janvier 2026
+**Version** : 1.2.0
+**Statut** : Production LIVE (Mode Test Livraison)
+**Maintenu par** : Nash369
