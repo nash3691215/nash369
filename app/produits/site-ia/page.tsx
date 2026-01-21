@@ -46,7 +46,7 @@ export default function SiteIAPage() {
             </div>
 
             <div className="bg-gray-50 border-2 border-gray-200 rounded-2xl p-8">
-              <h2 className="text-3xl font-bold mb-6 text-gray-900">La méthode pour créer ton site pro en 24h :</h2>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">Crée ton système de vente automatique en 24h :</h2>
               <ul className="space-y-4">
                 {product.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -96,11 +96,11 @@ export default function SiteIAPage() {
                     </div>
                   </div>
                   <p className="text-gray-700 italic leading-relaxed">
-                    "48h après l'achat, mon site vendait mes formations. <span className="font-bold text-emerald-600">2.1K€ la première semaine.</span> J'ai économisé 3 mois de galère et 1500€ d'agence. Meilleur investissement de 2024."
+                    "48h après l'achat, mon site vendait mes formations. <span className="font-bold text-emerald-600">J'ai économisé 3 mois de galère et 1500€ d'agence.</span> Meilleur investissement de 2024."
                   </p>
                   <div className="text-green-600 font-bold mt-3 flex items-center gap-2">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                    2.1K€ en 7 jours
+                    Site en ligne en 48h
                   </div>
                 </div>
 
@@ -118,11 +118,11 @@ export default function SiteIAPage() {
                     </div>
                   </div>
                   <p className="text-gray-700 italic leading-relaxed">
-                    "Zéro ligne de code écrite. L'IA a tout fait. <span className="font-bold text-indigo-600">Site en ligne en 1 journée.</span> Je vends mes ebooks H24 maintenant. Si j'avais su que c'était aussi simple..."
+                    "Zéro ligne de code écrite. L'IA a tout fait. <span className="font-bold text-indigo-600">Site en ligne en 1 journée.</span> Mes ebooks se vendent pendant que je crée du contenu. Si j'avais su que c'était aussi simple..."
                   </p>
                   <div className="text-green-600 font-bold mt-3 flex items-center gap-2">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                    Ventes 24/7 automatiques
+                    Ventes automatiques
                   </div>
                 </div>
               </div>
@@ -144,7 +144,7 @@ export default function SiteIAPage() {
                   onClick={handleBuy}
                   className="w-full bg-gradient-to-r from-indigo-600 to-emerald-600 hover:from-indigo-500 hover:to-emerald-500 text-white py-5 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg mb-6"
                 >
-                  Créer mon site pro maintenant
+                  Accéder à la formation complète →
                 </button>
 
                 <div className="space-y-4 mb-8">
@@ -167,11 +167,11 @@ export default function SiteIAPage() {
                 </div>
 
                 <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
-                  <h4 className="font-bold mb-3 text-center text-gray-900">ROI immédiat :</h4>
+                  <h4 className="font-bold mb-3 text-center text-gray-900">Ce que tu gagnes :</h4>
                   <div className="text-center space-y-2 text-sm text-gray-600">
-                    <p>49€ → Économise 1000€+ d'agence</p>
-                    <p>ROI = x20 immédiatement</p>
-                    <p>Site en ligne en 24h au lieu de 3 semaines</p>
+                    <p>199,90€ vs 1500€ d'agence</p>
+                    <p>Site prêt à vendre en 24h vs 3 semaines</p>
+                    <p>Stack 0€/mois vs 87€/mois (Shopify + outils)</p>
                   </div>
                 </div>
               </div>

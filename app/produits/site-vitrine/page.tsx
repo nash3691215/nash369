@@ -46,7 +46,7 @@ export default function SiteVitrinePage() {
             </div>
 
             <div className="bg-gray-50 border-2 border-gray-200 rounded-2xl p-8">
-              <h2 className="text-3xl font-bold mb-6 text-gray-900">La méthode pour créer ton site vitrine en 5h :</h2>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">Construis ton actif professionnel en 5h :</h2>
               <ul className="space-y-4">
                 {product.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -153,7 +153,7 @@ export default function SiteVitrinePage() {
                   onClick={handleBuy}
                   className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white py-5 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg mb-6"
                 >
-                  Accéder maintenant →
+                  Commencer la formation →
                 </button>
 
                 <div className="space-y-4 mb-8">
@@ -176,11 +176,11 @@ export default function SiteVitrinePage() {
                 </div>
 
                 <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
-                  <h4 className="font-bold mb-3 text-center text-gray-900">ROI immédiat :</h4>
+                  <h4 className="font-bold mb-3 text-center text-gray-900">Ce que tu gagnes :</h4>
                   <div className="text-center space-y-2 text-sm text-gray-600">
-                    <p>49€ → Économise 500€+ d'agence</p>
-                    <p>ROI = x10 immédiatement</p>
-                    <p>Site en ligne en quelques heures</p>
+                    <p>49,90€ vs 500€ d'agence</p>
+                    <p>Site pro en 5h vs 2 semaines d'attente</p>
+                    <p>Garde le contrôle total de ton contenu</p>
                   </div>
                 </div>
               </div>

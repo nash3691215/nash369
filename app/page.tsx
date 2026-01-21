@@ -18,29 +18,29 @@ export default function Home() {
               NASH369
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight text-gray-900">
-              Reprends ton temps.
+              Construis ton système.
               <span className="block bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">
-                Gagne ta liberté.
+                Vends en automatique.
               </span>
-              <span className="block mt-2">Grâce à l'IA.</span>
+              <span className="block mt-2">Sans coder.</span>
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Je te montre comment créer des systèmes IA qui bossent pour toi 24/7, sans échanger ton temps contre de l'argent.
+              La méthode pour créer un site qui vend pendant que tu bosses sur autre chose.
             </p>
 
             {/* Stats Section */}
             <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto mb-12">
               <div className="text-center p-4 md:p-6 bg-white rounded-xl shadow-sm">
-                <div className="text-2xl md:text-4xl font-bold text-indigo-600 mb-1 md:mb-2">24/7</div>
-                <div className="text-gray-600 text-xs md:text-sm">L'IA travaille</div>
+                <div className="text-2xl md:text-4xl font-bold text-indigo-600 mb-1 md:mb-2">24h</div>
+                <div className="text-gray-600 text-xs md:text-sm">Pour créer ton site</div>
               </div>
               <div className="text-center p-4 md:p-6 bg-white rounded-xl shadow-sm">
-                <div className="text-2xl md:text-4xl font-bold text-emerald-600 mb-1 md:mb-2">0h</div>
-                <div className="text-gray-600 text-xs md:text-sm">De ton temps</div>
+                <div className="text-2xl md:text-4xl font-bold text-emerald-600 mb-1 md:mb-2">0€</div>
+                <div className="text-gray-600 text-xs md:text-sm">D'abonnements</div>
               </div>
               <div className="text-center p-4 md:p-6 bg-white rounded-xl shadow-sm">
                 <div className="text-2xl md:text-4xl font-bold text-indigo-600 mb-1 md:mb-2">100%</div>
-                <div className="text-gray-600 text-xs md:text-sm">Liberté</div>
+                <div className="text-gray-600 text-xs md:text-sm">Automatique</div>
               </div>
             </div>
           </div>
@@ -51,16 +51,11 @@ export default function Home() {
       <section id="produits" className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 border-2 border-green-300 rounded-full text-green-700 text-sm font-bold shadow-lg animate-pulse">
-              <span className="w-2 h-2 bg-green-600 rounded-full animate-ping"></span>
-              <span className="w-2 h-2 bg-green-600 rounded-full absolute"></span>
-              🔥 OFFRE LIMITÉE - Plus que quelques places à ce prix
-            </div>
             <h2 className="text-3xl md:text-5xl font-black mb-4 text-gray-900">
-              Mes Systèmes <span className="bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">IA Automatisés</span>
+              3 étapes pour <span className="bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">vendre en ligne</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-              L'IA fait le boulot. Tu récupères ton temps. <span className="font-bold text-indigo-600">Et ta liberté.</span>
+              Choisis ton point de départ. Chaque formation te donne la méthode exacte.
             </p>
           </div>
 
@@ -219,42 +214,42 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="space-y-4 md:space-y-6 bg-red-50 border border-red-200 rounded-2xl p-6 md:p-8">
-                <div className="text-red-600 text-xs md:text-sm font-bold uppercase tracking-wider">Sans IA</div>
+                <div className="text-red-600 text-xs md:text-sm font-bold uppercase tracking-wider">Sans automatisation</div>
                 <h2 className="text-2xl md:text-4xl font-bold leading-tight text-gray-900">
-                  Esclave de ton agenda et de tes clients
+                  Chaque vente demande ton intervention
                 </h2>
                 <ul className="space-y-3 md:space-y-4 text-sm md:text-base text-gray-700">
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 text-lg md:text-xl mt-1 flex-shrink-0">✗</span>
-                    <span>Tu échanges ton temps contre de l'argent (jamais libre)</span>
+                    <span>Envoyer manuellement chaque accès après paiement</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 text-lg md:text-xl mt-1 flex-shrink-0">✗</span>
-                    <span>Tu cours après les deadlines au lieu de vivre</span>
+                    <span>Support client qui te bouffe ton temps</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 text-lg md:text-xl mt-1 flex-shrink-0">✗</span>
-                    <span>Impossible de partir en vacances sans tout arrêter</span>
+                    <span>Impossible de scaler sans recruter</span>
                   </li>
                 </ul>
               </div>
               <div className="space-y-4 md:space-y-6 bg-green-50 border border-green-200 rounded-2xl p-6 md:p-8">
-                <div className="text-green-600 text-xs md:text-sm font-bold uppercase tracking-wider">Avec l'IA</div>
+                <div className="text-green-600 text-xs md:text-sm font-bold uppercase tracking-wider">Avec automatisation</div>
                 <h2 className="text-2xl md:text-4xl font-bold leading-tight text-gray-900">
-                  L'IA travaille pendant que tu vis
+                  Le système travaille pour toi
                 </h2>
                 <ul className="space-y-3 md:space-y-4 text-sm md:text-base text-gray-700">
                   <li className="flex items-start gap-3">
                     <span className="text-green-500 text-lg md:text-xl mt-1 flex-shrink-0">✓</span>
-                    <span>L'IA gère tout automatiquement 24/7 (ventes, support, livraison)</span>
+                    <span>Paiement → Accès automatique par email (0 action manuelle)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-green-500 text-lg md:text-xl mt-1 flex-shrink-0">✓</span>
-                    <span>Tu choisis ton emploi du temps et tes projets</span>
+                    <span>Tu configures une fois, ça tourne ensuite</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-green-500 text-lg md:text-xl mt-1 flex-shrink-0">✓</span>
-                    <span>Revenus qui tournent même quand tu dors</span>
+                    <span>Tu peux partir 2 semaines, les ventes continuent</span>
                   </li>
                 </ul>
               </div>
@@ -290,9 +285,9 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
-                Ils ont <span className="bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">repris leur liberté</span>
+                Déjà utilisé par <span className="bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">+300 créateurs</span>
               </h2>
-              <p className="text-lg text-gray-600">L'IA fait le boulot. Ils profitent de leur vie.</p>
+              <p className="text-lg text-gray-600">Ils ont monté leur système. Maintenant ils vendent.</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               <div className="bg-white rounded-xl p-8 border-2 border-indigo-100 hover:border-indigo-300 shadow-lg hover:shadow-2xl transition-all">
@@ -311,11 +306,11 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-700 mb-4 leading-relaxed italic">
-                  "J'étais sceptique au début. 3 semaines plus tard : mon site tourne H24, paiements automatiques, <span className="font-bold text-indigo-600">+6.8K€ le premier mois</span>. Je regrette juste de pas avoir commencé avant."
+                  "J'étais sceptique au début. 3 semaines plus tard : mon site tourne H24, paiements automatiques, livraison par email. <span className="font-bold text-indigo-600">Je ne touche plus à rien.</span>"
                 </p>
                 <div className="flex items-center gap-2 text-green-600 font-bold bg-green-50 px-3 py-2 rounded-lg">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                  <span>6.8K€ en 30 jours</span>
+                  <span>Ventes automatiques</span>
                 </div>
               </div>
 
@@ -335,11 +330,11 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-700 mb-4 leading-relaxed italic">
-                  "J'ai créé mon site e-commerce en 48h avec la formation. Zéro compétence technique. Aujourd'hui <span className="font-bold text-purple-600">12K€/mois</span> en dormant. Mon seul regret ? Avoir perdu 2 ans avec Shopify avant."
+                  "J'ai créé mon site e-commerce en 48h avec la formation. Zéro compétence technique. <span className="font-bold text-purple-600">Paiement Stripe → Email automatique.</span> Mon seul regret ? Avoir perdu 2 ans avec Shopify avant."
                 </p>
                 <div className="flex items-center gap-2 text-green-600 font-bold bg-green-50 px-3 py-2 rounded-lg">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                  <span>12K€/mois passif</span>
+                  <span>Site en 48h</span>
                 </div>
               </div>
 
@@ -359,11 +354,11 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-700 mb-4 leading-relaxed italic">
-                  "Avant j'échangeais mon temps contre de l'argent. Maintenant mon système génère pendant que je dors. <span className="font-bold text-pink-600">+18.5K€ ce mois.</span> J'ai enfin ma liberté."
+                  "Avant je passais des heures à gérer les commandes. Maintenant <span className="font-bold text-pink-600">mon système encaisse pendant que je dors.</span> Client paie → Email part. C'est tout."
                 </p>
                 <div className="flex items-center gap-2 text-green-600 font-bold bg-green-50 px-3 py-2 rounded-lg">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
-                  <span>Liberté totale</span>
+                  <span>Système automatique</span>
                 </div>
               </div>
             </div>
@@ -374,9 +369,9 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-indigo-600 to-emerald-600">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">Prêt à reprendre ta liberté ?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white">Prêt à automatiser tes ventes ?</h2>
           <p className="text-lg md:text-xl text-indigo-100 mb-8 md:mb-12 max-w-2xl mx-auto">
-            Laisse l'IA bosser pour toi pendant que tu vis ta vie
+            Télécharge le guide gratuit et découvre le système exact
           </p>
           <Link
             href="/guide-sites-5min"
@@ -395,7 +390,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-2 text-white">
                 NASH<span className="bg-gradient-to-r from-indigo-400 to-emerald-400 text-transparent bg-clip-text">369</span>
               </h3>
-              <p className="text-gray-400">L'IA travaille. Tu vis. C'est simple.</p>
+              <p className="text-gray-400">Construis ton système. Vends en automatique.</p>
             </div>
             <div className="flex gap-8">
               <a
