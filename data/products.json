@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "zero-vivre",
-      "name": "De Zéro à Vivre de Ton Activité",
+      "name": "Trouve TON modèle rentable en 7 jours",
       "price": 9.90,
       "originalPrice": 19.90,
       "currency": "eur",
@@ -10,16 +10,16 @@
       "priority": "core",
       "file": "zero-vivre.html",
       "stripe_price_id": "price_1SptVQRws3CXDdFEpBC25JDU",
-      "description": "Le système complet pour construire une activité qui génère des revenus sans échanger ton temps contre de l'argent",
+      "description": "Le framework exact pour identifier une idée qui vend, valider la demande et lancer ton offre en une semaine",
       "benefits": [
-        "Framework validé pour identifier ton système rentable",
-        "Méthode concrète pour acquérir tes premiers clients",
-        "Architecture pour générer des revenus récurrents"
+        "La grille d'évaluation pour tester 10 idées en 2h",
+        "3 techniques pour valider la demande avant de créer",
+        "Le script pour vendre tes 3 premières unités en 48h"
       ]
     },
     {
       "id": "site-vitrine",
-      "name": "Créer un Site Pro avec l'IA",
+      "name": "Construis ton actif professionnel en 5h",
       "price": 49.90,
       "originalPrice": 99.90,
       "currency": "eur",
@@ -28,17 +28,17 @@
       "file": "site-vitrine.html",
       "stripe_price_id": "price_1SptTKRws3CXDdFEO1JTMGjD",
       "stripe_product_id": "prod_TnUSMoIEZVxHe5",
-      "description": "Formation complète pour créer ton site vitrine professionnel avec l'IA, sans coder",
+      "description": "Crée un site vitrine qui génère des leads pendant que tu dors. Design pro, formulaires opérationnels, hébergement gratuit à vie",
       "benefits": [
-        "Crée ton site avec ChatGPT/Claude en quelques heures",
-        "Design moderne et responsive automatiquement",
-        "Formulaire de contact et Google Maps intégrés",
-        "Déploiement gratuit sur Vercel"
+        "Site déployé en ligne en 5h chrono (même sans coder)",
+        "Formulaire de contact qui envoie dans ta boîte mail",
+        "Google Maps intégré pour être trouvé localement",
+        "0€/mois d'hébergement avec Vercel (gratuit à vie)"
       ]
     },
     {
       "id": "site-ia",
-      "name": "Crée ton Site Prêt à Vendre sans Shopify",
+      "name": "Crée ton système de vente automatique en 24h",
       "price": 199.90,
       "originalPrice": 399.90,
       "currency": "eur",
@@ -47,12 +47,12 @@
       "file": "site-ia.html",
       "stripe_price_id": "price_1SptPhRws3CXDdFEw22XJlFf",
       "stripe_product_id": "prod_TnUOSYSsbiwQS2",
-      "description": "Formation complète pour créer ton site e-commerce avec paiements intégrés, sans Shopify ni abonnement",
+      "description": "Monte un site qui vend, encaisse et livre automatiquement. Client paie → Accès envoyé. 0 action manuelle. 0€/mois",
       "benefits": [
-        "Crée ton site Next.js avec ChatGPT/Claude",
-        "Intègre Stripe pour les paiements automatiques",
-        "Configure l'email automation et analytics",
-        "0€/mois de coûts - Stack moderne et gratuite"
+        "Site e-commerce déployé en 24h (Next.js + Claude AI)",
+        "Stripe configuré : paiement → email automatique",
+        "Automation complète : vente, livraison, analytics",
+        "0€/mois à vie (pas de Shopify, pas d'abonnement)"
       ]
     },
     {
