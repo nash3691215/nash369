@@ -198,11 +198,15 @@ export default function SiteCleEnMainPage() {
             <div className="bg-gradient-to-br from-green-600 to-emerald-700 rounded-2xl p-1 shadow-2xl">
               <div className="bg-white rounded-xl p-8">
                 <div className="mb-6 text-center">
-                  <div className="text-gray-500 line-through text-lg mb-2">Économise 3 mois de dev</div>
-                  <div className="text-6xl font-black bg-gradient-to-r from-green-600 to-emerald-600 text-transparent bg-clip-text mb-2">
-                    {product.price}€
+                  <div className="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4 inline-block animate-pulse">
+                    🔥 OFFRE PROMO - Jusqu'au 28 février
                   </div>
-                  <p className="text-gray-600">Paiement unique. Livraison en 7 jours.</p>
+                  <div className="text-gray-500 line-through text-2xl mb-2">1499€</div>
+                  <div className="text-6xl font-black bg-gradient-to-r from-green-600 to-emerald-600 text-transparent bg-clip-text mb-2">
+                    À partir de 999€
+                  </div>
+                  <p className="text-gray-600">Prix final sur devis · Livraison en 7 jours</p>
+                  <p className="text-red-600 font-bold text-sm mt-2">-33% · Offre limitée au 28 février 2026</p>
                 </div>
 
                 <div className="mb-8">

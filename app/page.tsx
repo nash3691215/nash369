@@ -10,39 +10,48 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
+      {/* Hero Section with Lead Magnet */}
       <section id="hero" className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-purple-50 to-white">
-        <div className="container mx-auto px-4 py-20 md:py-32">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block mb-6 px-4 py-2 bg-indigo-100 border border-indigo-200 rounded-full text-indigo-700 text-sm font-semibold">
-              NASH369
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight text-gray-900">
-              Construis ton système.
-              <span className="block bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">
-                Vends en automatique.
-              </span>
-              <span className="block mt-2">Sans coder.</span>
-            </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              La méthode pour créer un site qui vend pendant que tu bosses sur autre chose.
-            </p>
+        <div className="container mx-auto px-4 py-5 md:py-8">
+          <div className="max-w-2xl mx-auto">
+            {/* Lead Magnet Full Width */}
+            {leadMagnet && (
+              <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl p-1 shadow-2xl">
+                <div className="bg-white rounded-xl p-8">
+                  <div className="text-center mb-6">
+                    <div className="text-5xl mb-4">🎁</div>
+                    <div className="bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-xs font-bold mb-4 inline-block">
+                      GUIDE GRATUIT
+                    </div>
+                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-gray-900">
+                      {leadMagnet.name}
+                    </h1>
+                    <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
+                      {leadMagnet.description}
+                    </p>
+                  </div>
 
-            {/* Stats Section */}
-            <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto mb-12">
-              <div className="text-center p-4 md:p-6 bg-white rounded-xl shadow-sm">
-                <div className="text-2xl md:text-4xl font-bold text-indigo-600 mb-1 md:mb-2">24h</div>
-                <div className="text-gray-600 text-xs md:text-sm">Pour créer ton site</div>
+                  <div className="space-y-3 mb-6">
+                    {leadMagnet.benefits.map((benefit, i) => (
+                      <div key={i} className="flex items-start gap-3 text-base">
+                        <span className="text-green-500 text-xl flex-shrink-0">✓</span>
+                        <span className="text-gray-700">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link
+                    href="/guide-sites-5min"
+                    className="block w-full bg-gradient-to-r from-indigo-600 to-emerald-600 hover:from-indigo-500 hover:to-emerald-500 text-white text-center py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg"
+                  >
+                    Télécharger maintenant (100% gratuit)
+                  </Link>
+                  <p className="text-sm text-gray-500 text-center mt-3">
+                    ✓ Aucune CB • ✓ Accès immédiat • ✓ Méthode complète
+                  </p>
+                </div>
               </div>
-              <div className="text-center p-4 md:p-6 bg-white rounded-xl shadow-sm">
-                <div className="text-2xl md:text-4xl font-bold text-emerald-600 mb-1 md:mb-2">0€</div>
-                <div className="text-gray-600 text-xs md:text-sm">D'abonnements</div>
-              </div>
-              <div className="text-center p-4 md:p-6 bg-white rounded-xl shadow-sm">
-                <div className="text-2xl md:text-4xl font-bold text-indigo-600 mb-1 md:mb-2">100%</div>
-                <div className="text-gray-600 text-xs md:text-sm">Automatique</div>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
@@ -393,6 +402,12 @@ export default function Home() {
               <p className="text-gray-400">Construis ton système. Vends en automatique.</p>
             </div>
             <div className="flex gap-8">
+              <Link
+                href="/a-propos"
+                className="text-gray-400 hover:text-indigo-400 transition-colors font-medium"
+              >
+                À propos
+              </Link>
               <a
                 href="https://twitter.com/nash3691215"
                 target="_blank"
