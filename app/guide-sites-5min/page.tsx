@@ -82,10 +82,10 @@ export default function GuideSites5MinPage() {
             🎁 GUIDE GRATUIT
           </div>
           <h1 className="text-4xl md:text-6xl font-black mb-6 text-gray-900 leading-tight">
-            Comment je crée des sites en <span className="bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">5 minutes</span> pour mes clients
+            Les Opportunités <span className="bg-gradient-to-r from-indigo-600 to-emerald-600 text-transparent bg-clip-text">IA 2026</span> vues par NASH369
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            La méthode exacte que j'utilise avec Claude AI + Hostinger pour livrer des sites pros rapidement
+            Comment profiter de la vague IA pour générer des revenus (création de sites, automatisations, vente de services)
           </p>
         </div>
 
@@ -93,26 +93,26 @@ export default function GuideSites5MinPage() {
           {/* Left - Benefits */}
           <div className="space-y-6">
             <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-indigo-100">
-              <div className="text-3xl mb-3">⚡</div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">La stack complète</h3>
+              <div className="text-3xl mb-3">💎</div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">3 opportunités concrètes</h3>
               <p className="text-gray-600">
-                Claude AI pour générer le code + Hostinger pour l'hébergement. Simple, rapide, efficace.
+                Les niches exactes pour monétiser l'IA en 2026. Sites, automatisations, services à forte marge.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-emerald-100">
-              <div className="text-3xl mb-3">🚀</div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Le process étape par étape</h3>
+              <div className="text-3xl mb-3">🤖</div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">Vendre sans coder</h3>
               <p className="text-gray-600">
-                De la commande client jusqu'à la livraison. Sans prise de tête, sans code compliqué.
+                Comment utiliser Claude AI et les outils no-code pour créer et vendre sans compétences techniques.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-purple-100">
-              <div className="text-3xl mb-3">💰</div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Comment bien facturer</h3>
+              <div className="text-3xl mb-3">🚀</div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">Le framework complet</h3>
               <p className="text-gray-600">
-                Les astuces pour livrer vite ET vendre à bon prix. La rapidité = valeur ajoutée.
+                Le plan exact pour passer de zéro à vivre de ton activité IA. Étape par étape, sans bullshit.
               </p>
             </div>
           </div>
@@ -155,7 +155,7 @@ export default function GuideSites5MinPage() {
 
             <div className="mt-6 pt-6 border-t-2 border-gray-100">
               <p className="text-sm text-gray-600 text-center">
-                <strong className="text-indigo-600">Bonus :</strong> Tu recevras aussi mes meilleurs tips pour automatiser ton business avec l'IA
+                <strong className="text-indigo-600">Bonus :</strong> Tu recevras aussi des tips exclusifs sur les nouvelles opportunités IA chaque semaine
               </p>
             </div>
           </div>
@@ -171,44 +171,44 @@ export default function GuideSites5MinPage() {
             <div className="flex items-start gap-3">
               <span className="text-yellow-300 text-xl flex-shrink-0">✓</span>
               <div>
-                <strong>Ma stack technique exacte</strong> - Claude AI + Hostinger (pourquoi cette combo est imbattable)
+                <strong>Opportunité #1 : Sites IA automatisés</strong> - Comment créer et vendre des sites e-commerce qui tournent seuls (500€ à 2500€ par site)
               </div>
             </div>
             <div className="flex items-start gap-3">
               <span className="text-yellow-300 text-xl flex-shrink-0">✓</span>
               <div>
-                <strong>Le workflow complet</strong> - De la consultation client jusqu'au déploiement
+                <strong>Opportunité #2 : Services d'automation</strong> - Les automatisations les plus demandées en 2026 et comment les vendre sans coder
               </div>
             </div>
             <div className="flex items-start gap-3">
               <span className="text-yellow-300 text-xl flex-shrink-0">✓</span>
               <div>
-                <strong>Les prompts que j'utilise</strong> - Pour générer des sites pros en quelques minutes
+                <strong>Opportunité #3 : Formation & conseil IA</strong> - Vendre ton expertise en IA (même en tant que débutant)
               </div>
             </div>
             <div className="flex items-start gap-3">
               <span className="text-yellow-300 text-xl flex-shrink-0">✓</span>
               <div>
-                <strong>Comment livrer rapidement</strong> - Sans sacrifier la qualité ni ton pricing
+                <strong>Le framework 0 → Revenu</strong> - Les 4 étapes pour passer de zéro à tes premiers 1000€ avec l'IA
               </div>
             </div>
             <div className="flex items-start gap-3">
               <span className="text-yellow-300 text-xl flex-shrink-0">✓</span>
               <div>
-                <strong>Les erreurs à éviter</strong> - Ce que j'aurais aimé savoir avant de me lancer
+                <strong>Les outils gratuits à maîtriser</strong> - Claude AI, ChatGPT, Cursor, Vercel... La stack complète pour démarrer sans budget
               </div>
             </div>
             <div className="flex items-start gap-3">
               <span className="text-yellow-300 text-xl flex-shrink-0">✓</span>
               <div>
-                <strong>Comment bien facturer tes services</strong> - Le pricing qui marche pour gagner sans galérer
+                <strong>Comment trouver tes premiers clients</strong> - Les canaux qui marchent vraiment pour vendre tes services IA
               </div>
             </div>
           </div>
 
           <div className="mt-10 text-center">
             <p className="text-indigo-100 mb-4">
-              ⚠️ Ce guide te donne un <strong>aperçu de la méthode</strong>. Pour le process complet, check mes formations payantes.
+              ⚠️ Ce guide te donne une <strong>vision complète des opportunités</strong>. Pour maîtriser chaque méthode en détail, découvre mes formations.
             </p>
           </div>
         </div>
@@ -219,9 +219,9 @@ export default function GuideSites5MinPage() {
             Plus de <strong className="text-indigo-600">500+ personnes</strong> ont déjà téléchargé ce guide
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-            <span>⭐⭐⭐⭐⭐ "Très actionnable"</span>
-            <span>⭐⭐⭐⭐⭐ "Méthode claire"</span>
-            <span>⭐⭐⭐⭐⭐ "Je recommande"</span>
+            <span>⭐⭐⭐⭐⭐ "Opportunités concrètes"</span>
+            <span>⭐⭐⭐⭐⭐ "Vision claire"</span>
+            <span>⭐⭐⭐⭐⭐ "Très inspirant"</span>
           </div>
         </div>
       </section>
