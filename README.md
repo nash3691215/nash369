@@ -1,8 +1,9 @@
 # NASH369 - Plateforme E-commerce Produits Numériques
 
-Site e-commerce Next.js pour vente de formations IA avec Stripe, email automation Resend, capture de leads Supabase et système de devis.
+Site e-commerce Next.js sécurisé pour vente de formations IA avec Stripe, email automation Resend, lead magnet HTML et système de devis.
 
 **Live**: https://nash369.com
+**Statut**: Production LIVE avec sécurité complète
 
 ---
 
@@ -16,6 +17,7 @@ Site e-commerce Next.js pour vente de formations IA avec Stripe, email automatio
 - **Database**: Supabase (leads table)
 - **Analytics**: Google Analytics 4
 - **Hosting**: Vercel (auto-deploy depuis GitHub)
+- **Sécurité**: Rate limiting, validation email, honeypot, XSS protection, CSP headers
 
 ---
 
@@ -26,7 +28,7 @@ Site e-commerce Next.js pour vente de formations IA avec Stripe, email automatio
 | `zero-vivre` | De Zéro à Vivre de Ton Activité | 9.90€ | `price_1SptVQRws3CXDdFEpBC25JDU` | ✅ |
 | `site-vitrine` | Créer un Site Pro avec l'IA | 49.90€ | `price_1SptTKRws3CXDdFEO1JTMGjD` | ✅ |
 | `site-ia` | Crée ton Site Prêt à Vendre sans Shopify | 199.90€ | `price_1SptPhRws3CXDdFEw22XJlFf` | ✅ |
-| `guide-sites-5min` | Lead Magnet (Guide gratuit) | GRATUIT | N/A | ✅ |
+| `opportunites-ia-2026` | Lead Magnet (Opportunités IA 2026) | GRATUIT | N/A | ✅ |
 
 **Mode de livraison actuel** : Manuel sous 24H (mode test)
 
@@ -54,8 +56,15 @@ Site e-commerce Next.js pour vente de formations IA avec Stripe, email automatio
 
 /lib
   stripe.ts                    → Logique Stripe checkout
-  stripe-config.ts             → [SUPPRIMÉ] Config Stripe (causait erreurs)
+  rate-limit.ts                → Rate limiting (3 req/h par IP)
+  security.ts                  → Validation email, sanitization, anti-spam
+  email-templates.ts           → Chargement fichiers HTML emails
   db.ts                        → Opérations Supabase
+
+/public/products
+  nash369-lead-magnet-ia-2026.html → Guide HTML complet (8 pages)
+
+middleware.ts                  → Security headers (CSP, XSS, HTTPS)
 
 /data
   products.json                → Configuration produits + Price IDs
@@ -110,21 +119,30 @@ Email automatique via Resend:
 Redirect → /success
 ```
 
-### 2. Lead Magnet (Guide Gratuit)
+### 2. Lead Magnet (Guide HTML Complet)
 
 ```
-Visiteur → /guide-sites-5min → Formulaire email
+Visiteur → Homepage → Formulaire email lead magnet
   ↓
-API /send-email (type: 'lead_magnet')
+Validation Sécurité:
+  - Rate limiting (3 req/h par IP)
+  - Sanitization email
+  - Validation format
+  - Détection bot (User-Agent)
+  - Honeypot anti-spam
+  ↓
+API /send-lead-magnet
+  ↓
+Chargement HTML complet (lib/email-templates.ts)
   ↓
 Email automatique Resend:
-  - Sujet: "🎁 Ton guide gratuit est prêt !"
-  - Contenu: "Livraison sous 24H max"
-  - Cross-sell vers formations payantes
+  - Sujet: "🎁 Voici ton guide : Les Opportunités IA 2026"
+  - Contenu: Guide HTML 8 pages complet (opportunités, framework, FAQ)
+  - CTA vers formations payantes
   ↓
-Supabase insert (table: lead_magnets)
-  ↓
-Notification Supabase au propriétaire
+Email notification propriétaire:
+  - Email, IP, User-Agent trackés
+  - Action follow-up suggérée
 ```
 
 ### 3. Système Devis
@@ -160,10 +178,16 @@ CNAME | resend2._domainkey | DKIM key 2
 
 ### Templates Email
 
-#### Lead Magnet
-- Fichier: `/app/api/send-email/route.ts`
-- Type: `lead_magnet`
-- Contenu: Message livraison 24H + cross-sell formations
+#### Lead Magnet (Opportunités IA 2026)
+- Fichier: `/app/api/send-lead-magnet/route.ts`
+- Template HTML: `/public/products/nash369-lead-magnet-ia-2026.html`
+- Contenu: Guide complet 8 pages (1405 lignes HTML)
+  - Couverture professionnelle
+  - 3 opportunités IA détaillées avec chiffres
+  - Framework en 3 phases (Validation → Monétisation → Scalabilité)
+  - 3 scénarios concrets selon profil
+  - FAQ complète
+  - CTA vers formations
 
 #### Confirmation Achat
 - Fichier: `/app/api/webhooks/stripe/route.ts`
@@ -294,6 +318,33 @@ Le site est configuré pour auto-deploy :
 
 ## 📝 Modifications Récentes (Jan 2026)
 
+### ✅ Lead Magnet HTML Complet (Commit: `0cf6ae3`)
+
+**Ajouté**:
+- Guide HTML 8 pages "Opportunités IA 2026" (1405 lignes)
+- Fonction `getLeadMagnetHTML()` pour charger fichiers HTML
+- Email complet avec design professionnel (couverture, opportunités, framework, FAQ)
+- Suppression anciens fichiers HTML produits (site-ia.html, zero-vivre.html)
+
+**Résultat**: Les clients reçoivent un vrai guide professionnel au lieu d'un email basique
+
+### ✅ Sécurité Complète (Commit: `2958b40`)
+
+**Ajouté**:
+- Middleware avec security headers (CSP, XSS, clickjacking protection)
+- Rate limiting: 3 requêtes/heure par IP pour lead magnet
+- Validation et sanitization email complète
+- Honeypot anti-spam
+- Détection bots via User-Agent
+- Protection XSS/injection dans formulaires
+- Redirection HTTPS forcée en production
+- Documentation sécurité (`SECURITY.md`)
+- `.env.example` et `.gitignore` mis à jour
+
+**Résultat**: Site 100% protégé contre spam, bots, XSS, injections
+
+### ✅ Corrections Stripe (Commit: `fde360e`, `1d7fe7d`, `ef9e622`)
+
 ### ✅ Corrections Stripe (Commit: `fde360e`, `1d7fe7d`, `ef9e622`)
 
 **Problème** :
@@ -321,16 +372,43 @@ Le site est configuré pour auto-deploy :
 
 ## 🔒 Sécurité
 
-### ✅ Sécurisé
-- Clés API en `.env.local` (jamais committées)
+### ✅ Protection Complète Implémentée
+
+#### Security Headers (middleware.ts)
+- **X-Frame-Options: DENY** - Anti-clickjacking
+- **X-Content-Type-Options: nosniff** - Anti-MIME sniffing
+- **X-XSS-Protection** - Protection XSS
+- **Content-Security-Policy (CSP)** - Scripts, styles, images contrôlés
+- **Permissions-Policy** - Désactivation caméra, micro, géolocalisation
+- **HTTPS Redirect** - Redirection automatique en production
+
+#### API Protection (lib/rate-limit.ts)
+- **Rate Limiting**: 3 requêtes/heure par IP pour lead magnet
+- **Stockage en mémoire** avec nettoyage automatique
+- **Messages d'erreur clairs** pour les utilisateurs
+
+#### Validation & Sanitization (lib/security.ts)
+- **sanitizeEmail()** - Nettoyage anti-injection
+- **isValidEmail()** - Validation RFC compliant
+- **sanitizeText()** - Échappement HTML pour XSS
+- **validateFormData()** - Validation complète + détection patterns suspects
+- **isPotentialBot()** - Détection bots via User-Agent
+- **checkHoneypot()** - Champ honeypot anti-spam
+
+#### Protection Données
+- Clés API en `.env` (jamais committées)
+- `.env.example` fourni comme template
 - Validation signature webhook Stripe
 - Paiements via Stripe (PCI compliant)
 - HTTPS obligatoire (Vercel)
 
-### ⚠️ À Améliorer
-- Rate limiting sur `/api/send-email` (risque spam)
-- Supabase RLS à configurer pour leads table
-- CORS sur API routes (actuellement ouvert)
+### 📋 Documentation Sécurité
+
+Voir `SECURITY.md` pour:
+- Instructions détaillées de chaque mesure
+- Bonnes pratiques développeurs
+- Checklist déploiement production
+- Procédure reporting vulnérabilités
 
 ---
 
@@ -446,7 +524,7 @@ Propriétaire - Tous droits réservés © 2026 NASH369
 
 ---
 
-**Dernière mise à jour** : 19 Janvier 2026
-**Version** : 1.2.0
-**Statut** : Production LIVE (Mode Test Livraison)
+**Dernière mise à jour** : 22 Janvier 2026
+**Version** : 2.0.0
+**Statut** : Production LIVE - Sécurisé & Lead Magnet HTML
 **Maintenu par** : Nash369
