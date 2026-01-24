@@ -518,6 +518,40 @@ stripe trigger checkout.session.completed
 
 ---
 
+## ⚖️ Mentions Légales
+
+### Éditeur du Site
+**Nom commercial**: NASH369
+**Site web**: https://nash369.com
+**Email**: noreply@nash369.com
+**Hébergement**: Vercel Inc., San Francisco, CA, USA
+
+### Propriété Intellectuelle
+Tous les contenus présents sur le site NASH369 (textes, images, formations, guides) sont protégés par le droit d'auteur. Toute reproduction non autorisée est interdite.
+
+### Protection des Données (RGPD)
+- **Données collectées**: Email, IP, User-Agent pour les leads et achats
+- **Finalité**: Envoi de produits achetés, newsletter, support client
+- **Conservation**: Données stockées sur Supabase (hébergement EU)
+- **Droits**: Accès, rectification, suppression via email à noreply@nash369.com
+- **Cookies**: Google Analytics 4 pour statistiques anonymisées
+- **Paiements**: Traités par Stripe (PCI-DSS compliant), NASH369 ne stocke aucune donnée bancaire
+
+### Conditions Générales de Vente
+- **Produits**: Formations numériques livrées par email sous 24H
+- **Prix**: Affichés en euros TTC
+- **Paiement**: Stripe (carte bancaire, Apple Pay, Google Pay)
+- **Droit de rétractation**: 14 jours (sauf produits numériques téléchargés)
+- **Support**: Email noreply@nash369.com - Réponse sous 48H
+
+### Responsabilité
+NASH369 ne peut être tenu responsable des dommages directs ou indirects résultant de l'utilisation des formations. Les résultats présentés ne sont pas garantis.
+
+### Cookies
+Le site utilise Google Analytics pour améliorer l'expérience utilisateur. Vous pouvez désactiver les cookies via les paramètres de votre navigateur.
+
+---
+
 ## 📄 Licence
 
 Propriétaire - Tous droits réservés © 2026 NASH369

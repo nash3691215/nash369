@@ -408,6 +408,12 @@ export default function Home() {
               >
                 À propos
               </Link>
+              <Link
+                href="/mentions-legales"
+                className="text-gray-400 hover:text-indigo-400 transition-colors font-medium"
+              >
+                Mentions légales
+              </Link>
               <a
                 href="https://twitter.com/nash3691215"
                 target="_blank"
@@ -424,7 +430,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-            © 2024 NASH369. Tous droits réservés.
+            © 2026 NASH369. Tous droits réservés.
           </div>
         </div>
       </footer>
