@@ -51,12 +51,20 @@ function SuccessContent() {
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="border-b border-gray-200">
-        <div className="container mx-auto px-4 py-6">
-          <Link href="/" className="text-2xl font-bold text-gray-900">
-            NASH369
-          </Link>
+      {/* Header with Home Button */}
+      <header className="border-b border-gray-200 sticky top-0 bg-white z-50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <Link href="/" className="text-xl md:text-2xl font-bold text-gray-900">
+              NASH369
+            </Link>
+            <Link
+              href="/"
+              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-lg font-medium transition-all text-sm"
+            >
+              ← Accueil
+            </Link>
+          </div>
         </div>
       </header>
 

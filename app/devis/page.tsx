@@ -37,12 +37,20 @@ export default function DevisPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="border-b border-gray-200">
-        <div className="container mx-auto px-4 py-6">
-          <Link href="/" className="text-2xl font-bold text-gray-900">
-            NASH369
-          </Link>
+      {/* Header with Home Button */}
+      <header className="border-b border-gray-200 sticky top-0 bg-white z-50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <Link href="/" className="text-xl md:text-2xl font-bold text-gray-900">
+              NASH369
+            </Link>
+            <Link
+              href="/"
+              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-lg font-medium transition-all text-sm"
+            >
+              ← Accueil
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -155,9 +163,9 @@ export default function DevisPage() {
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="w-full bg-gray-900 hover:bg-gray-800 text-white py-4 rounded-lg font-semibold text-lg transition-all disabled:opacity-50"
+              className="w-full bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:hover:scale-100"
             >
-              {status === 'loading' ? 'Envoi en cours...' : 'Envoyer la demande'}
+              {status === 'loading' ? 'Envoi en cours...' : 'Envoyer ma demande →'}
             </button>
           </form>
         )}
