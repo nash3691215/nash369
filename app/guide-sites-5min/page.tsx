@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import Header from '@/components/Header'
 
 export default function GuideSites5MinPage() {
   const [email, setEmail] = useState('')
@@ -35,7 +34,13 @@ export default function GuideSites5MinPage() {
   if (submitted) {
     return (
       <>
-        <Header />
+        <header className="border-b border-gray-200">
+          <div className="container mx-auto px-4 py-6">
+            <Link href="/" className="text-2xl font-bold text-gray-900">
+              NASH369
+            </Link>
+          </div>
+        </header>
         <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-emerald-50 flex items-center justify-center px-6">
           <div className="max-w-2xl w-full bg-white rounded-2xl shadow-2xl p-12 text-center">
             <div className="text-6xl mb-6">🎉</div>
@@ -73,7 +78,13 @@ export default function GuideSites5MinPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-emerald-50">
-      <Header />
+      <header className="border-b border-gray-200 bg-white">
+        <div className="container mx-auto px-4 py-6">
+          <Link href="/" className="text-2xl font-bold text-gray-900">
+            NASH369
+          </Link>
+        </div>
+      </header>
 
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto px-6 py-12 md:py-20">

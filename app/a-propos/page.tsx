@@ -1,10 +1,16 @@
 import Link from 'next/link'
-import Header from '@/components/Header'
 
 export default function AProposPage() {
   return (
     <main className="min-h-screen bg-white">
-      <Header />
+      {/* Header */}
+      <header className="border-b border-gray-200">
+        <div className="container mx-auto px-4 py-6">
+          <Link href="/" className="text-2xl font-bold text-gray-900">
+            NASH369
+          </Link>
+        </div>
+      </header>
 
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Hero */}
