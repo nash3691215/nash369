@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import products from '@/data/products.json'
 
@@ -29,23 +31,75 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text">
+      <section className="relative py-24 md:py-32 bg-gradient-to-b from-gray-50 via-amber-50/30 to-white overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-amber-200/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gray-200/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        <div className="container mx-auto px-4 text-center relative z-10">
+          {/* Badge animé */}
+          <div className="inline-block mb-6 animate-bounce">
+            <div className="px-4 py-2 bg-gradient-to-r from-amber-100 to-amber-50 border border-amber-200 rounded-full">
+              <span className="text-sm font-bold bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">
+                ✨ Build systems. Not noise.
+              </span>
+            </div>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text animate-fade-in">
             Nash369
           </h1>
-          <p className="text-xl md:text-2xl text-gray-900 font-bold mb-6">
-            Build systems. Not noise.
-          </p>
-          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-6 leading-relaxed">
+
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-6 leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Je transforme des créateurs de contenu en entrepreneurs rentables.
           </p>
-          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             Sites e-commerce clés en main, automatisations de vente, formations pour construire toi-même.<br />
-            Stack moderne gratuite (Next.js, Stripe, Vercel) + IA = systèmes qui tournent en 24h sans abonnements mensuels.<br />
-            <span className="font-semibold text-gray-900">300+ créateurs accompagnés. 0€/mois. Résultats réels.</span>
+            Stack moderne gratuite (Next.js, Stripe, Vercel) + IA = systèmes qui tournent en 24h sans abonnements mensuels.
           </p>
+
+          {/* Stats avec effet doré */}
+          <div className="flex justify-center gap-8 flex-wrap animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="group">
+              <div className="px-6 py-3 bg-gradient-to-br from-amber-50 to-white border border-amber-200/50 rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-105">
+                <span className="text-2xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">300+</span>
+                <span className="text-sm text-gray-600 ml-2">créateurs</span>
+              </div>
+            </div>
+            <div className="group">
+              <div className="px-6 py-3 bg-gradient-to-br from-amber-50 to-white border border-amber-200/50 rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-105">
+                <span className="text-2xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">0€</span>
+                <span className="text-sm text-gray-600 ml-2">/mois</span>
+              </div>
+            </div>
+            <div className="group">
+              <div className="px-6 py-3 bg-gradient-to-br from-amber-50 to-white border border-amber-200/50 rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-105">
+                <span className="text-2xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">24h</span>
+                <span className="text-sm text-gray-600 ml-2">pour lancer</span>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <style jsx>{`
+          @keyframes fade-in {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          .animate-fade-in {
+            animation: fade-in 0.8s ease-out forwards;
+            opacity: 0;
+          }
+        `}</style>
       </section>
 
       {/* Services Section */}
