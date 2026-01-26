@@ -8,50 +8,50 @@ export default function Home() {
   const formations = products.products.filter(p => p.id !== 'guide-sites-5min' && p.priority !== 'hidden')
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Premium Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+    <main className="min-h-screen bg-gray-950">
+      {/* Futuristic Header */}
+      <header className="sticky top-0 z-50 glass border-b border-amber-500/10 backdrop-blur-lg">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            {/* Logo avec dégradé doré */}
+            {/* Logo futuriste */}
             <Link href="/" className="group flex items-center gap-2">
-              <div className="text-2xl md:text-3xl font-black bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text transition-all group-hover:scale-105">
+              <div className="text-2xl md:text-3xl font-black bg-gradient-to-r from-white via-amber-100 to-white text-transparent bg-clip-text transition-all group-hover:scale-105 animate-gradient">
                 NASH369
               </div>
-              <span className="hidden md:inline-block px-2 py-1 bg-amber-50 border border-amber-200 rounded text-xs font-bold text-amber-800">
+              <span className="hidden md:inline-block px-2 py-1 glass border border-amber-500/30 rounded text-xs font-bold text-amber-400">
                 PRO
               </span>
             </Link>
 
-            {/* Navigation */}
+            {/* Navigation futuriste */}
             <nav className="flex items-center gap-2 md:gap-4">
               <Link
                 href="/"
-                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
+                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
               >
                 Accueil
               </Link>
               <a
                 href="#services"
-                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
+                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
               >
                 Services
               </a>
               <a
                 href="#formations"
-                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
+                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
               >
                 Formations
               </a>
               <Link
                 href="/a-propos"
-                className="hidden md:block px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
+                className="hidden md:block px-3 md:px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
               >
                 À propos
               </Link>
               <Link
                 href="/devis"
-                className="px-4 md:px-6 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-sm font-bold rounded-lg transition-all transform hover:scale-105 shadow-sm hover:shadow-md"
+                className="px-4 md:px-6 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-gray-900 text-sm font-bold rounded-lg transition-all transform hover:scale-105 glow-amber"
               >
                 Devis gratuit
               </Link>
@@ -60,55 +60,76 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-b from-gray-50 via-amber-50/30 to-white overflow-hidden">
-        {/* Animated background elements */}
+      {/* Hero Section - Futuristic */}
+      <section className="relative py-24 md:py-32 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 overflow-hidden">
+        {/* Grid futuriste en arrière-plan */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(251,191,36,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(251,191,36,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
+
+        {/* Animated gradient orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-amber-200/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gray-200/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-amber-500/10 to-amber-600/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-amber-400/10 to-yellow-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
-          {/* Badge animé */}
-          <div className="inline-block mb-6 animate-bounce">
-            <div className="px-4 py-2 bg-gradient-to-r from-amber-100 to-amber-50 border border-amber-200 rounded-full">
-              <span className="text-sm font-bold bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">
-                ✨ Build systems. Not noise.
+          {/* Badge futuriste */}
+          <div className="inline-block mb-8 animate-fade-in">
+            <div className="px-6 py-2.5 glass border border-amber-500/20 rounded-full glow-amber">
+              <span className="text-sm font-bold bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 text-transparent bg-clip-text animate-gradient">
+                ⚡ Pour créateurs & micro-entrepreneurs
               </span>
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text animate-fade-in">
-            Nash369
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <span className="bg-gradient-to-r from-white via-amber-100 to-white text-transparent bg-clip-text animate-gradient">
+              Nash369
+            </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-6 leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Je transforme des créateurs de contenu en entrepreneurs rentables.
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed font-medium animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            Transforme ton audience en revenus
           </p>
 
-          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            Sites e-commerce clés en main, automatisations de vente, formations pour construire toi-même.<br />
-            Stack moderne gratuite (Next.js, Stripe, Vercel) + IA = systèmes qui tournent en 24h sans abonnements mensuels.
+          <p className="text-base md:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-10 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            Sites e-commerce automatisés · Formations pratiques · Stack moderne 100% gratuite<br />
+            <span className="text-amber-400 font-semibold">Pour créateurs, influenceurs et petits entrepreneurs du web</span>
           </p>
 
-          {/* Stats avec effet doré */}
-          <div className="flex justify-center gap-8 flex-wrap animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <a
+              href="#formations"
+              className="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-gray-900 rounded-xl font-bold text-lg transition-all transform hover:scale-105 glow-amber-strong"
+            >
+              Voir les formations →
+            </a>
+            <Link
+              href="/devis"
+              className="px-8 py-4 glass border border-amber-500/30 hover:border-amber-500/50 text-white rounded-xl font-bold text-lg transition-all transform hover:scale-105"
+            >
+              Devis gratuit
+            </Link>
+          </div>
+
+          {/* Stats futuristes */}
+          <div className="flex justify-center gap-6 md:gap-12 flex-wrap animate-fade-in" style={{ animationDelay: '0.5s' }}>
             <div className="group">
-              <div className="px-6 py-3 bg-gradient-to-br from-amber-50 to-white border border-amber-200/50 rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-105">
-                <span className="text-2xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">300+</span>
-                <span className="text-sm text-gray-600 ml-2">créateurs</span>
+              <div className="px-8 py-4 glass border border-amber-500/20 rounded-xl hover:border-amber-500/40 transition-all hover:glow-amber neon-border">
+                <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text mb-1">300+</div>
+                <div className="text-sm text-gray-400 font-medium">Créateurs accompagnés</div>
               </div>
             </div>
             <div className="group">
-              <div className="px-6 py-3 bg-gradient-to-br from-amber-50 to-white border border-amber-200/50 rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-105">
-                <span className="text-2xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">0€</span>
-                <span className="text-sm text-gray-600 ml-2">/mois</span>
+              <div className="px-8 py-4 glass border border-amber-500/20 rounded-xl hover:border-amber-500/40 transition-all hover:glow-amber neon-border">
+                <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text mb-1">0€</div>
+                <div className="text-sm text-gray-400 font-medium">Coûts mensuels</div>
               </div>
             </div>
             <div className="group">
-              <div className="px-6 py-3 bg-gradient-to-br from-amber-50 to-white border border-amber-200/50 rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-105">
-                <span className="text-2xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">24h</span>
-                <span className="text-sm text-gray-600 ml-2">pour lancer</span>
+              <div className="px-8 py-4 glass border border-amber-500/20 rounded-xl hover:border-amber-500/40 transition-all hover:glow-amber neon-border">
+                <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text mb-1">24h</div>
+                <div className="text-sm text-gray-400 font-medium">Pour lancer ton site</div>
               </div>
             </div>
           </div>
@@ -132,29 +153,34 @@ export default function Home() {
         `}</style>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-16 md:py-24 bg-gray-50">
+      {/* Services Section - Modernisé */}
+      <section id="services" className="py-16 md:py-24 bg-gradient-to-b from-gray-950 to-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              L'offre
+            <div className="inline-block mb-4 px-4 py-2 glass border border-amber-500/20 rounded-full">
+              <span className="text-sm font-bold bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text">
+                SERVICES
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black mb-6 bg-gradient-to-r from-white via-amber-100 to-white text-transparent bg-clip-text">
+              L'offre clés en main
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Solutions pour micro & petites entreprises qui veulent améliorer leur CA
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              Pour créateurs de contenu et micro-entrepreneurs qui veulent monétiser leur audience
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Site Vitrine */}
-            <div className="bg-white border border-gray-200 rounded-lg p-8 hover:border-gray-900 transition-all hover:shadow-lg">
+            <div className="glass border border-amber-500/20 rounded-xl p-8 hover:border-amber-500/40 transition-all hover:glow-amber neon-border group">
               <div className="text-4xl mb-4">🌐</div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">
+              <h3 className="text-2xl font-bold mb-3 text-white">
                 Site Vitrine
               </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-400 mb-6 leading-relaxed">
                 Site professionnel qui génère des leads. Design moderne, formulaires opérationnels, Google Maps intégré.
               </p>
-              <div className="space-y-2 mb-6 text-sm text-gray-700">
+              <div className="space-y-2 mb-6 text-sm text-gray-300">
                 <div className="flex items-start gap-2">
                   <span>✓</span>
                   <span>Livraison 48-72h</span>
@@ -168,45 +194,48 @@ export default function Home() {
                   <span>Formation incluse</span>
                 </div>
               </div>
-              <div className="pt-6 border-t border-gray-200">
-                <p className="text-3xl font-bold text-gray-900 mb-4">À partir de 299€</p>
+              <div className="pt-6 border-t border-amber-500/20">
+                <p className="text-3xl font-bold text-white mb-4">À partir de 299€</p>
                 <Link
                   href="/devis"
-                  className="block text-center bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
+                  className="block text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-gray-900 py-3 rounded-lg font-bold transition-all transform hover:scale-105 glow-amber"
                 >
                   Demander un devis →
                 </Link>
               </div>
             </div>
 
-            {/* Site E-commerce */}
-            <div className="bg-white border-2 border-gray-900 rounded-lg p-8 shadow-lg">
+            {/* Site E-commerce - Featured */}
+            <div className="glass border-2 border-amber-500/40 rounded-xl p-8 glow-amber-strong relative overflow-hidden group">
+              <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 text-xs font-bold rounded-full">
+                POPULAIRE
+              </div>
               <div className="text-4xl mb-4">🛒</div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">
+              <h3 className="text-2xl font-bold mb-3 text-white">
                 Site E-commerce
               </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-300 mb-6 leading-relaxed">
                 Site qui vend, encaisse et livre automatiquement. Stripe configuré, email automation, analytics inclus.
               </p>
-              <div className="space-y-2 mb-6 text-sm text-gray-700">
+              <div className="space-y-2 mb-6 text-sm text-gray-300">
                 <div className="flex items-start gap-2">
-                  <span>✓</span>
+                  <span className="text-amber-400">✓</span>
                   <span>Livraison 5-7 jours</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span>✓</span>
+                  <span className="text-amber-400">✓</span>
                   <span>Paiements automatiques</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span>✓</span>
+                  <span className="text-amber-400">✓</span>
                   <span>Support 30 jours</span>
                 </div>
               </div>
-              <div className="pt-6 border-t border-gray-200">
-                <p className="text-3xl font-bold text-gray-900 mb-4">À partir de 999€</p>
+              <div className="pt-6 border-t border-amber-500/30">
+                <p className="text-3xl font-bold bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text mb-4">À partir de 999€</p>
                 <Link
                   href="/devis"
-                  className="block text-center bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
+                  className="block text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-gray-900 py-3 rounded-lg font-bold transition-all transform hover:scale-105 glow-amber"
                 >
                   Demander un devis →
                 </Link>
@@ -214,15 +243,15 @@ export default function Home() {
             </div>
 
             {/* Automatisations */}
-            <div className="bg-white border border-gray-200 rounded-lg p-8 hover:border-gray-900 transition-all hover:shadow-lg">
+            <div className="glass border border-amber-500/20 rounded-xl p-8 hover:border-amber-500/40 transition-all hover:glow-amber neon-border group">
               <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">
+              <h3 className="text-2xl font-bold mb-3 text-white">
                 Automatisations
               </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-400 mb-6 leading-relaxed">
                 Workflows personnalisés pour récupérer du temps. Email automation, lead scoring, sync data entre outils.
               </p>
-              <div className="space-y-2 mb-6 text-sm text-gray-700">
+              <div className="space-y-2 mb-6 text-sm text-gray-300">
                 <div className="flex items-start gap-2">
                   <span>✓</span>
                   <span>Audit gratuit</span>
@@ -236,11 +265,11 @@ export default function Home() {
                   <span>Maintenance incluse</span>
                 </div>
               </div>
-              <div className="pt-6 border-t border-gray-200">
-                <p className="text-3xl font-bold text-gray-900 mb-4">Sur devis</p>
+              <div className="pt-6 border-t border-amber-500/20">
+                <p className="text-3xl font-bold text-white mb-4">Sur devis</p>
                 <Link
                   href="/devis"
-                  className="block text-center bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
+                  className="block text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-gray-900 py-3 rounded-lg font-bold transition-all transform hover:scale-105 glow-amber"
                 >
                   Demander un devis →
                 </Link>
@@ -250,25 +279,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Le Projet Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      {/* Le Projet Section - Modernisé */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-900 to-gray-950">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Le projet
+            <div className="inline-block mb-4 px-4 py-2 glass border border-amber-500/20 rounded-full">
+              <span className="text-sm font-bold bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text">
+                LE PROJET
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black mb-4 bg-gradient-to-r from-white via-amber-100 to-white text-transparent bg-clip-text">
+              Pour créateurs & entrepreneurs du web
             </h2>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Left Column - Description */}
             <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                <strong className="text-gray-900">NASH369 démocratise l'accès aux systèmes de vente automatisés.</strong>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                <strong className="text-white">NASH369 démocratise l'accès aux systèmes de vente automatisés.</strong>
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Notre mission : rendre la tech accessible aux créateurs, sans compétences techniques, sans abonnements mensuels, sans passer des semaines à tout configurer.
+              <p className="text-lg text-gray-400 leading-relaxed">
+                Notre mission : rendre la tech accessible aux <span className="text-amber-400 font-semibold">créateurs de contenu, micro-influenceurs et petits entrepreneurs</span>, sans compétences techniques, sans abonnements mensuels, sans passer des semaines à tout configurer.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-400 leading-relaxed">
                 Stack moderne gratuite (Next.js, Vercel, Stripe) + IA comme accélérateur = sites qui tournent en 24h.
               </p>
             </div>
@@ -276,26 +310,26 @@ export default function Home() {
             {/* Right Column - Stats & CTA */}
             <div className="space-y-6">
               <div className="grid grid-cols-3 gap-4">
-                <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
-                  <div className="text-3xl font-black text-gray-900 mb-1">300+</div>
-                  <div className="text-xs text-gray-600 font-medium">Créateurs accompagnés</div>
+                <div className="glass border border-amber-500/20 rounded-lg p-4 text-center hover:border-amber-500/40 transition-all">
+                  <div className="text-3xl font-black bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text mb-1">300+</div>
+                  <div className="text-xs text-gray-400 font-medium">Créateurs accompagnés</div>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
-                  <div className="text-3xl font-black text-gray-900 mb-1">0€</div>
-                  <div className="text-xs text-gray-600 font-medium">Coûts mensuels</div>
+                <div className="glass border border-amber-500/20 rounded-lg p-4 text-center hover:border-amber-500/40 transition-all">
+                  <div className="text-3xl font-black bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text mb-1">0€</div>
+                  <div className="text-xs text-gray-400 font-medium">Coûts mensuels</div>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
-                  <div className="text-3xl font-black text-gray-900 mb-1">24h</div>
-                  <div className="text-xs text-gray-600 font-medium">Pour lancer</div>
+                <div className="glass border border-amber-500/20 rounded-lg p-4 text-center hover:border-amber-500/40 transition-all">
+                  <div className="text-3xl font-black bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text mb-1">24h</div>
+                  <div className="text-xs text-gray-400 font-medium">Pour lancer</div>
                 </div>
               </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-6">
-                <p className="text-gray-700 mb-4 leading-relaxed">
+              <div className="glass border border-amber-500/20 rounded-xl p-6">
+                <p className="text-gray-300 mb-4 leading-relaxed">
                   Développeur devenu entrepreneur. Je partage les méthodes exactes que j'utilise pour aider les créateurs à construire leur indépendance financière.
                 </p>
                 <Link
                   href="/a-propos"
-                  className="block text-center bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-lg font-semibold transition-all"
+                  className="block text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-gray-900 py-3 rounded-lg font-bold transition-all glow-amber"
                 >
                   En savoir plus sur Nash369 →
                 </Link>
@@ -305,15 +339,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Formations Section */}
-      <section id="formations" className="py-16 md:py-24 bg-white">
+      {/* Formations Section - Futuriste */}
+      <section id="formations" className="py-16 md:py-24 bg-gradient-to-b from-gray-950 to-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Formations
+            <div className="inline-block mb-4 px-4 py-2 glass border border-amber-500/20 rounded-full">
+              <span className="text-sm font-bold bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text">
+                FORMATIONS
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black mb-6 bg-gradient-to-r from-white via-amber-100 to-white text-transparent bg-clip-text">
+              Construis toi-même ton système
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Si tu veux créer toi-même, voici les méthodes exactes que j'utilise
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              Les méthodes exactes pour monétiser ton audience sans coder
             </p>
           </div>
 
@@ -322,41 +361,41 @@ export default function Home() {
               <Link
                 key={product.id}
                 href={`/produits/${product.id}`}
-                className="group bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-900 transition-all hover:shadow-lg"
+                className="group glass border border-amber-500/20 rounded-xl p-6 hover:border-amber-500/40 transition-all hover:glow-amber neon-border"
               >
                 <div className="text-4xl mb-4">
                   {product.type === 'ebook' && '💰'}
                   {product.type === 'formation' && '🚀'}
                 </div>
 
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                <h3 className="text-xl font-bold mb-3 text-white">
                   {product.name}
                 </h3>
 
-                <p className="text-gray-600 mb-6 text-sm leading-relaxed">
+                <p className="text-gray-400 mb-6 text-sm leading-relaxed">
                   {product.description}
                 </p>
 
-                <div className="space-y-2 mb-6 text-sm text-gray-700">
+                <div className="space-y-2 mb-6 text-sm text-gray-300">
                   {product.benefits.slice(0, 3).map((benefit, i) => (
                     <div key={i} className="flex items-start gap-2">
-                      <span>✓</span>
+                      <span className="text-amber-400">✓</span>
                       <span>{benefit}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="pt-6 border-t border-gray-200">
+                <div className="pt-6 border-t border-amber-500/20">
                   {product.originalPrice && (
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-lg text-gray-400 line-through">{product.originalPrice.toFixed(2).replace('.', ',')}€</span>
-                      <span className="px-2 py-0.5 bg-gray-900 text-white text-xs font-semibold rounded">-50%</span>
+                      <span className="text-lg text-gray-500 line-through">{product.originalPrice.toFixed(2).replace('.', ',')}€</span>
+                      <span className="px-2 py-0.5 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 text-xs font-bold rounded">-50%</span>
                     </div>
                   )}
-                  <p className="text-3xl font-bold text-gray-900 mb-4">
+                  <p className="text-3xl font-bold bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text mb-4">
                     {product.price.toFixed(2).replace('.', ',')}€
                   </p>
-                  <div className="bg-gray-900 group-hover:bg-gray-800 text-white text-center py-3 rounded-lg font-semibold transition-all">
+                  <div className="bg-gradient-to-r from-amber-500 to-amber-600 group-hover:from-amber-400 group-hover:to-amber-500 text-gray-900 text-center py-3 rounded-lg font-bold transition-all glow-amber">
                     Accéder maintenant →
                   </div>
                 </div>
