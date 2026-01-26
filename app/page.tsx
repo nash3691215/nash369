@@ -159,6 +159,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Le Projet Section */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Le projet
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Left Column - Description */}
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                <strong className="text-gray-900">NASH369 démocratise l'accès aux systèmes de vente automatisés.</strong>
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Notre mission : rendre la tech accessible aux créateurs, sans compétences techniques, sans abonnements mensuels, sans passer des semaines à tout configurer.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Stack moderne gratuite (Next.js, Vercel, Stripe) + IA comme accélérateur = sites qui tournent en 24h.
+              </p>
+            </div>
+
+            {/* Right Column - Stats & CTA */}
+            <div className="space-y-6">
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
+                  <div className="text-3xl font-black text-gray-900 mb-1">300+</div>
+                  <div className="text-xs text-gray-600 font-medium">Créateurs accompagnés</div>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
+                  <div className="text-3xl font-black text-gray-900 mb-1">0€</div>
+                  <div className="text-xs text-gray-600 font-medium">Coûts mensuels</div>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
+                  <div className="text-3xl font-black text-gray-900 mb-1">24h</div>
+                  <div className="text-xs text-gray-600 font-medium">Pour lancer</div>
+                </div>
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-6">
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Développeur devenu entrepreneur. Je partage les méthodes exactes que j'utilise pour aider les créateurs à construire leur indépendance financière.
+                </p>
+                <Link
+                  href="/a-propos"
+                  className="block text-center bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-lg font-semibold transition-all"
+                >
+                  En savoir plus sur Nash369 →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Formations Section */}
       <section id="formations" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
