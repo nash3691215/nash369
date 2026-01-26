@@ -44,6 +44,12 @@ export default function MentionsLegales() {
                 Formations
               </a>
               <Link
+                href="/a-propos"
+                className="hidden md:block px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
+              >
+                À propos
+              </Link>
+              <Link
                 href="/devis"
                 className="px-4 md:px-6 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-sm font-bold rounded-lg transition-all transform hover:scale-105 shadow-sm hover:shadow-md"
               >

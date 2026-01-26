@@ -27,7 +27,7 @@ export default function Home() {
             <nav className="flex items-center gap-2 md:gap-4">
               <Link
                 href="/"
-                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
+                className="px-3 md:px-4 py-2 text-sm font-medium bg-amber-50 text-amber-700 border border-amber-200 rounded-lg transition-all"
               >
                 Accueil
               </Link>
@@ -60,86 +60,72 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-b from-gray-50 via-amber-50/20 to-white overflow-hidden">
-        {/* Animated background elements subtils */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-amber-200/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gray-200/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
-
-        <div className="container mx-auto px-4 text-center relative z-10">
-          {/* Badge premium */}
-          <div className="inline-block mb-6 animate-fade-in">
-            <div className="px-4 py-2 bg-gradient-to-r from-amber-100 to-amber-50 border border-amber-200 rounded-full shadow-sm">
+      {/* Le Projet Section - Hero */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-amber-100 to-amber-50 border border-amber-200 rounded-full">
               <span className="text-sm font-bold bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">
                 ⚡ Pour créateurs & micro-entrepreneurs
               </span>
             </div>
+            <h1 className="text-3xl md:text-5xl font-black mb-4 bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text">
+              Transforme ton audience en revenus
+            </h1>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            Nash369
-          </h1>
-
-          <p className="text-xl md:text-2xl text-gray-800 max-w-3xl mx-auto mb-4 leading-relaxed font-semibold animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Transforme ton audience en revenus
-          </p>
-
-          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            Sites e-commerce automatisés · Formations pratiques · Stack moderne 100% gratuite<br />
-            <span className="text-amber-700 font-semibold">Pour créateurs, influenceurs et petits entrepreneurs du web</span>
-          </p>
-
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <a
-              href="#formations"
-              className="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              Voir les formations →
-            </a>
-            <Link
-              href="/devis"
-              className="px-8 py-4 bg-white border-2 border-gray-200 hover:border-amber-500 text-gray-900 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-sm hover:shadow-md"
-            >
-              Devis gratuit
-            </Link>
-          </div>
-
-          {/* Stats avec effet premium */}
-          <div className="flex justify-center gap-8 flex-wrap animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <div className="px-6 py-3 bg-gradient-to-br from-amber-50 to-white border border-amber-200/50 rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-105 group">
-              <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">300+</div>
-              <div className="text-sm text-gray-600 font-medium">Créateurs accompagnés</div>
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Left Column - Description */}
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                <strong className="text-gray-900">NASH369 démocratise l'accès aux systèmes de vente automatisés.</strong>
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Notre mission : rendre la tech accessible aux <span className="text-amber-700 font-semibold">créateurs de contenu, micro-influenceurs et petits entrepreneurs</span>, sans compétences techniques, sans abonnements mensuels, sans passer des semaines à tout configurer.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Stack moderne gratuite (Next.js, Vercel, Stripe) + IA comme accélérateur = sites qui tournent en 24h.
+              </p>
             </div>
-            <div className="px-6 py-3 bg-gradient-to-br from-amber-50 to-white border border-amber-200/50 rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-105 group">
-              <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">0€</div>
-              <div className="text-sm text-gray-600 font-medium">Coûts mensuels</div>
-            </div>
-            <div className="px-6 py-3 bg-gradient-to-br from-amber-50 to-white border border-amber-200/50 rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-105 group">
-              <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">24h</div>
-              <div className="text-sm text-gray-600 font-medium">Pour lancer ton site</div>
+
+            {/* Right Column - Stats & CTA */}
+            <div className="space-y-6">
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-amber-300 hover:shadow-lg transition-all">
+                  <div className="text-3xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">300+</div>
+                  <div className="text-xs text-gray-600 font-medium">Créateurs accompagnés</div>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-amber-300 hover:shadow-lg transition-all">
+                  <div className="text-3xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">0€</div>
+                  <div className="text-xs text-gray-600 font-medium">Coûts mensuels</div>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-amber-300 hover:shadow-lg transition-all">
+                  <div className="text-3xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">24h</div>
+                  <div className="text-xs text-gray-600 font-medium">Pour lancer</div>
+                </div>
+              </div>
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all">
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Développeur devenu entrepreneur. Je partage les méthodes exactes que j'utilise pour aider les créateurs à construire leur indépendance financière.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href="#formations"
+                    className="px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white rounded-lg font-bold text-center transition-all shadow-md hover:shadow-lg"
+                  >
+                    Voir les formations
+                  </a>
+                  <Link
+                    href="/devis"
+                    className="px-6 py-3 border-2 border-gray-200 hover:border-amber-500 text-gray-900 rounded-lg font-bold text-center transition-all"
+                  >
+                    Devis gratuit
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <style jsx>{`
-          @keyframes fade-in {
-            from {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          .animate-fade-in {
-            animation: fade-in 0.8s ease-out forwards;
-            opacity: 0;
-          }
-        `}</style>
       </section>
 
       {/* Services Section */}
@@ -268,65 +254,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Le Projet Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-amber-100 to-amber-50 border border-amber-200 rounded-full">
-              <span className="text-sm font-bold bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">
-                LE PROJET
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-black mb-4 bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text">
-              Pour créateurs & entrepreneurs du web
-            </h2>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Left Column - Description */}
-            <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                <strong className="text-gray-900">NASH369 démocratise l'accès aux systèmes de vente automatisés.</strong>
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Notre mission : rendre la tech accessible aux <span className="text-amber-700 font-semibold">créateurs de contenu, micro-influenceurs et petits entrepreneurs</span>, sans compétences techniques, sans abonnements mensuels, sans passer des semaines à tout configurer.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Stack moderne gratuite (Next.js, Vercel, Stripe) + IA comme accélérateur = sites qui tournent en 24h.
-              </p>
-            </div>
-
-            {/* Right Column - Stats & CTA */}
-            <div className="space-y-6">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-amber-300 hover:shadow-lg transition-all">
-                  <div className="text-3xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">300+</div>
-                  <div className="text-xs text-gray-600 font-medium">Créateurs accompagnés</div>
-                </div>
-                <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-amber-300 hover:shadow-lg transition-all">
-                  <div className="text-3xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">0€</div>
-                  <div className="text-xs text-gray-600 font-medium">Coûts mensuels</div>
-                </div>
-                <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-amber-300 hover:shadow-lg transition-all">
-                  <div className="text-3xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">24h</div>
-                  <div className="text-xs text-gray-600 font-medium">Pour lancer</div>
-                </div>
-              </div>
-              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all">
-                <p className="text-gray-700 mb-4 leading-relaxed">
-                  Développeur devenu entrepreneur. Je partage les méthodes exactes que j'utilise pour aider les créateurs à construire leur indépendance financière.
-                </p>
-                <Link
-                  href="/a-propos"
-                  className="block text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-3 rounded-lg font-bold transition-all shadow-md hover:shadow-lg"
-                >
-                  En savoir plus sur Nash369 →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Formations Section */}
       <section id="formations" className="py-16 md:py-24 bg-white">
