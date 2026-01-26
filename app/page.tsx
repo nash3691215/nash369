@@ -20,23 +20,30 @@ export default function Home() {
               <a href="#formations" className="text-gray-600 hover:text-gray-900 font-medium">
                 Formations
               </a>
+              <Link href="/a-propos" className="text-gray-600 hover:text-gray-900 font-medium">
+                À propos
+              </Link>
             </nav>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 text-gray-900">
+          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text">
             Nash369
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-4">
+          <p className="text-xl md:text-2xl text-gray-900 font-bold mb-6">
             Build systems. Not noise.
           </p>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            J'aide les créateurs à transformer leur audience en revenus.<br />
-            Sites, automatisations & systèmes de vente.
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-6 leading-relaxed">
+            Je transforme des créateurs de contenu en entrepreneurs rentables.
+          </p>
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Sites e-commerce clés en main, automatisations de vente, formations pour construire toi-même.<br />
+            Stack moderne gratuite (Next.js, Stripe, Vercel) + IA = systèmes qui tournent en 24h sans abonnements mensuels.<br />
+            <span className="font-semibold text-gray-900">300+ créateurs accompagnés. 0€/mois. Résultats réels.</span>
           </p>
         </div>
       </section>
@@ -55,7 +62,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Site Vitrine */}
-            <div className="bg-white border border-gray-200 rounded-lg p-8 hover:border-gray-900 transition-all">
+            <div className="bg-white border border-gray-200 rounded-lg p-8 hover:border-gray-900 transition-all hover:shadow-lg">
               <div className="text-4xl mb-4">🌐</div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900">
                 Site Vitrine
@@ -81,7 +88,7 @@ export default function Home() {
                 <p className="text-3xl font-bold text-gray-900 mb-4">À partir de 299€</p>
                 <Link
                   href="/devis"
-                  className="block text-center bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-lg font-semibold transition-all"
+                  className="block text-center bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
                 >
                   Demander un devis →
                 </Link>
@@ -115,7 +122,7 @@ export default function Home() {
                 <p className="text-3xl font-bold text-gray-900 mb-4">À partir de 999€</p>
                 <Link
                   href="/devis"
-                  className="block text-center bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-lg font-semibold transition-all"
+                  className="block text-center bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
                 >
                   Demander un devis →
                 </Link>
@@ -123,7 +130,7 @@ export default function Home() {
             </div>
 
             {/* Automatisations */}
-            <div className="bg-white border border-gray-200 rounded-lg p-8 hover:border-gray-900 transition-all">
+            <div className="bg-white border border-gray-200 rounded-lg p-8 hover:border-gray-900 transition-all hover:shadow-lg">
               <div className="text-4xl mb-4">⚡</div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900">
                 Automatisations
@@ -149,7 +156,7 @@ export default function Home() {
                 <p className="text-3xl font-bold text-gray-900 mb-4">Sur devis</p>
                 <Link
                   href="/devis"
-                  className="block text-center bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-lg font-semibold transition-all"
+                  className="block text-center bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
                 >
                   Demander un devis →
                 </Link>
