@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import products from '@/data/products.json'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   const formations = products.products.filter(p => p.id !== 'guide-sites-5min' && p.priority !== 'hidden')
@@ -365,36 +366,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-200 py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold text-gray-900 mb-1">
-                NASH369
-              </h3>
-              <p className="text-gray-600 text-sm">Build systems. Not noise.</p>
-            </div>
-            <div className="flex gap-8 text-sm">
-              <Link href="/a-propos" className="text-gray-600 hover:text-gray-900">
-                À propos
-              </Link>
-              <Link href="/mentions-legales" className="text-gray-600 hover:text-gray-900">
-                Mentions légales
-              </Link>
-              <a href="https://twitter.com/nash3691215" target="_blank" className="text-gray-600 hover:text-gray-900">
-                Twitter/X
-              </a>
-              <a href="mailto:contact@nash369.com" className="text-gray-600 hover:text-gray-900">
-                Contact
-              </a>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
-            © 2026 NASH369. Tous droits réservés.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }

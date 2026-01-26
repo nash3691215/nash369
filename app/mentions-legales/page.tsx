@@ -1,173 +1,217 @@
-import Link from 'next/link';
+import Link from 'next/link'
+import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'Mentions Légales - NASH369',
   description: 'Mentions légales, protection des données et conditions générales de vente',
-};
+}
 
 export default function MentionsLegales() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-blue-900">
-      {/* Header */}
-      <nav className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <Link href="/" className="text-white font-bold text-xl">
-              NASH369
+    <main className="min-h-screen bg-white">
+      {/* Premium Header - Same as Homepage */}
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            {/* Logo avec dégradé doré */}
+            <Link href="/" className="group flex items-center gap-2">
+              <div className="text-2xl md:text-3xl font-black bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text transition-all group-hover:scale-105">
+                NASH369
+              </div>
+              <span className="hidden md:inline-block px-2 py-1 bg-amber-50 border border-amber-200 rounded text-xs font-bold text-amber-800">
+                PRO
+              </span>
             </Link>
-            <Link
-              href="/"
-              className="text-white/80 hover:text-white transition-colors"
-            >
-              ← Retour à l'accueil
-            </Link>
+
+            {/* Navigation */}
+            <nav className="flex items-center gap-2 md:gap-4">
+              <Link
+                href="/"
+                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
+              >
+                Accueil
+              </Link>
+              <a
+                href="/#services"
+                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
+              >
+                Services
+              </a>
+              <a
+                href="/#formations"
+                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
+              >
+                Formations
+              </a>
+              <Link
+                href="/devis"
+                className="px-4 md:px-6 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-sm font-bold rounded-lg transition-all transform hover:scale-105 shadow-sm hover:shadow-md"
+              >
+                Devis gratuit
+              </Link>
+            </nav>
           </div>
         </div>
-      </nav>
+      </header>
 
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20">
-          <h1 className="text-4xl font-bold text-white mb-8">Mentions Légales</h1>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        {/* Hero */}
+        <div className="text-center mb-12">
+          <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-amber-100 to-amber-50 border border-amber-200 rounded-full">
+            <span className="text-sm font-bold bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">
+              MENTIONS LÉGALES
+            </span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text">
+            Informations Légales
+          </h1>
+          <p className="text-lg text-gray-600">
+            Protection des données, CGV et mentions légales
+          </p>
+        </div>
 
-          <div className="space-y-8 text-white/90">
-            {/* Éditeur */}
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">📍 Éditeur du Site</h2>
-              <div className="space-y-2 pl-4">
-                <p><strong>Nom commercial:</strong> NASH369</p>
-                <p><strong>Site web:</strong> <a href="https://nash369.com" className="text-purple-300 hover:text-purple-200">https://nash369.com</a></p>
-                <p><strong>Email:</strong> <a href="mailto:noreply@nash369.com" className="text-purple-300 hover:text-purple-200">noreply@nash369.com</a></p>
-                <p><strong>Hébergement:</strong> Vercel Inc., San Francisco, CA, USA</p>
-              </div>
-            </section>
-
-            {/* Propriété Intellectuelle */}
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">©️ Propriété Intellectuelle</h2>
-              <p className="pl-4">
-                Tous les contenus présents sur le site NASH369 (textes, images, formations, guides) sont protégés par le droit d'auteur.
-                Toute reproduction, distribution ou utilisation non autorisée est strictement interdite et passible de poursuites.
-              </p>
-            </section>
-
-            {/* Protection des Données */}
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">🔒 Protection des Données (RGPD)</h2>
-              <div className="space-y-3 pl-4">
-                <div>
-                  <p className="font-semibold">Données collectées:</p>
-                  <p className="pl-4">Email, adresse IP, User-Agent pour les leads et achats</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Finalité:</p>
-                  <p className="pl-4">Envoi de produits achetés, newsletter marketing, support client</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Conservation:</p>
-                  <p className="pl-4">Données stockées sur Supabase (hébergement Union Européenne)</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Vos droits:</p>
-                  <p className="pl-4">Accès, rectification, suppression, portabilité - Contactez-nous à noreply@nash369.com</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Cookies:</p>
-                  <p className="pl-4">Google Analytics 4 pour statistiques anonymisées - Désactivable via paramètres navigateur</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Paiements:</p>
-                  <p className="pl-4">Traités par Stripe (PCI-DSS compliant) - NASH369 ne stocke AUCUNE donnée bancaire</p>
-                </div>
-              </div>
-            </section>
-
-            {/* Conditions Générales de Vente */}
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">💳 Conditions Générales de Vente</h2>
-              <div className="space-y-3 pl-4">
-                <div>
-                  <p className="font-semibold">Produits:</p>
-                  <p className="pl-4">Formations et guides numériques livrés par email sous 24 heures maximum</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Prix:</p>
-                  <p className="pl-4">Affichés en euros TTC (TVA non applicable - auto-entrepreneur)</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Paiement:</p>
-                  <p className="pl-4">Stripe sécurisé - Carte bancaire, Apple Pay, Google Pay acceptés</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Droit de rétractation:</p>
-                  <p className="pl-4">14 jours légaux (sauf produits numériques téléchargés - renonciation au droit de rétractation)</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Support client:</p>
-                  <p className="pl-4">Email noreply@nash369.com - Réponse garantie sous 48 heures ouvrées</p>
-                </div>
-                <div>
-                  <p className="font-semibold">Livraison:</p>
-                  <p className="pl-4">Produits numériques envoyés par email - Vérifiez vos spams</p>
-                </div>
-              </div>
-            </section>
-
-            {/* Responsabilité */}
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">⚠️ Limitation de Responsabilité</h2>
-              <p className="pl-4">
-                NASH369 ne peut être tenu responsable des dommages directs ou indirects résultant de l'utilisation des formations.
-                Les résultats et témoignages présentés ne constituent pas une garantie de résultats identiques.
-                Chaque parcours entrepreneurial est unique et dépend de nombreux facteurs personnels.
-              </p>
-            </section>
-
-            {/* Cookies */}
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">🍪 Politique des Cookies</h2>
-              <div className="space-y-2 pl-4">
-                <p>Le site utilise Google Analytics 4 pour:</p>
-                <ul className="list-disc pl-8 space-y-1">
-                  <li>Analyser le trafic et améliorer l'expérience utilisateur</li>
-                  <li>Mesurer l'efficacité des campagnes marketing</li>
-                  <li>Comprendre les parcours d'achat</li>
-                </ul>
-                <p className="pt-2">
-                  Vous pouvez désactiver les cookies via les paramètres de votre navigateur ou utiliser des extensions comme uBlock Origin.
-                </p>
-              </div>
-            </section>
-
-            {/* Contact */}
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">📧 Nous Contacter</h2>
-              <div className="pl-4 space-y-2">
-                <p><strong>Questions générales:</strong> <a href="mailto:noreply@nash369.com" className="text-purple-300 hover:text-purple-200">noreply@nash369.com</a></p>
-                <p><strong>Support produits:</strong> <a href="mailto:noreply@nash369.com" className="text-purple-300 hover:text-purple-200">noreply@nash369.com</a></p>
-                <p><strong>Demande RGPD:</strong> <a href="mailto:noreply@nash369.com" className="text-purple-300 hover:text-purple-200">noreply@nash369.com</a></p>
-                <p className="text-sm text-white/70 pt-2">Réponse sous 48 heures ouvrées maximum</p>
-              </div>
-            </section>
-
-            {/* Footer */}
-            <div className="pt-8 border-t border-white/20 text-center text-white/60 text-sm">
-              <p>© 2026 NASH369 - Tous droits réservés</p>
-              <p className="mt-2">Dernière mise à jour: 22 Janvier 2026</p>
+        <div className="space-y-12">
+          {/* Éditeur */}
+          <section className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-300 transition-all">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center gap-2">
+              <span>📍</span> Éditeur du Site
+            </h2>
+            <div className="space-y-2 text-gray-700">
+              <p><strong>Nom commercial:</strong> NASH369</p>
+              <p><strong>Site web:</strong> <a href="https://nash369.com" className="text-amber-600 hover:text-amber-700">https://nash369.com</a></p>
+              <p><strong>Email:</strong> <a href="mailto:contact@nash369.com" className="text-amber-600 hover:text-amber-700">contact@nash369.com</a></p>
+              <p><strong>Hébergement:</strong> Vercel Inc., San Francisco, CA, USA</p>
             </div>
-          </div>
-        </div>
+          </section>
 
-        {/* Back to Home Button */}
-        <div className="mt-8 text-center">
-          <Link
-            href="/"
-            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
-          >
-            ← Retour à l'accueil
-          </Link>
+          {/* Propriété Intellectuelle */}
+          <section className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-300 transition-all">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center gap-2">
+              <span>©️</span> Propriété Intellectuelle
+            </h2>
+            <p className="text-gray-700">
+              Tous les contenus présents sur le site NASH369 (textes, images, formations, guides) sont protégés par le droit d'auteur.
+              Toute reproduction, distribution ou utilisation non autorisée est strictement interdite et passible de poursuites.
+            </p>
+          </section>
+
+          {/* Protection des Données */}
+          <section className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-300 transition-all">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center gap-2">
+              <span>🔒</span> Protection des Données (RGPD)
+            </h2>
+            <div className="space-y-4 text-gray-700">
+              <div>
+                <p className="font-bold text-gray-900">Données collectées:</p>
+                <p>Email, adresse IP, User-Agent pour les leads et achats</p>
+              </div>
+              <div>
+                <p className="font-bold text-gray-900">Finalité:</p>
+                <p>Envoi de produits achetés, newsletter marketing, support client</p>
+              </div>
+              <div>
+                <p className="font-bold text-gray-900">Conservation:</p>
+                <p>Données stockées sur Supabase (hébergement Union Européenne)</p>
+              </div>
+              <div>
+                <p className="font-bold text-gray-900">Vos droits:</p>
+                <p>Accès, rectification, suppression, portabilité - Contactez-nous à contact@nash369.com</p>
+              </div>
+              <div>
+                <p className="font-bold text-gray-900">Cookies:</p>
+                <p>Google Analytics 4 pour statistiques anonymisées - Désactivable via paramètres navigateur</p>
+              </div>
+              <div>
+                <p className="font-bold text-gray-900">Paiements:</p>
+                <p>Traités par Stripe (PCI-DSS compliant) - NASH369 ne stocke AUCUNE donnée bancaire</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Conditions Générales de Vente */}
+          <section className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-300 transition-all">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center gap-2">
+              <span>💳</span> Conditions Générales de Vente
+            </h2>
+            <div className="space-y-4 text-gray-700">
+              <div>
+                <p className="font-bold text-gray-900">Produits:</p>
+                <p>Formations et guides numériques livrés par email sous 24 heures maximum</p>
+              </div>
+              <div>
+                <p className="font-bold text-gray-900">Prix:</p>
+                <p>Affichés en euros TTC (TVA non applicable - auto-entrepreneur)</p>
+              </div>
+              <div>
+                <p className="font-bold text-gray-900">Paiement:</p>
+                <p>Stripe sécurisé - Carte bancaire, Apple Pay, Google Pay acceptés</p>
+              </div>
+              <div>
+                <p className="font-bold text-gray-900">Droit de rétractation:</p>
+                <p>14 jours légaux (sauf produits numériques téléchargés - renonciation au droit de rétractation)</p>
+              </div>
+              <div>
+                <p className="font-bold text-gray-900">Support client:</p>
+                <p>Email contact@nash369.com - Réponse garantie sous 48 heures ouvrées</p>
+              </div>
+              <div>
+                <p className="font-bold text-gray-900">Livraison:</p>
+                <p>Produits numériques envoyés par email - Vérifiez vos spams</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Responsabilité */}
+          <section className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-300 transition-all">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center gap-2">
+              <span>⚠️</span> Limitation de Responsabilité
+            </h2>
+            <p className="text-gray-700">
+              NASH369 ne peut être tenu responsable des dommages directs ou indirects résultant de l'utilisation des formations.
+              Les résultats et témoignages présentés ne constituent pas une garantie de résultats identiques.
+              Chaque parcours entrepreneurial est unique et dépend de nombreux facteurs personnels.
+            </p>
+          </section>
+
+          {/* Cookies */}
+          <section className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-300 transition-all">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 flex items-center gap-2">
+              <span>🍪</span> Politique des Cookies
+            </h2>
+            <div className="space-y-3 text-gray-700">
+              <p>Le site utilise Google Analytics 4 pour:</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Analyser le trafic et améliorer l'expérience utilisateur</li>
+                <li>Mesurer l'efficacité des campagnes marketing</li>
+                <li>Comprendre les parcours d'achat</li>
+              </ul>
+              <p>
+                Vous pouvez désactiver les cookies via les paramètres de votre navigateur ou utiliser des extensions comme uBlock Origin.
+              </p>
+            </div>
+          </section>
+
+          {/* Contact */}
+          <section className="bg-gradient-to-br from-gray-900 via-amber-900 to-gray-800 rounded-xl p-6 text-white shadow-lg">
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+              <span>📧</span> Nous Contacter
+            </h2>
+            <div className="space-y-2">
+              <p><strong>Questions générales:</strong> <a href="mailto:contact@nash369.com" className="text-amber-200 hover:text-amber-100">contact@nash369.com</a></p>
+              <p><strong>Support produits:</strong> <a href="mailto:contact@nash369.com" className="text-amber-200 hover:text-amber-100">contact@nash369.com</a></p>
+              <p><strong>Demande RGPD:</strong> <a href="mailto:contact@nash369.com" className="text-amber-200 hover:text-amber-100">contact@nash369.com</a></p>
+              <p className="text-sm text-amber-100 pt-2">Réponse sous 48 heures ouvrées maximum</p>
+            </div>
+          </section>
+
+          {/* Last Update */}
+          <div className="text-center text-gray-500 text-sm pt-4 border-t border-gray-200">
+            <p>Dernière mise à jour: 26 Janvier 2026</p>
+          </div>
         </div>
       </div>
-    </div>
-  );
+
+      <Footer />
+    </main>
+  )
 }

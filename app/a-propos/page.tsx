@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Footer from '@/components/Footer'
 
 export default function AProposPage() {
   return (
@@ -210,6 +211,8 @@ export default function AProposPage() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </main>
   )
 }
