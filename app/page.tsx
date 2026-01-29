@@ -37,12 +37,12 @@ export default function Home() {
               >
                 Services
               </a>
-              <a
-                href="#formations"
+              <Link
+                href="/ebooks"
                 className="px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
               >
-                Formations
-              </a>
+                eBooks
+              </Link>
               <Link
                 href="/a-propos"
                 className="hidden md:block px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
@@ -60,31 +60,36 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Le Projet Section - Hero */}
+      {/* Hero Section - Agence */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-amber-100 to-amber-50 border border-amber-200 rounded-full">
               <span className="text-sm font-bold bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">
-                ⚡ Pour créateurs & micro-entrepreneurs
+                🎯 Agence digitale pour petits entrepreneurs
               </span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-black mb-4 bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text">
-              Transforme ton audience en revenus
+            <h1 className="text-3xl md:text-5xl font-black mb-6 bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text">
+              On aide les petits à capter leur vraie valeur
             </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Sites web, outils sur mesure, automatisations intelligentes.<br />
+              Tout pour optimiser ton business sans te ruiner.
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Left Column - Description */}
             <div className="space-y-6">
+              <h2 className="text-2xl font-bold text-gray-900">Notre mission</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                <strong className="text-gray-900">NASH369 démocratise l'accès aux systèmes de vente automatisés.</strong>
+                <strong className="text-gray-900">NASH369</strong> est une agence digitale qui rend la tech accessible aux <span className="text-amber-700 font-semibold">micro-entrepreneurs, PME et micro-influenceurs</span>.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Notre mission : rendre la tech accessible aux <span className="text-amber-700 font-semibold">créateurs de contenu, micro-influenceurs et petits entrepreneurs</span>, sans compétences techniques, sans abonnements mensuels, sans passer des semaines à tout configurer.
+                On crée des solutions simples et efficaces : sites web performants, outils personnalisés, automatisations qui te font gagner du temps. Sans jargon technique, sans abonnements cachés.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Stack moderne gratuite (Next.js, Vercel, Stripe) + IA comme accélérateur = sites qui tournent en 24h.
+                Stack moderne (Next.js, Vercel, Stripe) + IA = systèmes qui tournent sans frais mensuels.
               </p>
             </div>
 
@@ -92,36 +97,28 @@ export default function Home() {
             <div className="space-y-6">
               <div className="grid grid-cols-3 gap-4">
                 <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-amber-300 hover:shadow-lg transition-all">
-                  <div className="text-3xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">300+</div>
-                  <div className="text-xs text-gray-600 font-medium">Créateurs accompagnés</div>
+                  <div className="text-3xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">50+</div>
+                  <div className="text-xs text-gray-600 font-medium">Projets livrés</div>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-amber-300 hover:shadow-lg transition-all">
                   <div className="text-3xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">0€</div>
-                  <div className="text-xs text-gray-600 font-medium">Coûts mensuels</div>
+                  <div className="text-xs text-gray-600 font-medium">Frais mensuels</div>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:border-amber-300 hover:shadow-lg transition-all">
-                  <div className="text-3xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">24h</div>
-                  <div className="text-xs text-gray-600 font-medium">Pour lancer</div>
+                  <div className="text-3xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-1">7j</div>
+                  <div className="text-xs text-gray-600 font-medium">Délai moyen</div>
                 </div>
               </div>
               <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all">
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  Développeur devenu entrepreneur. Je partage les méthodes exactes que j'utilise pour aider les créateurs à construire leur indépendance financière.
+                  Développeur devenu entrepreneur. Je construis des outils digitaux pour aider les petits à grandir sans se faire plumer par les gros.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href="#formations"
-                    className="px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white rounded-lg font-bold text-center transition-all shadow-md hover:shadow-lg"
-                  >
-                    Voir les formations
-                  </a>
-                  <Link
-                    href="/devis"
-                    className="px-6 py-3 border-2 border-gray-200 hover:border-amber-500 text-gray-900 rounded-lg font-bold text-center transition-all"
-                  >
-                    Devis gratuit
-                  </Link>
-                </div>
+                <Link
+                  href="/devis"
+                  className="block text-center px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white rounded-lg font-bold transition-all shadow-md hover:shadow-lg"
+                >
+                  Demander un devis gratuit
+                </Link>
               </div>
             </div>
           </div>
@@ -138,10 +135,10 @@ export default function Home() {
               </span>
             </div>
             <h2 className="text-3xl md:text-5xl font-black mb-6 bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text">
-              L'offre clés en main
+              Nos services sur mesure
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Pour créateurs de contenu et micro-entrepreneurs qui veulent monétiser leur audience
+              Solutions digitales adaptées à ton budget et tes besoins. Tarifs sur devis uniquement.
             </p>
           </div>
 
@@ -170,12 +167,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="pt-6 border-t border-gray-200">
-                <p className="text-3xl font-bold text-gray-900 mb-4">À partir de 299€</p>
                 <Link
                   href="/devis"
                   className="block text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-3 rounded-lg font-bold transition-all transform hover:scale-105 shadow-md hover:shadow-lg"
                 >
-                  Demander un devis →
+                  Demander un devis
                 </Link>
               </div>
             </div>
@@ -207,12 +203,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="pt-6 border-t border-amber-200">
-                <p className="text-3xl font-bold bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-4">À partir de 999€</p>
                 <Link
                   href="/devis"
                   className="block text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-3 rounded-lg font-bold transition-all transform hover:scale-105 shadow-md hover:shadow-lg"
                 >
-                  Demander un devis →
+                  Demander un devis
                 </Link>
               </div>
             </div>
@@ -241,12 +236,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="pt-6 border-t border-gray-200">
-                <p className="text-3xl font-bold text-gray-900 mb-4">Sur devis</p>
                 <Link
                   href="/devis"
                   className="block text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-3 rounded-lg font-bold transition-all transform hover:scale-105 shadow-md hover:shadow-lg"
                 >
-                  Demander un devis →
+                  Demander un devis
                 </Link>
               </div>
             </div>
@@ -255,71 +249,6 @@ export default function Home() {
       </section>
 
 
-      {/* Formations Section */}
-      <section id="formations" className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-amber-100 to-amber-50 border border-amber-200 rounded-full">
-              <span className="text-sm font-bold bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">
-                FORMATIONS
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-black mb-6 bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text">
-              Construis toi-même ton système
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Les méthodes exactes pour monétiser ton audience sans coder
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {formations.map((product) => (
-              <Link
-                key={product.id}
-                href={`/produits/${product.id}`}
-                className="group bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-300 transition-all hover:shadow-xl"
-              >
-                <div className="text-4xl mb-4">
-                  {product.type === 'ebook' && '💰'}
-                  {product.type === 'formation' && '🚀'}
-                </div>
-
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  {product.name}
-                </h3>
-
-                <p className="text-gray-600 mb-6 text-sm leading-relaxed">
-                  {product.description}
-                </p>
-
-                <div className="space-y-2 mb-6 text-sm text-gray-700">
-                  {product.benefits.slice(0, 3).map((benefit, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <span className="text-amber-600">✓</span>
-                      <span>{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="pt-6 border-t border-gray-200">
-                  {product.originalPrice && (
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-lg text-gray-400 line-through">{product.originalPrice.toFixed(2).replace('.', ',')}€</span>
-                      <span className="px-2 py-0.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-bold rounded shadow-sm">-50%</span>
-                    </div>
-                  )}
-                  <p className="text-3xl font-bold bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-4">
-                    {product.price.toFixed(2).replace('.', ',')}€
-                  </p>
-                  <div className="bg-gradient-to-r from-amber-500 to-amber-600 group-hover:from-amber-600 group-hover:to-amber-700 text-white text-center py-3 rounded-lg font-bold transition-all shadow-md hover:shadow-lg">
-                    Accéder maintenant →
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </main>

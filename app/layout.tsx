@@ -1,20 +1,21 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Header from '@/components/Header'
 
 export const metadata: Metadata = {
-  title: 'NASH369 - Sites & Automatisations pour Créateurs & Micro-Entrepreneurs',
-  description: 'Tu es créateur de contenu, micro-influenceur ou petit entrepreneur ? Transforme ton audience en revenus avec des sites e-commerce automatisés. Formation + services clés en main. Stack moderne gratuite (Next.js, Stripe). 0€/mois, livré en 24h.',
-  keywords: 'micro-influenceur, créateur contenu, entrepreneur digital, site e-commerce, automatisation vente, formation en ligne, monétiser audience, revenus passifs, Next.js, Stripe, sans code, business en ligne',
+  title: 'NASH369 - Agence Digitale pour Micro-Entrepreneurs & PME',
+  description: 'Agence digitale spécialisée pour micro-entrepreneurs, PME et micro-influenceurs. Sites web sur mesure, outils personnalisés, automatisations intelligentes. On aide les petits à capter leur vraie valeur. Devis gratuit.',
+  keywords: 'agence digitale, micro-entrepreneur, PME, micro-influenceur, site web sur mesure, automatisation business, outils digitaux, développement web, agence web petites entreprises, Next.js, création site internet',
   openGraph: {
-    title: 'NASH369 - Sites & Automatisations pour Créateurs & Micro-Entrepreneurs',
-    description: 'Transforme ton audience en revenus avec des sites automatisés. 0€/mois, livré en 24h.',
+    title: 'NASH369 - Agence Digitale pour Micro-Entrepreneurs & PME',
+    description: 'Solutions digitales sur mesure pour petits entrepreneurs. Sites web, automatisations, outils personnalisés. Devis gratuit.',
     type: 'website',
     locale: 'fr_FR',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NASH369 - Sites & Automatisations pour Créateurs',
-    description: 'Transforme ton audience en revenus. Sites e-commerce automatisés. 0€/mois.',
+    title: 'NASH369 - Agence Digitale',
+    description: 'On aide les petits à capter leur vraie valeur. Solutions digitales sur mesure.',
   },
 }
 
@@ -40,7 +41,10 @@ export default function RootLayout({
         />
         <script src="https://js.stripe.com/v3/" async></script>
       </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
