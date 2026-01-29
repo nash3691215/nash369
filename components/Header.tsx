@@ -4,52 +4,32 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 glass-dark border-b border-amber-500/10 backdrop-blur-lg">
-      <div className="container mx-auto px-4 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-blue-100/50 bg-white/80 backdrop-blur-xl">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          {/* Logo futuriste */}
-          <Link href="/" className="group flex items-center gap-2">
-            <div className="text-2xl md:text-3xl font-black bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 text-transparent bg-clip-text transition-all group-hover:scale-105 animate-gradient">
+          <Link href="/" className="group flex items-center gap-3">
+            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center font-black text-white text-xl transition-transform group-hover:rotate-12 shadow-lg shadow-blue-600/20">
+              N
+            </div>
+            <div className="text-2xl font-black tracking-tighter text-slate-900">
               NASH369
             </div>
-            <span className="hidden md:inline-block px-2 py-1 glass-dark border border-amber-500/30 rounded text-xs font-bold text-amber-400">
-              AGENCE
-            </span>
           </Link>
 
-          {/* Navigation futuriste */}
-          <nav className="flex items-center gap-2 md:gap-4">
-            <Link
-              href="/"
-              className="px-3 md:px-4 py-2 text-sm font-medium glass-dark text-amber-400 border border-amber-500/30 rounded-lg transition-all hover:border-amber-500/50 hover:glow-amber"
-            >
-              Accueil
-            </Link>
-            <Link
-              href="/#services"
-              className="px-3 md:px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
-            >
-              Services
-            </Link>
-            <Link
-              href="/ebooks"
-              className="px-3 md:px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
-            >
-              eBooks
-            </Link>
-            <Link
-              href="/a-propos"
-              className="hidden md:block px-3 md:px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
-            >
-              À propos
-            </Link>
+          <nav className="hidden md:flex items-center gap-8">
+            <Link href="/" className="text-sm font-semibold text-slate-500 hover:text-blue-600 transition-colors">Accueil</Link>
+            <Link href="/#services" className="text-sm font-semibold text-slate-500 hover:text-blue-600 transition-colors">Services</Link>
+            <Link href="/a-propos" className="text-sm font-semibold text-slate-500 hover:text-blue-600 transition-colors">À propos</Link>
+          </nav>
+
+          <div className="flex items-center gap-4">
             <Link
               href="/devis"
-              className="px-4 md:px-6 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-gray-900 text-sm font-bold rounded-lg transition-all transform hover:scale-105 glow-amber-strong"
+              className="px-6 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-full transition-all hover:bg-blue-700 hover:scale-105 shadow-md shadow-blue-600/20"
             >
               Devis gratuit
             </Link>
-          </nav>
+          </div>
         </div>
       </div>
     </header>

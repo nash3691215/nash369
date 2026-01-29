@@ -4,111 +4,64 @@ import Footer from '@/components/Footer'
 export default function AProposPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Premium Header - Same as Homepage */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            {/* Logo avec dégradé doré */}
-            <Link href="/" className="group flex items-center gap-2">
-              <div className="text-2xl md:text-3xl font-black bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text transition-all group-hover:scale-105">
-                NASH369
-              </div>
-              <span className="hidden md:inline-block px-2 py-1 bg-amber-50 border border-amber-200 rounded text-xs font-bold text-amber-800">
-                PRO
-              </span>
-            </Link>
 
-            {/* Navigation */}
-            <nav className="flex items-center gap-2 md:gap-4">
-              <Link
-                href="/"
-                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
-              >
-                Accueil
-              </Link>
-              <a
-                href="/#services"
-                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
-              >
-                Services
-              </a>
-              <a
-                href="/#formations"
-                className="px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
-              >
-                Formations
-              </a>
-              <Link
-                href="/a-propos"
-                className="hidden md:block px-3 md:px-4 py-2 text-sm font-medium bg-amber-50 text-amber-700 border border-amber-200 rounded-lg transition-all"
-              >
-                À propos
-              </Link>
-              <Link
-                href="/devis"
-                className="px-4 md:px-6 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-sm font-bold rounded-lg transition-all transform hover:scale-105 shadow-sm hover:shadow-md"
-              >
-                Devis gratuit
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <div className="container mx-auto px-4 py-32 max-w-4xl">
         {/* Hero */}
-        <div className="text-center mb-12">
-          <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-amber-100 to-amber-50 border border-amber-200 rounded-full">
-            <span className="text-sm font-bold bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-block mb-6 px-4 py-2 glass-blue border border-blue-100 rounded-full">
+            <span className="text-sm font-bold text-blue-600 uppercase tracking-widest">
               À PROPOS
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-6">
-            Le projet <span className="bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text">NASH369</span>
+          <h1 className="text-4xl md:text-6xl font-black mb-8 text-slate-900 leading-tight">
+            Le projet <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 text-transparent bg-clip-text">NASH369</span>
           </h1>
-          <p className="text-xl text-gray-600 leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto font-light leading-relaxed">
             Démocratiser l'accès à l'automatisation et permettre à chacun de construire son système de vente en ligne.
           </p>
         </div>
 
         {/* Mission */}
-        <div className="mb-16">
-          <div className="bg-gradient-to-br from-amber-50 to-gray-50 rounded-2xl p-8 border-2 border-amber-200/50 shadow-sm">
-            <div className="text-4xl mb-4">🎯</div>
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Notre mission</h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              NASH369 est né d'un constat simple : la technologie pour vendre en ligne existe, mais elle est soit trop chère, soit trop compliquée pour la plupart des gens.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Notre mission est de rendre l'automatisation accessible à tous, sans compétences techniques, sans abonnements mensuels qui plombent la rentabilité, et sans passer des semaines à tout configurer.
-            </p>
+        <div className="mb-20">
+          <div className="bg-slate-50 rounded-3xl p-10 border border-slate-100 shadow-sm relative overflow-hidden">
+            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
+            <div className="relative z-10">
+              <div className="text-5xl mb-6">🎯</div>
+              <h2 className="text-3xl font-bold mb-6 text-slate-900">Notre mission</h2>
+              <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                NASH369 est né d'un constat simple : la technologie pour vendre en ligne existe, mais elle est soit trop chère, soit trop compliquée pour la plupart des gens.
+              </p>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Notre mission est de rendre l'automatisation accessible à tous, sans compétences techniques, sans abonnements mensuels qui plombent la rentabilité, et sans passer des semaines à tout configurer.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Valeurs */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center text-gray-900">Nos valeurs</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-300 transition-all hover:shadow-lg">
-              <div className="text-3xl mb-3">⚡</div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Simplicité</h3>
-              <p className="text-gray-600">
+        <div className="mb-20">
+          <h2 className="text-3xl font-bold mb-10 text-center text-slate-900">Nos valeurs</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="group bg-white border border-slate-100 rounded-3xl p-8 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl mb-6 text-blue-600 group-hover:scale-110 transition-transform">⚡</div>
+              <h3 className="text-xl font-bold mb-4 text-slate-900">Simplicité</h3>
+              <p className="text-slate-500 leading-relaxed text-sm">
                 Pas de jargon technique. Des solutions qui fonctionnent out-of-the-box, sans courbe d'apprentissage abrupte.
               </p>
             </div>
 
-            <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-300 transition-all hover:shadow-lg">
-              <div className="text-3xl mb-3">💰</div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Transparence</h3>
-              <p className="text-gray-600">
-                Prix clairs dès le départ. Pas de frais cachés, pas d'abonnements surprise. Tu paies une fois, tu gardes à vie.
+            <div className="group bg-white border border-slate-100 rounded-3xl p-8 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl mb-6 text-blue-600 group-hover:scale-110 transition-transform">💰</div>
+              <h3 className="text-xl font-bold mb-4 text-slate-900">Transparence</h3>
+              <p className="text-slate-500 leading-relaxed text-sm">
+                Prix clairs dès le départ. Pas de frais cachés. Tu paies une fois, tu gardes à vie. L'honnêteté avant tout.
               </p>
             </div>
 
-            <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-amber-300 transition-all hover:shadow-lg">
-              <div className="text-3xl mb-3">🚀</div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Résultats</h3>
-              <p className="text-gray-600">
+            <div className="group bg-white border border-slate-100 rounded-3xl p-8 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl mb-6 text-blue-600 group-hover:scale-110 transition-transform">🚀</div>
+              <h3 className="text-xl font-bold mb-4 text-slate-900">Résultats</h3>
+              <p className="text-slate-500 leading-relaxed text-sm">
                 Nous ne vendons pas de la théorie. Chaque formation, chaque service est conçu pour générer des revenus réels.
               </p>
             </div>
@@ -116,35 +69,35 @@ export default function AProposPage() {
         </div>
 
         {/* L'approche */}
-        <div className="mb-16">
-          <div className="bg-gray-50 rounded-2xl p-8 border-2 border-gray-200">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">L'approche NASH369</h2>
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-full flex items-center justify-center font-bold shadow-sm">1</div>
+        <div className="mb-20">
+          <div className="bg-white rounded-3xl p-10 border border-slate-200 shadow-sm">
+            <h2 className="text-3xl font-bold mb-10 text-slate-900 text-center">L'approche NASH369</h2>
+            <div className="space-y-8">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-blue-600/20">1</div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1 text-gray-900">Stack moderne et gratuite</h3>
-                  <p className="text-gray-600">
+                  <h3 className="font-bold text-lg mb-2 text-slate-900">Stack moderne et gratuite</h3>
+                  <p className="text-slate-600 leading-relaxed">
                     Next.js, Vercel, Stripe, Resend... Les mêmes outils que les startups à millions, mais sans les coûts mensuels.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-full flex items-center justify-center font-bold shadow-sm">2</div>
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-blue-600/20">2</div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1 text-gray-900">IA comme accélérateur</h3>
-                  <p className="text-gray-600">
+                  <h3 className="font-bold text-lg mb-2 text-slate-900">IA comme accélérateur</h3>
+                  <p className="text-slate-600 leading-relaxed">
                     Claude, ChatGPT, Cursor... L'IA fait le travail de code pendant que tu te concentres sur ton business.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-full flex items-center justify-center font-bold shadow-sm">3</div>
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-blue-600/20">3</div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1 text-gray-900">Automation complète</h3>
-                  <p className="text-gray-600">
+                  <h3 className="font-bold text-lg mb-2 text-slate-900">Automation complète</h3>
+                  <p className="text-slate-600 leading-relaxed">
                     De la vente à la livraison en passant par les emails et les analytics. Tout tourne sans intervention manuelle.
                   </p>
                 </div>
@@ -154,65 +107,68 @@ export default function AProposPage() {
         </div>
 
         {/* Fondateur */}
-        <div className="mb-16">
-          <div className="bg-gradient-to-br from-gray-900 via-amber-900 to-gray-800 rounded-2xl p-8 text-white shadow-lg">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                <span className="text-3xl font-black bg-gradient-to-r from-gray-900 via-amber-900 to-gray-800 text-transparent bg-clip-text">N</span>
+        <div className="mb-20">
+          <div className="bg-blue-600 rounded-3xl p-10 text-white shadow-2xl shadow-blue-600/30 relative overflow-hidden">
+            <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+            <div className="flex items-center gap-6 mb-8 relative z-10">
+              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg transform rotate-3">
+                <span className="text-4xl font-black text-blue-600">N</span>
               </div>
               <div>
-                <h2 className="text-2xl font-bold">Nash</h2>
-                <p className="text-amber-100">Fondateur NASH369</p>
+                <h2 className="text-3xl font-bold">Nash</h2>
+                <p className="text-blue-200 font-medium tracking-wide">Fondateur NASH369</p>
               </div>
             </div>
-            <p className="text-lg text-gray-100 leading-relaxed mb-4">
+            <p className="text-xl text-blue-50 leading-relaxed mb-6 font-light">
               Développeur devenu entrepreneur, j'ai passé des années à construire des systèmes de vente automatisés pour des clients.
             </p>
-            <p className="text-lg text-gray-100 leading-relaxed">
+            <p className="text-xl text-blue-50 leading-relaxed font-light">
               NASH369 est né de ma conviction que ces outils ne devraient pas être réservés aux grandes entreprises ou aux développeurs. Aujourd'hui, je partage les méthodes exactes que j'utilise pour aider d'autres à construire leur indépendance financière.
             </p>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center text-gray-900">NASH369 en chiffres</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-gradient-to-br from-amber-50 to-white rounded-xl border-2 border-amber-200/50 hover:shadow-lg transition-all">
-              <div className="text-4xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-2">300+</div>
-              <div className="text-gray-700 font-semibold">Créateurs accompagnés</div>
+        <div className="mb-20">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
+              <div className="text-5xl font-black text-slate-900 mb-2">300+</div>
+              <div className="text-blue-600 font-bold uppercase tracking-wide text-xs">Créateurs accompagnés</div>
             </div>
-            <div className="text-center p-6 bg-gradient-to-br from-amber-50 to-white rounded-xl border-2 border-amber-200/50 hover:shadow-lg transition-all">
-              <div className="text-4xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-2">0€</div>
-              <div className="text-gray-700 font-semibold">De coûts mensuels</div>
+            <div className="text-center p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
+              <div className="text-5xl font-black text-slate-900 mb-2">0€</div>
+              <div className="text-blue-600 font-bold uppercase tracking-wide text-xs">De coûts mensuels</div>
             </div>
-            <div className="text-center p-6 bg-gradient-to-br from-amber-50 to-white rounded-xl border-2 border-amber-200/50 hover:shadow-lg transition-all">
-              <div className="text-4xl font-black bg-gradient-to-r from-amber-600 to-amber-800 text-transparent bg-clip-text mb-2">24h</div>
-              <div className="text-gray-700 font-semibold">Pour lancer un site</div>
+            <div className="text-center p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
+              <div className="text-5xl font-black text-slate-900 mb-2">24h</div>
+              <div className="text-blue-600 font-bold uppercase tracking-wide text-xs">Pour lancer un site</div>
             </div>
           </div>
         </div>
 
         {/* CTA */}
         <div className="text-center">
-          <div className="bg-gradient-to-br from-gray-900 via-amber-900 to-gray-800 rounded-2xl p-8 text-white shadow-xl">
-            <h2 className="text-3xl font-bold mb-4">Rejoins le mouvement</h2>
-            <p className="text-xl text-amber-100 mb-6">
-              Construis ton système. Vends en automatique. Sans coder.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/#formations"
-                className="inline-block px-8 py-4 bg-white text-gray-900 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105"
-              >
-                Voir les formations
-              </Link>
-              <Link
-                href="/devis"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg"
-              >
-                Demander un devis
-              </Link>
+          <div className="bg-slate-900 rounded-3xl p-12 text-white shadow-2xl relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.2),transparent_50%)]"></div>
+            <div className="relative z-10">
+              <h2 className="text-4xl font-bold mb-6">Rejoins le mouvement</h2>
+              <p className="text-xl text-slate-400 mb-10 max-w-xl mx-auto">
+                Construis ton système. Vends en automatique. Sans coder.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link
+                  href="/ebooks"
+                  className="inline-block px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
+                >
+                  Voir les formations
+                </Link>
+                <Link
+                  href="/devis"
+                  className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-lg transition-all shadow-lg shadow-blue-600/30"
+                >
+                  Demander un devis
+                </Link>
+              </div>
             </div>
           </div>
         </div>

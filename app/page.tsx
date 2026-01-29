@@ -1,213 +1,156 @@
 'use client'
 
 import Link from 'next/link'
-import products from '@/data/products.json'
 import Footer from '@/components/Footer'
 
 export default function Home() {
-  const formations = products.products.filter(p => p.id !== 'guide-sites-5min' && p.priority !== 'hidden')
-
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
-
-      {/* Hero Section - Futuriste */}
-      <section className="relative py-16 md:py-32 overflow-hidden">
-        {/* Grid futuriste en arrière-plan */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(251,191,36,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(251,191,36,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
-
-        {/* Animated gradient orbs */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-amber-500/10 to-amber-600/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-amber-400/10 to-yellow-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        </div>
+    <main className="min-h-screen bg-white">
+      {/* Hero Section - Electric Blue Light */}
+      <section className="relative min-h-[90vh] flex items-center pt-20 pb-16 overflow-hidden bg-slate-50">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(41,98,255,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(41,98,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(41,98,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-block mb-6 px-6 py-2.5 glass-dark border border-amber-500/20 rounded-full glow-amber">
-              <span className="text-sm font-bold bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 text-transparent bg-clip-text animate-gradient">
-                🎯 Agence digitale pour petits entrepreneurs
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 glass-blue rounded-full animate-fade-in">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+              </span>
+              <span className="text-xs font-bold tracking-widest uppercase text-blue-800">
+                Agence Digitale Nouvelle Génération
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-white via-amber-100 to-white text-transparent bg-clip-text animate-gradient">
-              On aide les petits à capter<br />leur vraie valeur
+
+            <h1 className="text-5xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tight text-slate-900">
+              Bâtir l'avenir des<br />
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 text-transparent bg-clip-text animate-gradient">entrepreneurs.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Sites web, outils sur mesure, automatisations intelligentes.<br />
-              <span className="text-amber-400 font-semibold">Tout pour optimiser ton business sans te ruiner.</span>
+
+            <p className="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+              Nous transformons vos idées en <span className="text-blue-700 font-medium">systèmes numériques haute performance</span>.
+              Rapidité, design premium et zéro abonnement caché.
             </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link
+                href="/devis"
+                className="group relative px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg transition-all hover:bg-blue-700 hover:scale-105 hover:glow-blue-strong overflow-hidden shadow-lg shadow-blue-500/30"
+              >
+                <span className="relative z-10">Lancer mon projet</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              </Link>
+              <Link
+                href="#services"
+                className="px-8 py-4 glass-blue text-slate-700 rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition-all border border-slate-200 hover:border-blue-200"
+              >
+                Explorer nos services
+              </Link>
+            </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Left Column - Description */}
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-white">Notre mission</h2>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                <strong className="text-white">NASH369</strong> est une agence digitale qui rend la tech accessible aux <span className="text-amber-400 font-semibold">micro-entrepreneurs, PME et micro-influenceurs</span>.
-              </p>
-              <p className="text-lg text-gray-400 leading-relaxed">
-                On crée des solutions simples et efficaces : sites web performants, outils personnalisés, automatisations qui te font gagner du temps. Sans jargon technique, sans abonnements cachés.
-              </p>
-              <p className="text-lg text-gray-400 leading-relaxed">
-                Stack moderne (Next.js, Vercel, Stripe) + IA = systèmes qui tournent sans frais mensuels.
-              </p>
+          {/* Stats Bar */}
+          <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-200 pt-12 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-slate-900 mb-1">50+</div>
+              <div className="text-sm text-slate-500 uppercase tracking-widest font-bold">Projets</div>
             </div>
-
-            {/* Right Column - Stats & CTA */}
-            <div className="space-y-6">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="glass-dark border border-amber-500/20 rounded-xl p-4 text-center hover:border-amber-500/40 hover:glow-amber transition-all neon-border">
-                  <div className="text-3xl font-black bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text mb-1">50+</div>
-                  <div className="text-xs text-gray-400 font-medium">Projets livrés</div>
-                </div>
-                <div className="glass-dark border border-amber-500/20 rounded-xl p-4 text-center hover:border-amber-500/40 hover:glow-amber transition-all neon-border">
-                  <div className="text-3xl font-black bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text mb-1">0€</div>
-                  <div className="text-xs text-gray-400 font-medium">Frais mensuels</div>
-                </div>
-                <div className="glass-dark border border-amber-500/20 rounded-xl p-4 text-center hover:border-amber-500/40 hover:glow-amber transition-all neon-border">
-                  <div className="text-3xl font-black bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text mb-1">7j</div>
-                  <div className="text-xs text-gray-400 font-medium">Délai moyen</div>
-                </div>
-              </div>
-              <div className="glass-dark border border-amber-500/20 rounded-xl p-6 hover:border-amber-500/30 transition-all">
-                <p className="text-gray-300 mb-4 leading-relaxed">
-                  Développeur devenu entrepreneur. Je construis des outils digitaux pour aider les petits à grandir sans se faire plumer par les gros.
-                </p>
-                <Link
-                  href="/devis"
-                  className="block text-center px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-gray-900 rounded-lg font-bold transition-all glow-amber-strong"
-                >
-                  Demander un devis gratuit
-                </Link>
-              </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-slate-900 mb-1">7 Ans</div>
+              <div className="text-sm text-slate-500 uppercase tracking-widest font-bold">Expertise</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-slate-900 mb-1">0€</div>
+              <div className="text-sm text-slate-500 uppercase tracking-widest font-bold">Abonnements</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-slate-900 mb-1">24/7</div>
+              <div className="text-sm text-slate-500 uppercase tracking-widest font-bold">Support</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section - Futuriste */}
-      <section id="services" className="py-16 md:py-24 bg-gradient-to-b from-gray-900 to-gray-950">
+      {/* Services Section - Clean White */}
+      <section id="services" className="py-32 relative bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4 px-4 py-2 glass-dark border border-amber-500/20 rounded-full">
-              <span className="text-sm font-bold bg-gradient-to-r from-amber-400 to-amber-300 text-transparent bg-clip-text">
-                SERVICES
-              </span>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-sm font-bold text-blue-600 uppercase tracking-[0.3em] mb-4">Expertise</h2>
+              <h3 className="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
+                Des solutions taillées pour <br /><span className="text-slate-400 italic">votre croissance.</span>
+              </h3>
             </div>
-            <h2 className="text-3xl md:text-5xl font-black mb-6 bg-gradient-to-r from-white via-amber-100 to-white text-transparent bg-clip-text">
-              Nos services sur mesure
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Solutions digitales adaptées à ton budget et tes besoins. <span className="text-amber-400">Tarifs sur devis uniquement.</span>
+            <p className="text-slate-500 text-lg max-w-sm mb-2">
+              Chaque projet est unique. Nous combinons technique et stratégie pour maximiser votre impact.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-10">
             {/* Site Vitrine */}
-            <div className="glass-dark border border-amber-500/20 rounded-xl p-8 hover:border-amber-500/40 transition-all hover:glow-amber neon-border group">
-              <div className="text-4xl mb-4">🌐</div>
-              <h3 className="text-2xl font-bold mb-3 text-white">
-                Site Vitrine
-              </h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">
-                Site professionnel qui génère des leads. Design moderne, formulaires opérationnels, Google Maps intégré.
+            <div className="group relative p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-500">
+              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-8 text-blue-600 group-hover:scale-110 transition-transform duration-500">
+                🌐
+              </div>
+              <h4 className="text-2xl font-bold text-slate-900 mb-4">Site Vitrine Premium</h4>
+              <p className="text-slate-600 mb-8 leading-relaxed">
+                Capturez l'attention dès la première seconde. Un design qui convertit et une technique irréprochable.
               </p>
-              <div className="space-y-2 mb-6 text-sm text-gray-300">
-                <div className="flex items-start gap-2">
-                  <span className="text-amber-400">✓</span>
-                  <span>Livraison 48-72h</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-amber-400">✓</span>
-                  <span>0€/mois d'hébergement</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-amber-400">✓</span>
-                  <span>Formation incluse</span>
-                </div>
-              </div>
-              <div className="pt-6 border-t border-amber-500/20">
-                <Link
-                  href="/devis"
-                  className="block text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-gray-900 py-3 rounded-lg font-bold transition-all transform hover:scale-105 glow-amber"
-                >
-                  Demander un devis
-                </Link>
-              </div>
+              <ul className="space-y-4 mb-10 text-sm text-slate-600">
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span> SEO Optimisé</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span> Design Responsive</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span> Analytics Inclus</li>
+              </ul>
+              <Link href="/devis" className="inline-flex items-center gap-2 text-blue-600 font-bold group/link">
+                En savoir plus
+                <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+              </Link>
             </div>
 
-            {/* Site E-commerce - Featured */}
-            <div className="glass-dark border-2 border-amber-500/40 rounded-xl p-8 glow-amber-strong relative overflow-hidden group">
-              <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 text-xs font-bold rounded-full shadow-md">
-                POPULAIRE
+            {/* E-commerce */}
+            <div className="group relative p-10 rounded-3xl bg-blue-600 text-white shadow-2xl shadow-blue-600/30 transition-all duration-500 hover:translate-y-[-5px]">
+              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center text-3xl mb-8">
+                🛒
               </div>
-              <div className="text-4xl mb-4">🛒</div>
-              <h3 className="text-2xl font-bold mb-3 text-white">
-                Site E-commerce
-              </h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Site qui vend, encaisse et livre automatiquement. Stripe configuré, email automation, analytics inclus.
+              <h4 className="text-2xl font-bold text-white mb-4">Écosystème Sales</h4>
+              <p className="text-blue-50 mb-8 leading-relaxed">
+                Vendez sans limites. Automatisation complète du tunnel de vente, du paiement à la livraison.
               </p>
-              <div className="space-y-2 mb-6 text-sm text-gray-300">
-                <div className="flex items-start gap-2">
-                  <span className="text-amber-400">✓</span>
-                  <span>Livraison 5-7 jours</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-amber-400">✓</span>
-                  <span>Paiements automatiques</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-amber-400">✓</span>
-                  <span>Support 30 jours</span>
-                </div>
-              </div>
-              <div className="pt-6 border-t border-amber-500/30">
-                <Link
-                  href="/devis"
-                  className="block text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-gray-900 py-3 rounded-lg font-bold transition-all transform hover:scale-105 glow-amber"
-                >
-                  Demander un devis
-                </Link>
-              </div>
+              <ul className="space-y-4 mb-10 text-sm text-blue-50 font-medium">
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-white rounded-full"></span> Paiements Sécurisés</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-white rounded-full"></span> Gestion de Stocks</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-white rounded-full"></span> Marketing Automation</li>
+              </ul>
+              <Link href="/devis" className="inline-flex items-center gap-2 text-white font-bold group/link text-lg">
+                Démarrer la vente
+                <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+              </Link>
             </div>
 
             {/* Automatisations */}
-            <div className="glass-dark border border-amber-500/20 rounded-xl p-8 hover:border-amber-500/40 transition-all hover:glow-amber neon-border group">
-              <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-2xl font-bold mb-3 text-white">
-                Automatisations
-              </h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">
-                Workflows personnalisés pour récupérer du temps. Email automation, lead scoring, sync data entre outils.
+            <div className="group relative p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-500">
+              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-8 text-blue-600 group-hover:scale-110 transition-transform duration-500">
+                ⚡
+              </div>
+              <h4 className="text-2xl font-bold text-slate-900 mb-4">Architecture IA</h4>
+              <p className="text-slate-600 mb-8 leading-relaxed">
+                Libérez votre temps. Automatisez les tâches répétitives avec l'IA et connectez vos outils favoris.
               </p>
-              <div className="space-y-2 mb-6 text-sm text-gray-300">
-                <div className="flex items-start gap-2">
-                  <span className="text-amber-400">✓</span>
-                  <span>Audit gratuit</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-amber-400">✓</span>
-                  <span>ROI calculé avant</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-amber-400">✓</span>
-                  <span>Maintenance incluse</span>
-                </div>
-              </div>
-              <div className="pt-6 border-t border-amber-500/20">
-                <Link
-                  href="/devis"
-                  className="block text-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-gray-900 py-3 rounded-lg font-bold transition-all transform hover:scale-105 glow-amber"
-                >
-                  Demander un devis
-                </Link>
-              </div>
+              <ul className="space-y-4 mb-10 text-sm text-slate-600">
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span> Workflows Auto</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span> Intégration API</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span> Support Dédié</li>
+              </ul>
+              <Link href="/devis" className="inline-flex items-center gap-2 text-blue-600 font-bold group/link">
+                Optimiser mon flux
+                <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+              </Link>
             </div>
           </div>
         </div>
       </section>
-
-
 
       <Footer />
     </main>
