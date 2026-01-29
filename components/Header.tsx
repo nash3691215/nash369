@@ -27,7 +27,7 @@ export default function Header() {
               href="/devis"
               className="px-6 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-full transition-all hover:bg-blue-700 hover:scale-105 shadow-md shadow-blue-600/20"
             >
-              Devis gratuit
+              Appel découverte gratuit
             </Link>
           </div>
         </div>

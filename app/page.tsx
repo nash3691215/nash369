@@ -25,13 +25,12 @@ export default function Home() {
             </div>
 
             <h1 className="text-5xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tight text-slate-900">
-              Bâtir l'avenir des<br />
-              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 text-transparent bg-clip-text animate-gradient">entrepreneurs.</span>
+              On vous aide à<br />
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 text-transparent bg-clip-text animate-gradient">vous lancer & grandir.</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-              Nous transformons vos idées en <span className="text-blue-700 font-medium">systèmes numériques haute performance</span>.
-              Rapidité, design premium et zéro abonnement caché.
+            <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+              Mini agence digitale pour micro-entrepreneurs et PME. On transforme vos idées en <span className="text-blue-700 font-medium">outils qui génèrent des revenus</span>. Sites web, automatisations, stratégie digitale.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -39,14 +38,14 @@ export default function Home() {
                 href="/devis"
                 className="group relative px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg transition-all hover:bg-blue-700 hover:scale-105 hover:glow-blue-strong overflow-hidden shadow-lg shadow-blue-500/30"
               >
-                <span className="relative z-10">Lancer mon projet</span>
+                <span className="relative z-10">📞 Appel découverte 30 min (gratuit)</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               </Link>
               <Link
                 href="#services"
                 className="px-8 py-4 glass-blue text-slate-700 rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition-all border border-slate-200 hover:border-blue-200"
               >
-                Explorer nos services
+                Voir nos services
               </Link>
             </div>
           </div>
@@ -78,13 +77,13 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl">
-              <h2 className="text-sm font-bold text-blue-600 uppercase tracking-[0.3em] mb-4">Expertise</h2>
+              <h2 className="text-sm font-bold text-blue-600 uppercase tracking-[0.3em] mb-4">On vous accompagne</h2>
               <h3 className="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
-                Des solutions taillées pour <br /><span className="text-slate-400 italic">votre croissance.</span>
+                Comment on peut <br /><span className="text-slate-400 italic">vous aider.</span>
               </h3>
             </div>
             <p className="text-slate-500 text-lg max-w-sm mb-2">
-              Chaque projet est unique. Nous combinons technique et stratégie pour maximiser votre impact.
+              Appel découverte de 30 min pour valider vos besoins. Gratuit et sans engagement.
             </p>
           </div>
 
@@ -104,7 +103,7 @@ export default function Home() {
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span> Analytics Inclus</li>
               </ul>
               <Link href="/devis" className="inline-flex items-center gap-2 text-blue-600 font-bold group/link">
-                En savoir plus
+                Discutons-en
                 <span className="group-hover/link:translate-x-1 transition-transform">→</span>
               </Link>
             </div>
@@ -124,7 +123,7 @@ export default function Home() {
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-white rounded-full"></span> Marketing Automation</li>
               </ul>
               <Link href="/devis" className="inline-flex items-center gap-2 text-white font-bold group/link text-lg">
-                Démarrer la vente
+                Parlons de votre projet
                 <span className="group-hover/link:translate-x-1 transition-transform">→</span>
               </Link>
             </div>
@@ -144,7 +143,7 @@ export default function Home() {
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span> Support Dédié</li>
               </ul>
               <Link href="/devis" className="inline-flex items-center gap-2 text-blue-600 font-bold group/link">
-                Optimiser mon flux
+                Discutons-en
                 <span className="group-hover/link:translate-x-1 transition-transform">→</span>
               </Link>
             </div>
