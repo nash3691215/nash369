@@ -67,3 +67,11 @@ body {
 .neon-border:hover::before {
   opacity: 1;
 }
+
+/* Glass dark for futuristic theme */
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(251, 191, 36, 0.1);
+}
