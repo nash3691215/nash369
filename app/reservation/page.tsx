@@ -4,12 +4,12 @@ import Link from 'next/link'
 import { useState } from 'react'
 import Footer from '@/components/Footer'
 
-export default function DevisPage() {
+export default function ReservationPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    project: '',
-    budget: '',
+    phone: '',
+    company: '',
     message: ''
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -19,7 +19,7 @@ export default function DevisPage() {
     setStatus('loading')
 
     try {
-      const response = await fetch('/api/send-quote-request', {
+      const response = await fetch('/api/send-call-reservation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -27,7 +27,7 @@ export default function DevisPage() {
 
       if (response.ok) {
         setStatus('success')
-        setFormData({ name: '', email: '', project: '', budget: '', message: '' })
+        setFormData({ name: '', email: '', phone: '', company: '', message: '' })
       } else {
         setStatus('error')
       }
@@ -38,18 +38,17 @@ export default function DevisPage() {
 
   return (
     <div className="min-h-screen bg-white">
-
       <div className="container mx-auto px-4 py-32 max-w-5xl">
         {/* Page Header */}
         <div className="text-center mb-16 animate-fade-in">
           <div className="inline-block px-4 py-2 bg-blue-50 border border-blue-100 rounded-full text-xs font-bold text-blue-600 uppercase tracking-widest mb-6">
-            Projet Sur Mesure
+            Appel Gratuit
           </div>
           <h1 className="text-4xl md:text-6xl font-black mb-6 text-slate-900 leading-tight">
-            Obtiens ton devis <span className="text-blue-600">en 24h</span>
+            Réserve ton appel <span className="text-blue-600">découverte gratuit</span>
           </h1>
           <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
-            Site vitrine, e-commerce ou automatisation complète. Décris ton besoin, je m'occupe du reste.
+            30 minutes pour comprendre ton projet, explorer les possibilités et voir comment NASH369 peut t'aider à te lancer. Gratuit et sans engagement.
           </p>
         </div>
 
@@ -58,28 +57,28 @@ export default function DevisPage() {
             <div className="bg-white border border-green-100 rounded-3xl p-10 text-center shadow-2xl shadow-green-500/10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-green-50 rounded-full blur-3xl opacity-50 -mr-10 -mt-10"></div>
               <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-6 relative z-10">✓</div>
-              <h2 className="text-3xl font-bold mb-4 text-slate-900">Demande envoyée !</h2>
+              <h2 className="text-3xl font-bold mb-4 text-slate-900">Appel réservé !</h2>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-                Je reviens vers toi sous <strong className="text-slate-900 border-b-2 border-green-200">24h maximum</strong> avec un devis détaillé et personnalisé.
+                Vérifie ton email, tu vas recevoir une confirmation avec les détails de notre appel. On se parle très bientôt !
               </p>
 
               <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100 mb-8 text-left">
                 <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                  Prochaines étapes
+                  Ce qu'il va se passer
                 </h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-4 p-3 bg-white rounded-xl border border-slate-100">
                     <div className="font-bold text-blue-600 text-lg">1</div>
-                    <span className="text-slate-600 text-sm">Analyse de ton projet et calcul du meilleur tarif</span>
+                    <span className="text-slate-600 text-sm">Tu vas recevoir un email de confirmation avec le lien de l'appel</span>
                   </li>
                   <li className="flex items-start gap-4 p-3 bg-white rounded-xl border border-slate-100">
                     <div className="font-bold text-blue-600 text-lg">2</div>
-                    <span className="text-slate-600 text-sm">Envoi du devis détaillé par email avec options</span>
+                    <span className="text-slate-600 text-sm">On prend 30 minutes pour discuter de ton projet et comprendre tes besoins</span>
                   </li>
                   <li className="flex items-start gap-4 p-3 bg-white rounded-xl border border-slate-100">
                     <div className="font-bold text-blue-600 text-lg">3</div>
-                    <span className="text-slate-600 text-sm">Discussion pour affiner le projet si besoin</span>
+                    <span className="text-slate-600 text-sm">Je te propose des solutions adaptées et on voit si on peut bosser ensemble</span>
                   </li>
                 </ul>
               </div>
@@ -99,55 +98,39 @@ export default function DevisPage() {
             <div className="space-y-8 animate-fade-in-left">
               <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100">
                 <h2 className="text-2xl font-bold mb-8 text-slate-900 flex items-center gap-3">
-                  <span className="text-3xl">✨</span>
-                  Pourquoi passer par Nash ?
+                  <span className="text-3xl">📞</span>
+                  Pourquoi cet appel ?
                 </h2>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4 group">
-                    <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">⚡</div>
+                    <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">🎯</div>
                     <div>
-                      <h3 className="font-bold text-slate-900 mb-1 text-lg">Livraison ultra-rapide</h3>
-                      <p className="text-slate-500 text-sm leading-relaxed">Site vitrine en 48-72h, e-commerce complet en 5-7 jours ouvrés.</p>
+                      <h3 className="font-bold text-slate-900 mb-1 text-lg">On comprend ton contexte</h3>
+                      <p className="text-slate-500 text-sm leading-relaxed">Pas de solution générique. On discute de ta situation, tes objectifs, tes défis.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 group">
-                    <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">💰</div>
+                    <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">💡</div>
                     <div>
-                      <h3 className="font-bold text-slate-900 mb-1 text-lg">Prix transparents</h3>
-                      <p className="text-slate-500 text-sm leading-relaxed">À partir de 299€. Pas de frais cachés, pas d'abonnements.</p>
+                      <h3 className="font-bold text-slate-900 mb-1 text-lg">On te propose la meilleure approche</h3>
+                      <p className="text-slate-500 text-sm leading-relaxed">Selon ton budget et tes délais, on explore les options qui te correspondent.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 group">
-                    <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">🎓</div>
+                    <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">✨</div>
                     <div>
-                      <h3 className="font-bold text-slate-900 mb-1 text-lg">Formation incluse</h3>
-                      <p className="text-slate-500 text-sm leading-relaxed">Tu gardes le contrôle total de ton site. Je t'apprends à le gérer.</p>
+                      <h3 className="font-bold text-slate-900 mb-1 text-lg">Sans pression, sans engagement</h3>
+                      <p className="text-slate-500 text-sm leading-relaxed">C'est un appel de découverte. Pas d'obligation d'acheter. Juste du conseil honnête.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 group">
-                    <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">🤝</div>
+                    <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">⏱️</div>
                     <div>
-                      <h3 className="font-bold text-slate-900 mb-1 text-lg">Support inclus</h3>
-                      <p className="text-slate-500 text-sm leading-relaxed">30 jours de support dédié après la livraison du projet.</p>
+                      <h3 className="font-bold text-slate-900 mb-1 text-lg">Seulement 30 minutes</h3>
+                      <p className="text-slate-500 text-sm leading-relaxed">Pas de réunion interminable. Direct au but. Utile ou remboursé (c'est gratuit 😉).</p>
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* CTA Box - Visible on mobile/tablet */}
-              <div className="lg:hidden bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white text-center shadow-xl">
-                <p className="font-bold text-xl mb-6">
-                  Pas sûr de ton projet ?
-                </p>
-                <Link
-                  href="/reservation"
-                  className="inline-block px-8 py-4 bg-white text-blue-600 rounded-xl font-bold hover:bg-blue-50 transition-all shadow-lg"
-                >
-                  Appel découverte gratuit
-                </Link>
-                <p className="text-sm text-blue-200 mt-4 font-light">
-                  Parlons de ton projet sans engagement
-                </p>
               </div>
             </div>
 
@@ -158,7 +141,7 @@ export default function DevisPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2 ml-1">
-                      Nom
+                      Ton nom *
                     </label>
                     <input
                       type="text"
@@ -172,7 +155,7 @@ export default function DevisPage() {
 
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2 ml-1">
-                      Email
+                      Ton email *
                     </label>
                     <input
                       type="email"
@@ -185,63 +168,46 @@ export default function DevisPage() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2 ml-1">
-                    Type de projet
-                  </label>
-                  <div className="relative">
-                    <select
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-bold text-slate-700 mb-2 ml-1">
+                      Ton téléphone *
+                    </label>
+                    <input
+                      type="tel"
                       required
-                      value={formData.project}
-                      onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all font-medium text-slate-900 appearance-none cursor-pointer"
-                    >
-                      <option value="">Sélectionner un type...</option>
-                      <option value="site-vitrine">🌐 Site vitrine (Présentation d'activité)</option>
-                      <option value="e-commerce">🛒 Site e-commerce (Vente en ligne)</option>
-                      <option value="automatisation">⚡ Automatisation & IA</option>
-                      <option value="autre">💡 Autre projet spécifique</option>
-                    </select>
-                    <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all font-medium text-slate-900 placeholder:text-slate-400"
+                      placeholder="+33 6 XX XX XX XX"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-bold text-slate-700 mb-2 ml-1">
+                      Ton entreprise / projet
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all font-medium text-slate-900 placeholder:text-slate-400"
+                      placeholder="Ma super idée"
+                    />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2 ml-1">
-                    Budget estimé
-                  </label>
-                  <div className="relative">
-                    <select
-                      required
-                      value={formData.budget}
-                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all font-medium text-slate-900 appearance-none cursor-pointer"
-                    >
-                      <option value="">Sélectionner une fourchette...</option>
-                      <option value="moins-500">Moins de 500€</option>
-                      <option value="500-1000">500€ - 1000€</option>
-                      <option value="1000-2000">1000€ - 2000€</option>
-                      <option value="plus-2000">Plus de 2000€</option>
-                    </select>
-                    <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2 ml-1">
-                    Description du projet
+                    Comment je peux t'aider ? *
                   </label>
                   <textarea
                     required
-                    rows={5}
+                    rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all resize-none font-medium text-slate-900 placeholder:text-slate-400"
-                    placeholder="Décris ton projet en quelques lignes : tes objectifs, tes délais, tes inspirations..."
+                    placeholder="Ex: Je veux créer un site vitrine, j'ai un budget de 500€, j'ai besoin que ce soit fait rapidement..."
                   />
                 </div>
 
@@ -262,38 +228,21 @@ export default function DevisPage() {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      Envoi en cours...
+                      Réservation en cours...
                     </>
                   ) : (
                     <>
-                      <span>Recevoir mon devis gratuit</span>
-                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                      <span>Réserver mon appel gratuit</span>
+                      <span className="group-hover:translate-x-1 transition-transform">📅</span>
                     </>
                   )}
                 </button>
 
                 <p className="text-center text-xs text-slate-400 mt-4 flex items-center justify-center gap-2">
                   <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                  Réponse garantie sous 24h • Sans engagement
+                  30 minutes • Gratuit • Sans engagement
                 </p>
               </form>
-
-              {/* CTA Box - Desktop only */}
-              <div className="hidden lg:block mt-8 bg-slate-900 rounded-2xl p-6 text-white text-center shadow-lg relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500"></div>
-                <p className="font-bold text-lg mb-4">
-                  Besoin de conseils ?
-                </p>
-                <Link
-                  href="/reservation"
-                  className="inline-block px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-xl font-bold hover:bg-white/20 transition-all text-sm"
-                >
-                  Appel découverte gratuit →
-                </Link>
-                <p className="text-xs text-slate-400 mt-3">
-                  30 minutes pour comprendre ton projet
-                </p>
-              </div>
             </div>
           </div>
         )}
