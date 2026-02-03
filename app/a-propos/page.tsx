@@ -116,14 +116,17 @@ export default function AProposPage() {
               </div>
               <div>
                 <h2 className="text-3xl font-bold">Nash</h2>
-                <p className="text-blue-200 font-medium tracking-wide">Fondateur NASH369</p>
+                <p className="text-blue-200 font-medium tracking-wide">Entrepreneur en reconversion digitale</p>
               </div>
             </div>
             <p className="text-xl text-blue-50 leading-relaxed mb-6 font-light">
-              Développeur devenu entrepreneur, j'ai passé des années à construire des systèmes de vente automatisés pour des clients.
+              Pendant des années, j'ai bâti ma vie en tant qu'entrepreneur physique. J'ai connu les contraintes : dépendre du "bouche à oreille", être limité géographiquement, ne pouvoir servir que les clients que je pouvais rencontrer en personne.
+            </p>
+            <p className="text-xl text-blue-50 leading-relaxed mb-6 font-light">
+              Puis j'ai découvert comment transformer mon expertise en systèmes de vente automatisés en ligne. En quelques mois, j'ai pu décupler mes revenus sans multiplier mes heures de travail.
             </p>
             <p className="text-xl text-blue-50 leading-relaxed font-light">
-              NASH369 est né de ma conviction que ces outils ne devraient pas être réservés aux grandes entreprises ou aux développeurs. Aujourd'hui, je partage les méthodes exactes que j'utilise pour aider d'autres à construire leur indépendance financière.
+              NASH369 est né de cette conviction : tout entrepreneur mérite d'accéder à ces outils, peu importe son background technique ou son budget. Je partage exactement les méthodes qui ont transformé mon business pour que tu construises ton indépendance financière sans dépendre de personne.
             </p>
           </div>
         </div>
@@ -151,16 +154,16 @@ export default function AProposPage() {
           <div className="bg-slate-900 rounded-3xl p-12 text-white shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.2),transparent_50%)]"></div>
             <div className="relative z-10">
-              <h2 className="text-4xl font-bold mb-6">Rejoins le mouvement</h2>
+              <h2 className="text-4xl font-bold mb-6">C'est ton moment</h2>
               <p className="text-xl text-slate-400 mb-10 max-w-xl mx-auto">
-                Construis ton système. Vends en automatique. Sans coder.
+                Construis ton système. Vends en automatique. Reprends ton indépendance.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Link
-                  href="/ebooks"
+                  href="/reservation"
                   className="inline-block px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
                 >
-                  Voir les formations
+                  Appel découverte gratuit
                 </Link>
                 <Link
                   href="/devis"
