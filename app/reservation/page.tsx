@@ -51,7 +51,7 @@ export default function ReservationPage() {
 
       if (response.ok) {
         setStatus('success')
-        setFormData({ name: '', email: '', phone: '', company: '', message: '' })
+        setFormData({ name: '', email: '', phone: '', company: '', message: '', preferredDate: '', preferredTime: '', preferredContact: 'phone' })
       } else {
         setStatus('error')
       }
