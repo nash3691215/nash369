@@ -10,9 +10,33 @@ export default function ReservationPage() {
     email: '',
     phone: '',
     company: '',
-    message: ''
+    message: '',
+    preferredDate: '',
+    preferredTime: '',
+    preferredContact: 'phone'
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+
+  // Générer les dates disponibles (7 prochains jours, en excluant les dimanches)
+  const getAvailableDates = () => {
+    const dates = []
+    const today = new Date()
+    for (let i = 1; i <= 14; i++) {
+      const date = new Date(today)
+      date.setDate(date.getDate() + i)
+      if (date.getDay() !== 0) { // Exclure les dimanches
+        dates.push(date)
+      }
+      if (dates.length >= 7) break
+    }
+    return dates
+  }
+
+  const availableDates = getAvailableDates()
+  const timeSlots = [
+    '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+    '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00'
+  ]
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -57,28 +81,61 @@ export default function ReservationPage() {
             <div className="bg-white border border-green-100 rounded-3xl p-10 text-center shadow-2xl shadow-green-500/10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-green-50 rounded-full blur-3xl opacity-50 -mr-10 -mt-10"></div>
               <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-6 relative z-10">✓</div>
-              <h2 className="text-3xl font-bold mb-4 text-slate-900">Appel réservé !</h2>
+              <h2 className="text-3xl font-bold mb-4 text-slate-900">Appel réservé ! 🎉</h2>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-                Vérifie ton email, tu vas recevoir une confirmation avec les détails de notre appel. On se parle très bientôt !
+                Parfait ! On se parle <strong>{formData.preferredDate ? new Date(formData.preferredDate).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }) : 'bientôt'}</strong> à <strong>{formData.preferredTime || 'l\'heure convenue'}</strong>.
               </p>
 
               <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100 mb-8 text-left">
-                <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <h3 className="font-bold text-slate-900 mb-6 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                  Récapitulatif
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-4 bg-white rounded-xl border border-slate-100">
+                    <span className="text-slate-600">📅 Date</span>
+                    <span className="font-bold text-slate-900">{formData.preferredDate ? new Date(formData.preferredDate).toLocaleDateString('fr-FR') : '-'}</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-white rounded-xl border border-slate-100">
+                    <span className="text-slate-600">⏰ Heure</span>
+                    <span className="font-bold text-slate-900">{formData.preferredTime || '-'}</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-white rounded-xl border border-slate-100">
+                    <span className="text-slate-600">📞 Contact par</span>
+                    <span className="font-bold text-slate-900">
+                      {formData.preferredContact === 'phone' && 'Téléphone'}
+                      {formData.preferredContact === 'email' && 'Email'}
+                      {formData.preferredContact === 'zoom' && 'Zoom'}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-white rounded-xl border border-slate-100">
+                    <span className="text-slate-600">👤 Nom</span>
+                    <span className="font-bold text-slate-900">{formData.name}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100 mb-8 text-left">
+                <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <span className="text-xl">📧</span>
                   Ce qu'il va se passer
                 </h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-4 p-3 bg-white rounded-xl border border-slate-100">
-                    <div className="font-bold text-blue-600 text-lg">1</div>
-                    <span className="text-slate-600 text-sm">Tu vas recevoir un email de confirmation avec le lien de l'appel</span>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-4 text-slate-600 text-sm">
+                    <span className="font-bold text-blue-600 mt-0.5">1</span>
+                    <span>Tu vas recevoir un email de confirmation avec tous les détails</span>
                   </li>
-                  <li className="flex items-start gap-4 p-3 bg-white rounded-xl border border-slate-100">
-                    <div className="font-bold text-blue-600 text-lg">2</div>
-                    <span className="text-slate-600 text-sm">On prend 30 minutes pour discuter de ton projet et comprendre tes besoins</span>
+                  <li className="flex items-start gap-4 text-slate-600 text-sm">
+                    <span className="font-bold text-blue-600 mt-0.5">2</span>
+                    <span>On prend 30 minutes pour discuter de ton projet et tes objectifs</span>
                   </li>
-                  <li className="flex items-start gap-4 p-3 bg-white rounded-xl border border-slate-100">
-                    <div className="font-bold text-blue-600 text-lg">3</div>
-                    <span className="text-slate-600 text-sm">Je te propose des solutions adaptées et on voit si on peut bosser ensemble</span>
+                  <li className="flex items-start gap-4 text-slate-600 text-sm">
+                    <span className="font-bold text-blue-600 mt-0.5">3</span>
+                    <span>Je te propose une solution adaptée à ta situation</span>
+                  </li>
+                  <li className="flex items-start gap-4 text-slate-600 text-sm">
+                    <span className="font-bold text-blue-600 mt-0.5">4</span>
+                    <span>Pas de pression, juste du conseil honnête et sans engagement</span>
                   </li>
                 </ul>
               </div>
@@ -105,29 +162,29 @@ export default function ReservationPage() {
                   <div className="flex items-start gap-4 group">
                     <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">🎯</div>
                     <div>
-                      <h3 className="font-bold text-slate-900 mb-1 text-lg">On comprend ton contexte</h3>
-                      <p className="text-slate-500 text-sm leading-relaxed">Pas de solution générique. On discute de ta situation, tes objectifs, tes défis.</p>
+                      <h3 className="font-bold text-slate-900 mb-1 text-lg">Optimiser tout ton business</h3>
+                      <p className="text-slate-500 text-sm leading-relaxed">Pas juste un devis de site. On regarde comment tu vends, comment tu acquiers tes clients et comment gagner plus en travaillant moins.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 group">
                     <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">💡</div>
                     <div>
-                      <h3 className="font-bold text-slate-900 mb-1 text-lg">On te propose la meilleure approche</h3>
-                      <p className="text-slate-500 text-sm leading-relaxed">Selon ton budget et tes délais, on explore les options qui te correspondent.</p>
+                      <h3 className="font-bold text-slate-900 mb-1 text-lg">Une stratégie sur mesure</h3>
+                      <p className="text-slate-500 text-sm leading-relaxed">Analyse de ta situation actuelle, identifier tes goulots, proposer des solutions qui ont fait leurs preuves.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 group">
-                    <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">✨</div>
+                    <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">🚀</div>
                     <div>
-                      <h3 className="font-bold text-slate-900 mb-1 text-lg">Sans pression, sans engagement</h3>
-                      <p className="text-slate-500 text-sm leading-relaxed">C'est un appel de découverte. Pas d'obligation d'acheter. Juste du conseil honnête.</p>
+                      <h3 className="font-bold text-slate-900 mb-1 text-lg">Passer à l'action</h3>
+                      <p className="text-slate-500 text-sm leading-relaxed">On ne te vend pas de la théorie. Tu repartiras avec un plan d'action concret et réaliste pour ton contexte.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 group">
                     <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 flex items-center justify-center text-2xl shadow-sm text-blue-600 group-hover:scale-110 transition-transform">⏱️</div>
                     <div>
-                      <h3 className="font-bold text-slate-900 mb-1 text-lg">Seulement 30 minutes</h3>
-                      <p className="text-slate-500 text-sm leading-relaxed">Pas de réunion interminable. Direct au but. Utile ou remboursé (c'est gratuit 😉).</p>
+                      <h3 className="font-bold text-slate-900 mb-1 text-lg">30 minutes, gratuit, sans engagement</h3>
+                      <p className="text-slate-500 text-sm leading-relaxed">Direct au but. Si on ne peut pas t'aider, je te le dirai honnêtement. C'est pour toi que je le fais.</p>
                     </div>
                   </div>
                 </div>
@@ -194,6 +251,85 @@ export default function ReservationPage() {
                       className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all font-medium text-slate-900 placeholder:text-slate-400"
                       placeholder="Ma super idée"
                     />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-bold text-slate-700 mb-2 ml-1">
+                    Quand préfères-tu qu'on se parle ? *
+                  </label>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <select
+                        required
+                        value={formData.preferredDate}
+                        onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
+                        className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all font-medium text-slate-900"
+                      >
+                        <option value="">Choisir une date...</option>
+                        {availableDates.map((date) => (
+                          <option key={date.toISOString()} value={date.toISOString().split('T')[0]}>
+                            {date.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'short' })}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <select
+                        required
+                        value={formData.preferredTime}
+                        onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
+                        className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all font-medium text-slate-900"
+                      >
+                        <option value="">Choisir une heure...</option>
+                        {timeSlots.map((time) => (
+                          <option key={time} value={time}>
+                            {time}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-bold text-slate-700 mb-3 ml-1">
+                    Comment préfères-tu être contacté ? *
+                  </label>
+                  <div className="flex gap-4">
+                    <label className="flex items-center gap-3 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="contact"
+                        value="phone"
+                        checked={formData.preferredContact === 'phone'}
+                        onChange={(e) => setFormData({ ...formData, preferredContact: e.target.value })}
+                        className="w-4 h-4 text-blue-600"
+                      />
+                      <span className="text-slate-700 font-medium">Par téléphone</span>
+                    </label>
+                    <label className="flex items-center gap-3 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="contact"
+                        value="email"
+                        checked={formData.preferredContact === 'email'}
+                        onChange={(e) => setFormData({ ...formData, preferredContact: e.target.value })}
+                        className="w-4 h-4 text-blue-600"
+                      />
+                      <span className="text-slate-700 font-medium">Par email</span>
+                    </label>
+                    <label className="flex items-center gap-3 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="contact"
+                        value="zoom"
+                        checked={formData.preferredContact === 'zoom'}
+                        onChange={(e) => setFormData({ ...formData, preferredContact: e.target.value })}
+                        className="w-4 h-4 text-blue-600"
+                      />
+                      <span className="text-slate-700 font-medium">Par vidéo (Zoom)</span>
+                    </label>
                   </div>
                 </div>
 

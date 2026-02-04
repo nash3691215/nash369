@@ -5,7 +5,11 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
   try {
-    const { name, email, phone, company, message } = await request.json()
+    const { name, email, phone, company, message, preferredDate, preferredTime, preferredContact } = await request.json()
+
+    // Format the date nicely
+    const formattedDate = preferredDate ? new Date(preferredDate).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }) : 'À confirmer'
+    const contactMethod = preferredContact === 'phone' ? 'Téléphone' : preferredContact === 'email' ? 'Email' : 'Zoom'
 
     // Send notification email to yourself
     await resend.emails.send({
@@ -21,15 +25,19 @@ export async function POST(request: Request) {
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Téléphone:</strong> ${phone}</p>
             <p><strong>Entreprise/Projet:</strong> ${company || 'Non spécifié'}</p>
+            <p style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #d1d5db;"><strong>📅 Créneau demandé:</strong></p>
+            <p><strong>Date:</strong> ${formattedDate}</p>
+            <p><strong>Heure:</strong> ${preferredTime || 'À confirmer'}</p>
+            <p><strong>Contact par:</strong> ${contactMethod}</p>
           </div>
 
           <div style="background: white; padding: 20px; border: 2px solid #e5e7eb; border-radius: 8px;">
-            <h3 style="margin-top: 0;">Message:</h3>
+            <h3 style="margin-top: 0;">Contexte du projet:</h3>
             <p style="white-space: pre-wrap;">${message}</p>
           </div>
 
           <div style="margin-top: 30px; padding: 20px; background: #eff6ff; border-radius: 8px; border-left: 4px solid #2563eb;">
-            <p style="margin: 0;"><strong>⏰ Action requise:</strong> Appelle ${name} au ${phone} ou envoie-lui un email pour confirmer l'horaire de l'appel.</p>
+            <p style="margin: 0;"><strong>⏰ Action requise:</strong> Contacte ${name} au ${phone} (préférenceContact: ${contactMethod}) pour confirmer l'appel et envoyer le lien Zoom/détails de l'appel.</p>
           </div>
         </div>
       `
@@ -50,14 +58,31 @@ export async function POST(request: Request) {
 
           <div style="background: #eff6ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2563eb;">
             <p style="margin: 0; font-size: 15px;">
-              <strong>📅 Prochaines étapes :</strong>
+              <strong>📅 Récapitulatif de ta réservation :</strong>
             </p>
             <ul style="margin: 10px 0; padding-left: 20px;">
-              <li>Tu vas recevoir un email de confirmation avec le lien de l'appel</li>
-              <li>On va discuter de ton projet et comprendre tes besoins</li>
-              <li>Je te proposerai les solutions les mieux adaptées à ta situation</li>
-              <li>Sans pression, sans engagement - juste du conseil honnête</li>
+              <li><strong>📅 Date:</strong> ${formattedDate}</li>
+              <li><strong>⏰ Heure:</strong> ${preferredTime || 'À confirmer'}</li>
+              <li><strong>📞 Contact par:</strong> ${contactMethod}</li>
             </ul>
+          </div>
+
+          <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #16a34a;">
+            <p style="margin: 0; font-size: 15px;">
+              <strong>🎯 Ce qu'on va discuter :</strong>
+            </p>
+            <ul style="margin: 10px 0; padding-left: 20px; font-size: 14px;">
+              <li>Comprendre ton contexte et tes objectifs</li>
+              <li>Analyser tes défis et opportunités actuels</li>
+              <li>Proposer des solutions concrètes et adaptées</li>
+              <li>Discuter d'une stratégie de croissance optimisée</li>
+            </ul>
+          </div>
+
+          <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #f59e0b;">
+            <p style="margin: 0; font-size: 14px; color: #92400e;">
+              <strong>💡 Conseil :</strong> Prépare une courte liste de tes 3 plus grands défis. Ça nous aidera à être hyper productif pendant l'appel !
+            </p>
           </div>
 
           <div style="background: #f9fafb; padding: 15px; border-radius: 6px; margin: 20px 0;">
