@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, Zap } from 'lucide-react'
+import { BookOpen, Zap, CheckCircle } from 'lucide-react'
 
 export default function Boutique() {
   const products = [
@@ -9,15 +9,33 @@ export default function Boutique() {
       icon: BookOpen,
       badge: 'BEST-SELLER',
       title: 'Sites Web Express',
-      description: 'Créez votre site pro en 5 minutes avec Claude + Hostinger',
+      description: 'Ton site pro en 5 minutes. Sans coder. Sans agence. Juste toi + Claude.',
+      fullDescription: `Tu as un service ou un produit à vendre, mais pas encore de site web?
+
+Combien ça coûte une agence web? 2000€? 5000€? Combien de temps? 2-3 mois?
+
+Avec "Sites Web Express", tu crées un site professionnel en moins de 5 minutes, même si tu ne sais rien en programmation. Tu utilises Claude (l'IA) pour générer le contenu, Hostinger pour héberger, et voilà. Site = live.
+
+Ce guide te montre pas à pas comment:
+• Créer un site qui vend (conversion-focused)
+• Le configurer sans touching à du code
+• L'optimiser pour Google (SEO)
+• Ajouter un formulaire de contact + paiement
+• Utiliser un domaine personnalisé
+
+Résultat? Un site professionnel que tes clients prennent au sérieux. Et tu l'as créé en 1 café.`,
+      features: [
+        'Ebook complet 50+ pages',
+        'Templates design modernes',
+        'Scripts Claude à copier-coller',
+        'Configuration Hostinger détaillée',
+        'Setup domaine personnalisé',
+        'Intégration formulaire + paiement',
+        'Guide SEO pour Google',
+        'Support email 30 jours',
+      ],
       originalPrice: 49,
       price: 9.9,
-      features: [
-        'Template prêt à l\'emploi',
-        'Configuration Claude AI',
-        'Hébergement inclus (1 an)',
-        'Support email',
-      ],
       stripeLink: '[STRIPE_LINK_1]',
       color: 'from-blue-600 to-blue-700',
     },
@@ -25,15 +43,36 @@ export default function Boutique() {
       icon: Zap,
       badge: 'NOUVEAU',
       title: 'Automatise Ton Business en 7 Jours',
-      description: 'Le guide pratique pour entrepreneurs. De zéro à hero en N8N.',
+      description: 'De 12h/jour de boulot manuel à 2h. Le guide pratique qui change tout.',
+      fullDescription: `Tu travailles combien d'heures par jour? 12? 14?
+
+Et combien de temps tu passes sur du boulot qui ne rapporte rien? E-mails, formulaires, données, relances, post sur réseaux, réunions inutiles…
+
+Avec N8N (et un peu d'IA), tu automatises TOUT ça.
+
+"Automatise Ton Business en 7 Jours" c'est le guide ultime pour:
+• Comprendre N8N en 30 minutes (zéro code required)
+• Créer tes premiers workflows automatisés
+• Automatiser les réseaux sociaux (posts, commentaires, follow)
+• Faire de la vente 24/7 (chatbots, emails, upsell)
+• Gérer tes clients sans effort (CRM auto)
+• Créer des rapports automatiques chaque matin
+• Sauvegarder tes données intelligemment
+
+Résultat? Tu économises 20-30 heures par semaine. Tu travailles moins. Tu gagnes plus. Le business tourne même la nuit.`,
+      features: [
+        'Ebook complet 80+ pages',
+        '15+ workflows N8N ready-to-use',
+        'Vidéos tutoriels (15+ heures)',
+        'Accès groupe Slack privé',
+        'Scripts et templates N8N',
+        'Guide intégration API',
+        'Automatisation réseaux sociaux',
+        'Système de vente 24/7',
+        'Support communauté illimité',
+      ],
       originalPrice: 99,
       price: 29,
-      features: [
-        '30 leçons vidéo',
-        'Workflows N8N ready-to-use',
-        'Groupe privé Slack',
-        'Certification incluse',
-      ],
       stripeLink: '[STRIPE_LINK_2]',
       color: 'from-orange-600 to-orange-700',
     },
@@ -99,8 +138,8 @@ export default function Boutique() {
                     <Icon className="w-6 h-6 text-white" />
                   </div>
 
-                  <h3 className="text-2xl font-bold text-slate-100 mb-2">{product.title}</h3>
-                  <p className="text-slate-400 mb-6 text-sm">{product.description}</p>
+                  <h3 className="text-2xl font-bold text-slate-100 mb-4">{product.title}</h3>
+                  <p className="text-slate-400 mb-6 text-sm leading-relaxed whitespace-pre-line">{product.fullDescription}</p>
 
                   {/* Pricing */}
                   <div className="mb-6">
@@ -116,14 +155,17 @@ export default function Boutique() {
                   </div>
 
                   {/* Features */}
-                  <ul className="mb-8 space-y-2">
-                    {product.features.map((feature, fidx) => (
-                      <li key={fidx} className="text-slate-400 text-sm flex items-center gap-2">
-                        <span className="w-1 h-1 bg-orange-500 rounded-full"></span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="mb-8">
+                    <h4 className="text-sm font-bold text-slate-300 mb-3 uppercase tracking-wider">Ce que tu reçois:</h4>
+                    <ul className="space-y-2">
+                      {product.features.map((feature, fidx) => (
+                        <li key={fidx} className="text-slate-400 text-sm flex items-start gap-2">
+                          <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
                   {/* CTA */}
                   <a

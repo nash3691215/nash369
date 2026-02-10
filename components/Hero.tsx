@@ -30,8 +30,9 @@ export default function Hero() {
             <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 bg-clip-text text-transparent"> Libère ton temps.</span> Scale tes revenus.
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto">
-            Je crée des systèmes d'automatisation IA + N8N pour entrepreneurs qui veulent bosser moins et gagner plus.
+          <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Tu passes tes journées à faire du boulot manuel qui ne rapporte rien? E-mails, données, réunions, posts… <br/>
+            Je crée des systèmes qui automatisent tout ça. N8N + IA = tu travailles 4h/jour au lieu de 12. Tes revenus? Ils augmentent.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
