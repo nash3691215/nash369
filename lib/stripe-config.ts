@@ -1,2 +1,0 @@
-// Configuration Stripe côté client
-export const STRIPE_PUBLISHABLE_KEY = 'pk_live_51SlWquRws3CXDdFEK56MOnWka549iAoizqT3pfbR9lySIA4S1WLXjX6b5MIEYYS592rrUyA1KZksc9AbYjvtplVM000jCQRHjR'
