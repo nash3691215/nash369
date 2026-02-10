@@ -74,14 +74,14 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="font-semibold text-slate-100 mb-4">Suivez-moi</h4>
+            <h4 className="font-semibold text-slate-100 mb-4">Communauté</h4>
             <div className="flex gap-4">
               <a href="https://twitter.com/nash369_" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-400 transition">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="mailto:noureddine@nash369.com" className="text-slate-400 hover:text-orange-500 transition">
+              <button onClick={() => scrollToSection('contact')} className="text-slate-400 hover:text-orange-500 transition">
                 <Mail className="w-5 h-5" />
-              </a>
+              </button>
               <a href="#" className="text-slate-400 hover:text-blue-600 transition">
                 <Linkedin className="w-5 h-5" />
               </a>

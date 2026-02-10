@@ -45,15 +45,15 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-slate-100 mb-4">Noureddine</h3>
+            <h3 className="text-2xl font-bold text-slate-100 mb-4">NASH369</h3>
             <p className="text-slate-300 mb-6 leading-relaxed">
-              Fondateur de NASH369. Ex-restaurateur devenu architecte de systèmes hybrides.
+              Je crée des systèmes d'automatisation pour entrepreneurs qui veulent bosser moins et gagner plus.
             </p>
             <p className="text-slate-300 mb-6 leading-relaxed">
-              J'ai passé 10 ans à bosser 12h/jour dans un restau. Puis j'ai découvert comment combiner N8N, IA et automatisation pour transformer des businesses manuels en machines autonomes.
+              N8N + IA + automatisation = tu transformes ton business manuel en machine autonome qui tourne 24/7.
             </p>
             <p className="text-slate-300 mb-8 leading-relaxed">
-              Aujourd'hui, je crée des systèmes pour entrepreneurs qui veulent enfin bosser moins et gagner plus.
+              Audit gratuit. Setup à 299€. Site web à 199€ (puis 399€/mois). Aucun engagement. Résultats garantis.
             </p>
 
             <div>

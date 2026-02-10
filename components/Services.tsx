@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Zap, Settings, Crown } from 'lucide-react'
+import { Zap, Settings, Globe } from 'lucide-react'
 
 export default function Services() {
   const services = [
@@ -17,21 +17,43 @@ export default function Services() {
     {
       icon: Settings,
       title: 'Setup N8N Complet',
-      description: 'Je construis ton système d\'automatisation end-to-end. De la capture de leads au suivi client, tout est automatisé.',
-      features: ['Architecture custom', 'Formation incluse', 'Support 30j'],
+      description: 'Je construis ton système d\'automatisation complet: réseaux sociaux, emails, facturation, et plus. Tout automatisé et prêt à tourner.',
+      fullDescription: 'Configuration complète de ton système N8N avec tous tes processus automatisés. Je mets en place les workflows pour tes réseaux sociaux (posts schedulés, commentaires auto), emails (newsletter, relances clients), facturation automatique, leads nurturing, et tout ce qui te prend du temps actuellement.',
+      features: [
+        'Audit + Architecture custom',
+        'Automatisation réseaux sociaux',
+        'Automation emails & newsletters',
+        'Système de facturation auto',
+        'Leads nurturing workflow',
+        'CRM integration',
+        'Formation complète',
+        'Support 3 mois inclus',
+      ],
       price: 'À partir de',
-      priceAmount: '1 500€',
+      priceAmount: '299€',
       color: 'from-blue-500 to-blue-600',
-      cta: 'Voir les détails',
+      cta: 'Réserve une consultation',
     },
     {
-      icon: Crown,
-      title: 'Accompagnement Premium',
-      description: 'Transformation complète: audit + setup + intégrations + coaching. Le full package pour entrepreneurs sérieux.',
-      features: ['Audit + Setup', 'Coaching 3 mois', 'Intégrations illimitées'],
-      price: 'Sur devis',
+      icon: Globe,
+      title: 'Création Site Web',
+      description: 'Je crée ton site web complet. Design moderne, responsive, et optimisé pour vendre. Prêt en 30 jours.',
+      fullDescription: 'Je crée ton site web professionnel de A à Z. Audit du besoin, design personnalisé, intégration avec tes systèmes (email, paiement, forms), et optimisation SEO. Ton site est terminé en 30 jours et prêt à générer des leads et des ventes.',
+      features: [
+        'Audit + stratégie site',
+        'Design personnalisé modern',
+        'Responsive mobile-first',
+        'Intégration paiement Stripe',
+        'Formulaires + webhooks',
+        'SEO optimization',
+        'SSL + domaine inclus',
+        'Formation + support 3 mois',
+      ],
+      price: '30 jours',
+      priceAmount: '199€',
+      priceAfter: 'Après: 399€/mois',
       color: 'from-violet-500 to-violet-600',
-      cta: 'Consulter',
+      cta: 'Lancer mon site',
     },
   ]
 
@@ -72,7 +94,7 @@ export default function Services() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          De l'audit gratuit à l'accompagnement premium. Choisis le package qui te correspond.
+          Commence par un audit gratuit. Ensuite, je construis ton système complet.
         </motion.p>
 
         <motion.div
@@ -109,6 +131,7 @@ export default function Services() {
                 <div className="mb-6">
                   <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">{service.price}</p>
                   <p className="text-2xl font-bold text-slate-100">{service.priceAmount || service.price}</p>
+                  {service.priceAfter && <p className="text-slate-400 text-xs mt-1">{service.priceAfter}</p>}
                 </div>
 
                 <button

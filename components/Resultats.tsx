@@ -31,27 +31,6 @@ export default function Resultats() {
     return () => intervals.forEach(clearInterval)
   }, [])
 
-  const testimonials = [
-    {
-      name: 'Marie Dupont',
-      role: 'Restauratrice',
-      text: 'J\'ai réduit mon temps administratif de 20h/semaine à 2h. Mon business tourne tout seul maintenant.',
-      avatar: '👩‍💼',
-    },
-    {
-      name: 'Pierre Bernard',
-      role: 'E-commerce',
-      text: 'Après le setup N8N, mes ventes ont augmenté de 40% sans effort supplémentaire. Incroyable !',
-      avatar: '👨‍💼',
-    },
-    {
-      name: 'Sophie Martin',
-      role: 'Coach digital',
-      text: 'Plus besoin de suivre chaque client manuellement. Les workflows font le boulot.',
-      avatar: '👩‍🏫',
-    },
-  ]
-
   return (
     <section id="resultats" className="py-20 px-6 bg-slate-800/30">
       <div className="max-w-6xl mx-auto">
@@ -76,37 +55,6 @@ export default function Resultats() {
           </motion.div>
         </motion.div>
 
-        {/* Testimonials */}
-        <motion.h2
-          className="text-4xl font-bold font-display text-center mb-16 text-slate-100"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          Ce que disent mes clients
-        </motion.h2>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, idx) => (
-            <motion.div
-              key={idx}
-              className="glass p-8 rounded-xl border border-slate-700"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <span className="text-4xl">{testimonial.avatar}</span>
-                <div>
-                  <p className="font-bold text-slate-100">{testimonial.name}</p>
-                  <p className="text-slate-400 text-sm">{testimonial.role}</p>
-                </div>
-              </div>
-              <p className="text-slate-300 italic">"{testimonial.text}"</p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   )

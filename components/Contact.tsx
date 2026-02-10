@@ -81,31 +81,25 @@ export default function Contact() {
             <div className="glass p-6 rounded-xl">
               <Mail className="w-6 h-6 text-orange-500 mb-3" />
               <p className="text-slate-400 text-sm mb-1">Email</p>
-              <a href="mailto:noureddine@nash369.com" className="text-slate-100 hover:text-orange-500 transition">
-                noureddine@nash369.com
-              </a>
+              <p className="text-slate-300">contact@nash369.com</p>
             </div>
 
             <div className="glass p-6 rounded-xl">
               <Phone className="w-6 h-6 text-blue-600 mb-3" />
-              <p className="text-slate-400 text-sm mb-1">Téléphone</p>
-              <a href="tel:+33612345678" className="text-slate-100 hover:text-blue-600 transition">
-                +33 6 12 34 56 78
-              </a>
+              <p className="text-slate-400 text-sm mb-1">Support</p>
+              <p className="text-slate-300">24/7 via formulaire</p>
             </div>
 
             <div className="glass p-6 rounded-xl">
               <MapPin className="w-6 h-6 text-violet-600 mb-3" />
-              <p className="text-slate-400 text-sm mb-1">Localisation</p>
-              <p className="text-slate-100">Montpellier, France</p>
+              <p className="text-slate-400 text-sm mb-1">Service</p>
+              <p className="text-slate-300">France entière</p>
             </div>
 
             <div className="glass p-6 rounded-xl">
               <Twitter className="w-6 h-6 text-blue-400 mb-3" />
-              <p className="text-slate-400 text-sm mb-1">Suivez-moi</p>
-              <a href="https://twitter.com/nash369_" target="_blank" rel="noopener noreferrer" className="text-slate-100 hover:text-blue-400 transition">
-                @nash369_
-              </a>
+              <p className="text-slate-400 text-sm mb-1">Communauté</p>
+              <p className="text-slate-300">@nash369_</p>
             </div>
           </motion.div>
 
