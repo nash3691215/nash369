@@ -2,56 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
+:root {
+  color-scheme: light;
+  background: #ffffff;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  @apply bg-white text-dark antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
+section {
+  @apply py-16 lg:py-24;
 }
 
-/* Glassmorphism */
-.glass {
-  background: rgba(30, 41, 59, 0.4);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(100, 116, 139, 0.2);
+.container-balanced {
+  @apply max-w-6xl mx-auto px-5 sm:px-6 lg:px-8;
 }
 
-/* Gradient mesh background */
-.gradient-mesh {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 1) 0%, rgba(30, 41, 59, 0.8) 25%, rgba(30, 41, 59, 1) 50%, rgba(20, 30, 48, 0.9) 75%, rgba(15, 23, 42, 1) 100%);
+/* Highlight text — surbrillance violette */
+.highlight {
+  @apply relative inline;
+  background: linear-gradient(120deg, rgba(108,58,237,0.12) 0%, rgba(139,92,246,0.12) 100%);
+  padding: 0.05em 0.25em;
+  border-radius: 0.25em;
 }
 
-/* Smooth scroll */
-.scroll-smooth {
-  scroll-behavior: smooth;
+/* Highlight text — surbrillance bleue */
+.highlight-brand {
+  @apply relative inline;
+  background: linear-gradient(120deg, rgba(37,99,235,0.10) 0%, rgba(59,130,246,0.10) 100%);
+  padding: 0.05em 0.25em;
+  border-radius: 0.25em;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* Liens affilies colores */
+.link-accent {
+  @apply font-semibold text-accent transition;
+  text-decoration: underline;
+  text-decoration-color: rgba(108,58,237,0.3);
+  text-underline-offset: 3px;
+}
+.link-accent:hover {
+  text-decoration-color: rgba(108,58,237,0.7);
+  @apply text-accent-dark;
 }
 
-::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.5);
+.link-brand {
+  @apply font-semibold text-brand transition;
+  text-decoration: underline;
+  text-decoration-color: rgba(37,99,235,0.3);
+  text-underline-offset: 3px;
+}
+.link-brand:hover {
+  text-decoration-color: rgba(37,99,235,0.7);
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(249, 115, 22, 0.6);
-  border-radius: 4px;
+/* Glow hover pour cartes */
+.card-glow {
+  @apply transition duration-300;
 }
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(249, 115, 22, 0.8);
+.card-glow:hover {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04), 0 0 24px rgba(108,58,237,0.08);
 }
