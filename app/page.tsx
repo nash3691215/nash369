@@ -43,12 +43,12 @@ export default function TeaserPage() {
         {/* Social */}
         <div className="pt-4">
           <a
-            href="https://x.com/nash369_"
+            href="https://x.com/nash3691215"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-semibold text-white/60 transition hover:border-[#6C3AED]/40 hover:text-white"
           >
-            Suivre @nash369_ sur X &rarr;
+            Suivre @nash3691215 sur X &rarr;
           </a>
         </div>
       </div>
