@@ -1,7 +1,7 @@
 export const CTA_LINKS = {
-  EBOOK_BUSINESS_URL: "https://stripe.com/ebook-business-placeholder",
-  EBOOK_HOSTINGER_URL: "https://stripe.com/ebook-hostinger-placeholder",
-  EBOOK_BUNDLE_URL: "https://stripe.com/ebook-bundle-placeholder"
+  EBOOK_HOSTINGER_URL: "https://buy.stripe.com/aFabJ33WCevCgSearGcV200",
+  EBOOK_BUSINESS_URL: "https://buy.stripe.com/28E14pgJoafm1XkczOcV201",
+  EBOOK_BUNDLE_URL: "https://buy.stripe.com/00wcN79gW4V231oeHWcV202"
 };
 
 export const AFFILIATE_LINKS = {
