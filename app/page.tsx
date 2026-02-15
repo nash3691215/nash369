@@ -3,13 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Button } from "../components/Button";
-import { PricingCard } from "../components/PricingCard";
-import { ComparisonTable } from "../components/ComparisonTable";
-import { FAQ } from "../components/FAQ";
-import { pricing, comparison, faq, bullets, ebookDetails, CTA_LINKS, AFFILIATE_LINKS, leadMagnet } from "../lib/config";
-
-const bulletIcons = ["🌐", "🤖", "💰"];
+import { AFFILIATE_LINKS, leadMagnet } from "../lib/config";
 
 function renderAffiliateLinks(text: string) {
   const parts = text.split(/(Hostinger|N8N|Make)/gi);
@@ -81,16 +75,30 @@ function EmailCapture() {
   );
 }
 
+const comingSoon = [
+  {
+    icon: "🎯",
+    title: "Trouve Tes Clients",
+    description: "Prospection, closing, marketing. Scripts DM, methode de closing en 15 min, templates Notion.",
+    price: "19,90"
+  },
+  {
+    icon: "🤖",
+    title: "Automatise Ton Business en 7 Jours",
+    description: "Site IA + 10 workflows N8N/Make + templates JSON + prompts optimises. Support 30 jours.",
+    price: "79"
+  },
+  {
+    icon: "🔥",
+    title: "Bundle (les 2)",
+    description: "Trouve tes clients + automatise tout. Le combo parfait pour partir de zero.",
+    price: "89"
+  }
+];
+
 export default function HomePage() {
   return (
     <div className="bg-white text-dark">
-      {/* Barre promo */}
-      <div className="border-b border-accent/20 bg-accent text-white">
-        <div className="container-balanced py-3 text-center text-sm font-medium tracking-wide">
-          🔥 Offre lancement : prix reduits pendant <strong>14 jours</strong>. Bundle <strong>89&euro;</strong> au lieu de <span className="line-through opacity-70">189&euro;</span>
-        </div>
-      </div>
-
       {/* HERO — Lead Magnet avec capture email */}
       <header className="container-balanced pt-20 pb-16">
         <motion.div
@@ -145,7 +153,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 5 systemes */}
+        {/* 5 systemes — apercu */}
         <section>
           <div className="container-balanced space-y-8">
             <div className="max-w-2xl mx-auto text-center space-y-3">
@@ -198,162 +206,82 @@ export default function HomePage() {
                     <p className="text-xs font-bold uppercase tracking-wide text-accent mb-1">Opportunite business</p>
                     <p className="text-sm text-dark/70">{system.opportunity}</p>
                   </div>
-
-                  <div>
-                    <a
-                      href={AFFILIATE_LINKS[system.cta.link]}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-accent text-white px-5 py-2.5 text-sm font-semibold transition hover:bg-accent-dark hover:shadow-glow hover:translate-y-[-1px] active:translate-y-[0]"
-                    >
-                      {system.cta.label} &rarr;
-                    </a>
-                  </div>
                 </motion.div>
               ))}
             </div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+            {/* CTA guide gratuit */}
+            <div className="max-w-md mx-auto text-center space-y-4 pt-4">
+              <p className="text-sm text-dark/50">
+                Tout ca dans un guide gratuit de 5 pages. Entre ton email pour le recevoir.
+              </p>
+              <EmailCapture />
+            </div>
+          </div>
+        </section>
+
+        {/* TEASER — Ebooks a venir */}
+        <section className="bg-dark text-white">
+          <div className="container-balanced space-y-10">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.4 }}
-              className="text-center text-sm text-dark/50 max-w-xl mx-auto"
+              transition={{ duration: 0.5 }}
+              className="max-w-2xl mx-auto text-center space-y-4"
             >
-              {leadMagnet.bottom}
-            </motion.p>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section id="ebooks" className="bg-soft">
-          <div className="container-balanced space-y-8">
-            <div className="max-w-2xl mx-auto text-center space-y-3">
-              <p className="inline-block rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-accent">
+              <p className="inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-accent">
+                Bientot disponible
+              </p>
+              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
                 Ebooks premium
-              </p>
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Passe a l&apos;action
               </h2>
-              <p className="text-base text-dark/60">
-                Prix de lancement. Augmentation dans <span className="highlight">14 jours</span>.
+              <p className="text-base text-white/60">
+                Le guide gratuit te donne le &laquo; quoi &raquo;. Les ebooks te donneront le &laquo; comment &raquo; — pas a pas, avec templates et prompts.
               </p>
-            </div>
+            </motion.div>
+
             <div className="grid gap-6 lg:grid-cols-3">
-              {pricing.map((p, index) => (
+              {comingSoon.map((item, idx) => (
                 <motion.div
-                  key={p.name}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.35 }}
-                  transition={{ delay: index * 0.08, duration: 0.45 }}
-                >
-                  <PricingCard
-                    name={p.name}
-                    price={p.price}
-                    originalPrice={p.originalPrice}
-                    description={p.description}
-                    features={p.features}
-                    ctaKey={p.cta as keyof typeof CTA_LINKS}
-                    badge={p.badge}
-                    featured={p.name.includes("Bundle")}
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Comparaison */}
-        <section>
-          <div className="container-balanced space-y-8">
-            <div className="max-w-2xl mx-auto text-center space-y-3">
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Comparaison
-              </h2>
-              <p className="text-base text-dark/60">
-                Le bundle contient tout. Les deux ebooks sont complementaires.
-              </p>
-            </div>
-            <ComparisonTable rows={comparison} />
-          </div>
-        </section>
-
-        {/* Ce que tu vas apprendre */}
-        <section className="bg-soft">
-          <div className="container-balanced space-y-8">
-            <div className="max-w-2xl mx-auto text-center space-y-3">
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Ce que tu vas apprendre
-              </h2>
-              <p className="text-base text-dark/60">
-                Chaque automatisation = un service vendable.
-              </p>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {bullets.map((b, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.4 }}
-                  className="rounded-xl border border-dark/8 bg-white p-6 text-sm leading-relaxed text-dark/80 card-glow"
-                >
-                  <span className="text-2xl block mb-3">{bulletIcons[i]}</span>
-                  {renderAffiliateLinks(b)}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Detail des ebooks */}
-        <section>
-          <div className="container-balanced space-y-12">
-            <div className="max-w-2xl mx-auto text-center space-y-3">
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Contenu des ebooks
-              </h2>
-              <p className="text-base text-dark/60">
-                Chaque chapitre est actionnable. Zero blabla.
-              </p>
-            </div>
-            <div className="grid gap-8 lg:grid-cols-2">
-              {ebookDetails.map((ebook, idx) => (
-                <motion.div
-                  key={ebook.title}
+                  key={item.title}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1, duration: 0.45 }}
-                  className="rounded-2xl border border-dark/10 bg-white p-6 space-y-5 card-glow"
+                  className="relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur space-y-4"
                 >
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-lg">{idx === 0 ? "🎯" : "🤖"}</span>
-                      <p className={`text-xs font-bold uppercase tracking-wide ${idx === 0 ? "text-brand/60" : "text-accent/60"}`}>
-                        {ebook.pages}
-                      </p>
-                    </div>
-                    <h3 className="mt-2 text-xl font-extrabold">{ebook.title}</h3>
-                    <p className="mt-1 text-sm text-dark/60">{renderAffiliateLinks(ebook.subtitle)}</p>
+                  <div className="absolute top-4 right-4">
+                    <span className="rounded-full bg-accent/20 text-accent px-3 py-1 text-[10px] font-bold uppercase tracking-wide">
+                      Soon
+                    </span>
                   </div>
-                  <ul className="space-y-2.5">
-                    {ebook.chapters.map((ch, chIdx) => (
-                      <li key={ch} className="flex items-start gap-3 text-sm text-dark/80">
-                        <span className={`mt-0.5 flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold shrink-0 ${
-                          idx === 0 ? "bg-brand/10 text-brand" : "bg-accent/10 text-accent"
-                        }`}>
-                          {chIdx + 1}
-                        </span>
-                        <span>{renderAffiliateLinks(ch)}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <span className="text-3xl block">{item.icon}</span>
+                  <div>
+                    <h3 className="text-lg font-extrabold">{item.title}</h3>
+                    <p className="mt-2 text-sm text-white/50 leading-relaxed">{item.description}</p>
+                  </div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-2xl font-extrabold text-accent">{item.price}&euro;</span>
+                    <span className="text-xs text-white/40">prix de lancement</span>
+                  </div>
                 </motion.div>
               ))}
             </div>
+
+            {/* CTA teaser */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.4 }}
+              className="max-w-md mx-auto text-center space-y-4"
+            >
+              <p className="text-sm text-white/50">
+                Inscris-toi pour etre notifie du lancement et beneficier du prix early adopter.
+              </p>
+              <EmailCapture />
+            </motion.div>
           </div>
         </section>
 
@@ -364,50 +292,17 @@ export default function HomePage() {
               <div className="space-y-2">
                 <span className="text-3xl block">📦</span>
                 <p className="text-sm font-bold text-dark">5 systemes concrets</p>
-                <p className="text-xs text-dark/50">Guide gratuit + ebooks premium actionnables</p>
+                <p className="text-xs text-dark/50">Guide gratuit telechargeable maintenant</p>
               </div>
               <div className="space-y-2">
                 <span className="text-3xl block">🔒</span>
-                <p className="text-sm font-bold text-dark">Paiement 100% securise</p>
-                <p className="text-xs text-dark/50">Via Stripe. Aucune donnee stockee ici</p>
+                <p className="text-sm font-bold text-dark">Zero spam</p>
+                <p className="text-xs text-dark/50">Desabonnement en un clic. Tes donnees restent privees</p>
               </div>
               <div className="space-y-2">
-                <span className="text-3xl block">💬</span>
-                <p className="text-sm font-bold text-dark">Support email 30 jours</p>
-                <p className="text-xs text-dark/50">Inclus avec l&apos;ebook Automatise et le Bundle</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section>
-          <div className="container-balanced space-y-8">
-            <div className="max-w-2xl mx-auto text-center space-y-3">
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">FAQ</h2>
-              <p className="text-base text-dark/60">Questions frequentes.</p>
-            </div>
-            <FAQ items={faq} />
-          </div>
-        </section>
-
-        {/* CTA final */}
-        <section className="bg-soft">
-          <div className="container-balanced">
-            <div className="max-w-2xl mx-auto text-center space-y-5">
-              <h2 className="text-2xl font-extrabold sm:text-3xl">
-                Pret a lancer ?
-              </h2>
-              <p className="text-base text-dark/60">
-                Prends le bundle et commence aujourd&apos;hui. Trouve tes clients + automatise tout.
-              </p>
-              <div className="space-y-2">
-                <Button href={CTA_LINKS.EBOOK_BUNDLE_URL}>
-                  Prendre le bundle (89&euro;)
-                </Button>
-                <p className="text-xs text-dark/40">
-                  Economise 100&euro; par rapport a l&apos;achat separe
-                </p>
+                <span className="text-3xl block">🚀</span>
+                <p className="text-sm font-bold text-dark">Ebooks bientot</p>
+                <p className="text-xs text-dark/50">Templates, workflows et prompts prets a l&apos;emploi</p>
               </div>
             </div>
           </div>
@@ -427,17 +322,6 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
-
-      {/* Barre mobile fixe */}
-      <div className="fixed bottom-3 left-1/2 z-40 w-[calc(100%-1.5rem)] max-w-lg -translate-x-1/2 rounded-2xl border border-accent/20 bg-white/95 p-3 shadow-lg backdrop-blur sm:hidden">
-        <div className="flex items-center justify-between gap-3">
-          <div>
-            <p className="text-xs font-semibold text-dark">Bundle <span className="text-accent">89&euro;</span></p>
-            <p className="text-[10px] text-dark/50 line-through">189&euro;</p>
-          </div>
-          <Button href={CTA_LINKS.EBOOK_BUNDLE_URL}>Prendre le bundle</Button>
-        </div>
-      </div>
     </div>
   );
 }
