@@ -17,7 +17,7 @@ export function getWelcomeEmailHtml(email: string): string {
           <tr>
             <td style="background:linear-gradient(135deg,#6C3AED,#2563EB);padding:32px 40px;text-align:center;">
               <h1 style="color:#ffffff;font-size:28px;margin:0;font-weight:700;">NASH369</h1>
-              <p style="color:rgba(255,255,255,0.85);font-size:14px;margin:8px 0 0;">Discipline &middot; Energie &middot; Elegance</p>
+              <p style="color:rgba(255,255,255,0.85);font-size:14px;margin:8px 0 0;">Lance ton business avec l'IA en 2026</p>
             </td>
           </tr>
 
@@ -31,21 +31,19 @@ export function getWelcomeEmailHtml(email: string): string {
               </p>
 
               <p style="color:#555;font-size:16px;line-height:1.6;margin:0 0 20px;">
-                Ton <strong>guide gratuit (5 pages, PDF)</strong> te sera envoye sous <strong>24h maximum</strong> a cette adresse : <strong>${email}</strong>
+                Ton <strong>guide gratuit</strong> est en cours de preparation et te sera envoye sous <strong>24h maximum</strong> a cette adresse : <strong>${email}</strong>
               </p>
 
               <!-- What's inside -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f8f6ff;border-radius:8px;border-left:4px solid #6C3AED;margin:24px 0;">
                 <tr>
                   <td style="padding:20px 24px;">
-                    <p style="color:#6C3AED;font-size:14px;font-weight:700;margin:0 0 12px;text-transform:uppercase;letter-spacing:0.5px;">📦 Ce que contient ton guide gratuit</p>
+                    <p style="color:#6C3AED;font-size:14px;font-weight:700;margin:0 0 12px;text-transform:uppercase;letter-spacing:0.5px;">📦 Ce que tu vas recevoir</p>
                     <p style="color:#333;font-size:15px;line-height:1.7;margin:0;">
-                      ✅ <strong>5 systemes concrets</strong> pour automatiser ton business<br>
-                      ✅ Creer un <strong>site pro en 5 min</strong> avec Claude AI + Hostinger<br>
-                      ✅ <strong>Reseaux sociaux en autopilot</strong> sur 3 plateformes<br>
-                      ✅ <strong>Generation de leads</strong> automatique + scoring IA<br>
-                      ✅ <strong>200+ avis Google</strong> sans effort + CRM auto<br>
-                      ✅ Chaque automatisation = <strong>un service vendable</strong>
+                      ✅ Comment creer un site pro en <strong>5 minutes</strong> avec l'IA<br>
+                      ✅ Les meilleurs outils pour <strong>automatiser</strong> ton business<br>
+                      ✅ Nos recommandations d'hebergement et d'outils no-code<br>
+                      ✅ Des <strong>prompts et templates</strong> prets a l'emploi
                     </p>
                   </td>
                 </tr>
@@ -53,17 +51,17 @@ export function getWelcomeEmailHtml(email: string): string {
 
               <!-- Produits -->
               <p style="color:#555;font-size:16px;line-height:1.6;margin:24px 0 16px;">
-                Envie d'aller plus loin ? Decouvre nos <strong>ebooks premium</strong> :
+                En attendant, decouvre nos <strong>deux ebooks</strong> pour passer a l'action :
               </p>
 
               <!-- Ebook 1 -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e5e7eb;border-radius:8px;margin:0 0 12px;">
                 <tr>
                   <td style="padding:16px 20px;">
-                    <p style="margin:0 0 4px;font-size:11px;color:#2563EB;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">🎯 Ebook 1 — Prospection</p>
-                    <p style="margin:0 0 6px;font-size:16px;color:#0b0b0b;font-weight:600;">Trouve Tes Clients</p>
-                    <p style="margin:0;font-size:14px;color:#555;line-height:1.5;">Scripts DM, methode de closing en 15 min, pricing, template Notion. Signe tes premiers clients cette semaine.</p>
-                    <p style="margin:8px 0 0;font-size:18px;font-weight:700;color:#2563EB;">19,90 &euro; <span style="font-size:13px;color:#999;text-decoration:line-through;font-weight:400;">39,90 &euro;</span></p>
+                    <p style="margin:0 0 4px;font-size:11px;color:#2563EB;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">🌐 Ebook 1 — Site Web</p>
+                    <p style="margin:0 0 6px;font-size:16px;color:#0b0b0b;font-weight:600;">Sites Web Express</p>
+                    <p style="margin:0;font-size:14px;color:#555;line-height:1.5;">Cree un site professionnel en 5 min avec Claude AI + Hostinger. 22 pages, 7 prompts inclus.</p>
+                    <p style="margin:8px 0 0;font-size:18px;font-weight:700;color:#2563EB;">19,90 € <span style="font-size:13px;color:#999;text-decoration:line-through;font-weight:400;">39,90 €</span></p>
                   </td>
                 </tr>
               </table>
@@ -74,8 +72,8 @@ export function getWelcomeEmailHtml(email: string): string {
                   <td style="padding:16px 20px;">
                     <p style="margin:0 0 4px;font-size:11px;color:#6C3AED;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">⚡ Ebook 2 — Automatisation</p>
                     <p style="margin:0 0 6px;font-size:16px;color:#0b0b0b;font-weight:600;">Automatise Ton Business en 7 Jours</p>
-                    <p style="margin:0;font-size:14px;color:#555;line-height:1.5;">Site IA + 10 workflows N8N/Make + templates JSON + prompts optimises. Support email 30 jours.</p>
-                    <p style="margin:8px 0 0;font-size:18px;font-weight:700;color:#6C3AED;">79 &euro; <span style="font-size:13px;color:#999;text-decoration:line-through;font-weight:400;">149 &euro;</span></p>
+                    <p style="margin:0;font-size:14px;color:#555;line-height:1.5;">Plan J0-J7 avec N8N. 25 pages, 10 templates JSON inclus. Zero code.</p>
+                    <p style="margin:8px 0 0;font-size:18px;font-weight:700;color:#6C3AED;">49,90 € <span style="font-size:13px;color:#999;text-decoration:line-through;font-weight:400;">99,90 €</span></p>
                   </td>
                 </tr>
               </table>
@@ -84,7 +82,7 @@ export function getWelcomeEmailHtml(email: string): string {
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td align="center">
-                    <a href="https://nash369.com#ebooks" style="display:inline-block;background:linear-gradient(135deg,#6C3AED,#5B21B6);color:#ffffff;font-size:16px;font-weight:600;text-decoration:none;padding:14px 40px;border-radius:8px;">
+                    <a href="https://nash369.com" style="display:inline-block;background:linear-gradient(135deg,#6C3AED,#5B21B6);color:#ffffff;font-size:16px;font-weight:600;text-decoration:none;padding:14px 40px;border-radius:8px;">
                       🔥 Decouvrir les offres →
                     </a>
                   </td>
@@ -93,7 +91,7 @@ export function getWelcomeEmailHtml(email: string): string {
 
               <!-- Bundle mention -->
               <p style="color:#999;font-size:13px;text-align:center;margin:16px 0 0;">
-                💡 Astuce : le Bundle (les 2 ebooks) est a <strong style="color:#6C3AED;">89 &euro;</strong> au lieu de 189 &euro; — economise 100 &euro;
+                💡 Astuce : le Bundle (les 2 ebooks) est a <strong style="color:#6C3AED;">59,90 €</strong> au lieu de 119,90 €
               </p>
             </td>
           </tr>
@@ -105,7 +103,7 @@ export function getWelcomeEmailHtml(email: string): string {
                 Tu recois cet email car tu t'es inscrit sur <a href="https://nash369.com" style="color:#6C3AED;text-decoration:none;">nash369.com</a>
               </p>
               <p style="color:#bbb;font-size:11px;text-align:center;margin:0;">
-                NASH369 — Discipline &middot; Energie &middot; Elegance 🇫🇷
+                NASH369 — Ressources IA pour indie hackers 🇫🇷
               </p>
             </td>
           </tr>
@@ -125,30 +123,28 @@ export function getWelcomeEmailText(email: string): string {
     "",
     "Merci de rejoindre la communaute NASH369. Tu as fait le premier pas pour lancer ou optimiser ton business avec l'IA.",
     "",
-    "Ton guide gratuit (5 pages, PDF) te sera envoye sous 24h maximum a cette adresse : " + email,
+    "Ton guide gratuit est en cours de preparation et te sera envoye sous 24h maximum a cette adresse : " + email,
     "",
-    "Ce que contient ton guide gratuit :",
-    "- 5 systemes concrets pour automatiser ton business",
-    "- Creer un site pro en 5 min avec Claude AI + Hostinger",
-    "- Reseaux sociaux en autopilot sur 3 plateformes",
-    "- Generation de leads automatique + scoring IA",
-    "- 200+ avis Google sans effort + CRM auto",
-    "- Chaque automatisation = un service vendable",
+    "Ce que tu vas recevoir :",
+    "- Comment creer un site pro en 5 minutes avec l'IA",
+    "- Les meilleurs outils pour automatiser ton business",
+    "- Nos recommandations d'hebergement et d'outils no-code",
+    "- Des prompts et templates prets a l'emploi",
     "",
-    "Envie d'aller plus loin ? Decouvre nos ebooks premium :",
+    "En attendant, decouvre nos deux ebooks :",
     "",
-    "Ebook 1 - Trouve Tes Clients (19,90 EUR au lieu de 39,90 EUR)",
-    "Scripts DM, methode de closing en 15 min, pricing, template Notion. Signe tes premiers clients cette semaine.",
+    "Ebook 1 - Sites Web Express (19,90 EUR au lieu de 39,90 EUR)",
+    "Cree un site professionnel en 5 min avec Claude AI + Hostinger. 22 pages, 7 prompts inclus.",
     "",
-    "Ebook 2 - Automatise Ton Business en 7 Jours (79 EUR au lieu de 149 EUR)",
-    "Site IA + 10 workflows N8N/Make + templates JSON + prompts optimises. Support email 30 jours.",
+    "Ebook 2 - Automatise Ton Business en 7 Jours (49,90 EUR au lieu de 99,90 EUR)",
+    "Plan J0-J7 avec N8N. 25 pages, 10 templates JSON inclus. Zero code.",
     "",
-    "Le Bundle (les 2 ebooks) est a 89 EUR au lieu de 189 EUR — economise 100 EUR",
+    "Le Bundle (les 2 ebooks) est a 59,90 EUR au lieu de 119,90 EUR",
     "",
-    "Decouvre les offres : https://nash369.com#ebooks",
+    "Decouvre les offres : https://nash369.com",
     "",
     "---",
-    "NASH369 — Discipline - Energie - Elegance"
+    "NASH369 - Ressources IA pour indie hackers"
   ];
   return lines.join("\n");
 }

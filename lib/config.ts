@@ -1,196 +1,146 @@
 export const CTA_LINKS = {
-  EBOOK_CLIENTS_URL: "https://buy.stripe.com/bJe6oJ8cS73a0Tg2ZecV203",
-  EBOOK_BUSINESS_URL: "https://buy.stripe.com/28E6oJ64K73a59wbvKcV204",
+  EBOOK_HOSTINGER_URL: "https://buy.stripe.com/aFabJ33WCevCgSearGcV200",
+  EBOOK_BUSINESS_URL: "https://buy.stripe.com/28E14pgJoafm1XkczOcV201",
   EBOOK_BUNDLE_URL: "https://buy.stripe.com/00wcN79gW4V231oeHWcV202"
 };
 
-export const AFFILIATE_LINKS: Record<string, string> = {
+export const AFFILIATE_LINKS = {
   HOSTINGER: "https://hostinger.fr?REFERRALCODE=MGPTOOLSBMYZ",
-  N8N: "#",
+  N8N: "#", // lien affilie N8N a venir
   MAKE: "https://www.make.com/en/register?pc=nash369"
 };
 
 export const leadMagnet = {
   badge: "Guide gratuit 2026",
-  title: "Profite de l'IA en 2026 pour gagner du temps et de l'argent",
-  subtitle: "Le guide pour ceux qui se lancent, ceux qui galerent a vendre, et ceux qui veulent un business qui tourne sans eux. 5 systemes concrets. Zero bullshit.",
+  title: "Profite de l'IA en 2026 pour optimiser ou lancer ton business",
+  subtitle: "Recois un ebook gratuit avec les strategies concretes pour creer ton site et automatiser ton business. Zero bullshit, que de l'actionnable.",
   emailPlaceholder: "ton@email.com",
-  emailCta: "Recevoir le guide gratuit",
+  emailCta: "Recevoir l'ebook gratuit",
   emailSuccess: "C'est envoye ! Verifie ta boite mail.",
-  targets: [
-    { label: "Graphistes", sub: "Creatifs" },
-    { label: "Vendeurs", sub: "TikTok / Insta" },
-    { label: "Freelances", sub: "Consultants" },
-    { label: "Indie Hackers", sub: "Solopreneurs" }
-  ],
-  stats: [
-    { value: "5 min", label: "pour creer un site pro" },
-    { value: "0\u20AC", label: "de budget pour demarrer" },
-    { value: "15h", label: "recuperees par semaine" },
-    { value: "3-5K\u20AC", label: "potentiel mois 1" }
-  ],
-  systems: [
+  pillars: [
     {
-      number: "01",
-      icon: "\uD83C\uDF10",
-      title: "Cree ton site pro en 5 min",
-      badge: "Site web",
-      description: "87% des consommateurs cherchent en ligne avant de contacter. Avec Claude AI + Hostinger, tu lances un site pro en 3 etapes et 5 minutes.",
+      icon: "🌐",
+      title: "Cree ton site — ta vitrine business",
+      badge: "Pilier 1 — Site web",
       points: [
-        "Brief : tu decris ton activite en 3 phrases",
-        "Generation : Claude AI cree le code complet",
-        "Deploiement : tu colles le code sur Hostinger. En ligne.",
-        "Cout : 2,99\u20AC/mois. Contre 2 000\u20AC+ en agence. Economie : 97%."
+        "En 2026, ne pas avoir de site = ne pas exister. 81% des clients recherchent en ligne avant d'acheter.",
+        "Avec l'IA (Claude) + Hostinger, tu crees un site pro en 5 minutes. Zero code, zero agence, zero attente.",
+        "Un site = credibilite, leads 24/7, et une base pour vendre tes services ou produits en automatique.",
+        "Tu peux meme creer des sites pour d'autres et facturer 500-2000EUR par site. Le cout reel : moins de 3EUR/mois d'hebergement."
       ],
-      opportunity: "Vends ce service a des commerces locaux : 500\u20AC a 999\u20AC par site. Marge : 95%.",
-      cta: { label: "Commencer avec Hostinger", link: "HOSTINGER" }
+      cta: {
+        label: "Commencer avec Hostinger",
+        link: "HOSTINGER" as const
+      }
     },
     {
-      number: "02",
-      icon: "\uD83D\uDCF1",
-      title: "Reseaux sociaux en autopilot",
-      badge: "Social media",
-      description: "Publie auto sur X/Twitter, LinkedIn et Instagram. Chaque jour. Sans toucher ton clavier. Avec N8N ou Make.",
+      icon: "🤖",
+      title: "Automatise — ton business tourne sans toi",
+      badge: "Pilier 2 — Automatisation",
       points: [
-        "Cron Trigger : declenchement auto chaque jour",
-        "API Claude : genere un post adapte a chaque plateforme",
-        "Formater : hashtags, longueur, ton adaptes",
-        "Poster : publication directe sur 3 reseaux"
+        "L'automatisation n'est plus un luxe, c'est la norme. Les entrepreneurs qui n'automatisent pas perdent 15h/semaine en taches repetitives.",
+        "N8N (gratuit et open-source) connecte +400 apps : reseaux sociaux, emails, CRM, factures, leads — tout en autopilot.",
+        "L'IA genere ton contenu, qualifie tes leads, repond a tes clients. Tu configures une fois, ca tourne 24/7.",
+        "Alternative : Make (Integromat) pour ceux qui preferent une interface encore plus visuelle."
       ],
-      opportunity: "Propose un abonnement 200\u20AC a 500\u20AC/mois par client. 5 clients = 2 500\u20AC/mois recurrents.",
-      cta: { label: "Decouvrir Make", link: "MAKE" }
-    },
-    {
-      number: "03",
-      icon: "\uD83C\uDFAF",
-      title: "Generation de leads automatique",
-      badge: "Lead gen",
-      description: "Un lead non contacte dans les 5 min a 80% de chances en moins de convertir. Automatise tout le pipeline.",
-      points: [
-        "Webhook : un formulaire declenche le pipeline",
-        "IA Scoring : Claude note le lead de 1 a 10",
-        "CRM : fiche auto dans Notion",
-        "Email auto : reponse personnalisee en moins de 2 min"
-      ],
-      opportunity: "Vends ce pipeline a des TPE/PME : 800\u20AC a 2 000\u20AC en one-shot + 150\u20AC/mois.",
-      cta: { label: "Decouvrir N8N", link: "N8N" }
-    },
-    {
-      number: "04",
-      icon: "\u2B50",
-      title: "200+ avis Google sans effort",
-      badge: "Avis Google",
-      description: "93% des consommateurs lisent les avis avant d'acheter. Automatise la collecte avec un workflow post-visite.",
-      points: [
-        "Trigger post-visite apres chaque prestation",
-        "SMS/Email personnalise + lien Google direct",
-        "Relance auto a J+2 si pas de reponse",
-        "Taux de reponse x3 par rapport au manuel"
-      ],
-      opportunity: "LE service le plus facile a vendre. 500\u20AC de setup + 100\u20AC/mois. 10 clients = 1 000\u20AC/mois recurrent.",
-      cta: { label: "Decouvrir Make", link: "MAKE" }
-    },
-    {
-      number: "05",
-      icon: "\uD83D\uDCCA",
-      title: "CRM qui se remplit tout seul",
-      badge: "CRM auto",
-      description: "Au-dela de 20 clients actifs, tu perds le controle. Automatise tout : fiche client, taches, relances, satisfaction.",
-      points: [
-        "Paiement Stripe declenche tout le systeme",
-        "Fiche Notion creee auto avec toutes les infos",
-        "Checklist suivi : onboarding, livrables, facturation",
-        "Emails satisfaction J+7 et J+30 automatiques"
-      ],
-      opportunity: "Vends un pack gestion client cle-en-main : 1 000\u20AC a 2 000\u20AC par client.",
-      cta: { label: "Commencer avec Hostinger", link: "HOSTINGER" }
+      cta: {
+        label: "Decouvrir N8N",
+        link: "N8N" as const
+      },
+      ctaSecondary: {
+        label: "Ou essayer Make",
+        link: "MAKE" as const
+      }
     }
   ],
-  bottom: "Ce guide te donne le \"quoi\". Nos ebooks payants te donnent le \"comment\" — pas a pas, avec templates et prompts."
+  bottom: "Envie d'aller plus loin ? Nos ebooks payants te donnent la methode complete, pas a pas, pour tout mettre en place en 7 jours."
 };
 
 export const hero = {
-  title: "Profite de l'IA en 2026 pour gagner du temps et de l'argent",
+  title: "Lance ton business en ligne. Sans code. Sans agence.",
   subtitle:
-    "5 systemes concrets pour automatiser ton business et vendre ces services a d'autres."
+    "Deux ebooks pour creer ton site pro en 5 minutes et automatiser ton business en 7 jours avec l'IA et N8N."
 };
 
 export const bullets = [
-  "Creer un site pro en 5 min avec Claude AI + Hostinger, et le vendre 500-999\u20AC a des commerces locaux.",
-  "Automatiser reseaux sociaux, leads, avis Google, CRM et facturation avec N8N ou Make — zero code.",
-  "Chaque automatisation = un service vendable. Potentiel realiste : 3 000\u20AC a 5 000\u20AC des le mois 1."
+  "Creer un site professionnel en 5 minutes avec Claude AI + Hostinger, sans une ligne de code.",
+  "Automatiser tes reseaux sociaux, emails, CRM, factures et leads avec N8N — jour par jour.",
+  "7 prompts prets a l'emploi + 10 templates N8N JSON importables en un clic."
 ];
 
 export const ebookDetails = [
   {
-    title: "Trouve Tes Clients",
-    subtitle: "Prospection, closing, marketing — signe tes premiers clients cette semaine",
-    pages: "Guide complet",
+    title: "Sites Web Express",
+    subtitle: "Cree ton site pro en 5 minutes",
+    pages: "22 pages",
     chapters: [
-      "50 premiers prospects identifies en 1h",
-      "Scripts DM/email froids prets a coller",
-      "Methode de closing en 15 min",
-      "Pricing : fixer tes tarifs sans brader",
-      "Template Notion de suivi + vente"
+      "La methode en 3 etapes : Brief, Generation, Deploy",
+      "Briefer Claude AI comme un pro (template ultime)",
+      "Deployer sur Hostinger pas a pas",
+      "7 prompts prets a l'emploi (landing, restaurant, portfolio...)",
+      "Optimisation mobile, SEO et formulaires",
+      "Bonus : automatiser avec N8N"
     ]
   },
   {
     title: "Automatise Ton Business en 7 Jours",
-    subtitle: "Site IA + 10 workflows N8N/Make + templates JSON + prompts optimises",
-    pages: "Guide complet + templates",
+    subtitle: "Le guide N8N pour bosser moins et gagner plus",
+    pages: "25 pages",
     chapters: [
-      "Jour 1 : Site pro cree + en ligne (Hostinger)",
-      "Jour 2-6 : 10 workflows N8N/Make complets",
-      "10 templates JSON importables en un clic",
-      "Prompts Claude testes + optimises",
-      "Chaque workflow = un service vendable",
-      "Support email 30 jours"
+      "Jour 0 : Installer N8N (cloud ou self-hosted gratuit)",
+      "Jour 1 : Reseaux sociaux en autopilot (contenu IA)",
+      "Jour 2 : Generation de leads (capture + qualification IA)",
+      "Jour 3 : Avis Google automatiques (200+ avis)",
+      "Jour 4 : Email marketing automatise (sequences + relances)",
+      "Jour 5 : CRM et suivi client sans effort",
+      "Jour 6 : Facturation et comptabilite en autopilot",
+      "Jour 7 : Dashboard de monitoring complet",
+      "Bonus : 10 templates JSON importables"
     ]
   }
 ];
 
 export const pricing = [
   {
-    name: "Trouve Tes Clients",
+    name: "Sites Web Express",
     price: 19.9,
     originalPrice: 39.9,
-    description: "Prospection, closing, marketing. Signe tes premiers clients cette semaine.",
+    description: "Le guide complet pour creer un site pro en 5 minutes avec Claude AI + Hostinger. Zero code.",
     features: [
-      "50 premiers prospects identifies en 1h",
-      "Scripts DM/email froids prets a coller",
-      "Methode de closing en 15 min",
-      "Pricing : fixer tes tarifs sans brader",
-      "Template Notion de suivi + vente"
+      "22 pages — methode en 3 etapes",
+      "7 prompts prets a copier-coller",
+      "Guide Hostinger pas a pas avec captures",
+      "Optimisation mobile + SEO incluse",
+      "Bonus : automatisation N8N"
     ],
-    cta: "EBOOK_CLIENTS_URL",
+    cta: "EBOOK_HOSTINGER_URL",
     badge: null
   },
   {
     name: "Automatise Ton Business",
-    price: 79,
-    originalPrice: 149,
-    description: "Le produit complet. Site IA + 10 workflows + templates. De J0 a J7, ton business tourne sans toi.",
+    price: 49.9,
+    originalPrice: 99.9,
+    description: "Plan jour par jour pour automatiser tout ton business avec N8N. Reseaux, leads, emails, CRM, factures.",
     features: [
-      "J1 : Site pro cree + en ligne (Hostinger)",
-      "J2-J6 : 10 workflows N8N/Make complets",
-      "10 templates JSON importables",
-      "Prompts Claude testes + optimises",
-      "Chaque workflow = un service vendable",
-      "Support email 30 jours"
+      "25 pages — roadmap J0 a J7",
+      "10 templates N8N JSON importables",
+      "Workflows complets : social, leads, avis, emails, CRM",
+      "Prompts IA pour contenu et qualification",
+      "Dashboard de monitoring inclus"
     ],
     cta: "EBOOK_BUSINESS_URL",
     badge: "Best-seller"
   },
   {
-    name: "Bundle (les 2)",
-    price: 89,
-    originalPrice: 189,
-    description: "Trouve tes clients + automatise tout. Le combo parfait pour partir de zero.",
+    name: "Bundle (2 ebooks)",
+    price: 59.9,
+    originalPrice: 119.9,
+    description: "Les deux guides au prix d'un. Cree ton site, automatise ton business. Tout est la.",
     features: [
-      "Trouve Tes Clients (valeur 39,90\u20AC)",
-      "Automatise Ton Business (valeur 149\u20AC)",
-      "Tous les templates et prompts inclus",
-      "Support email 30 jours",
+      "Sites Web Express (valeur 39,90EUR)",
+      "Automatise Ton Business (valeur 99,90EUR)",
+      "47 pages de contenu actionnable",
+      "17 templates et prompts inclus",
       "Mises a jour incluses"
     ],
     cta: "EBOOK_BUNDLE_URL",
@@ -199,38 +149,34 @@ export const pricing = [
 ];
 
 export const comparison = [
-  { label: "Scripts DM/email froids prets a coller", clients: true, bundle: true, business: false },
-  { label: "Methode de closing en 15 min", clients: true, bundle: true, business: false },
-  { label: "50 prospects identifies en 1h", clients: true, bundle: true, business: false },
-  { label: "Template Notion suivi + vente", clients: true, bundle: true, business: false },
-  { label: "Site pro cree + deploye (Hostinger)", clients: false, bundle: true, business: true },
-  { label: "10 workflows N8N/Make complets", clients: false, bundle: true, business: true },
-  { label: "10 templates JSON importables", clients: false, bundle: true, business: true },
-  { label: "Prompts Claude optimises", clients: false, bundle: true, business: true },
-  { label: "Support email 30 jours", clients: false, bundle: true, business: true },
-  { label: "Chaque workflow = service vendable", clients: false, bundle: true, business: true }
+  { label: "Methode creation site en 5 min", hostinger: true, bundle: true, business: false },
+  { label: "7 prompts Claude AI prets a l'emploi", hostinger: true, bundle: true, business: false },
+  { label: "Guide deploiement Hostinger", hostinger: true, bundle: true, business: false },
+  { label: "Plan automatisation J0-J7", hostinger: false, bundle: true, business: true },
+  { label: "10 templates N8N JSON", hostinger: false, bundle: true, business: true },
+  { label: "Workflows reseaux sociaux IA", hostinger: false, bundle: true, business: true },
+  { label: "Systeme avis Google auto", hostinger: false, bundle: true, business: true },
+  { label: "Email marketing automatise", hostinger: false, bundle: true, business: true },
+  { label: "CRM + facturation autopilot", hostinger: false, bundle: true, business: true },
+  { label: "Dashboard monitoring", hostinger: false, bundle: true, business: true }
 ];
 
 export const faq = [
   {
     q: "C'est quoi exactement ?",
-    a: "Un guide gratuit de 5 pages qui te montre 5 automatisations concretes pour lancer ou optimiser ton business avec l'IA. Plus deux ebooks premium pour passer a l'action."
-  },
-  {
-    q: "C'est pour qui ?",
-    a: "Graphistes, vendeurs TikTok/Insta, freelances, consultants, indie hackers, solopreneurs. Que tu debutes ou que t'aies deja un business, chaque systeme te fait gagner du temps et de l'argent."
+    a: "Deux ebooks PDF pratiques. Le premier t'apprend a creer un site web pro en 5 minutes avec Claude AI et Hostinger. Le deuxieme te montre comment automatiser tout ton business avec N8N en 7 jours."
   },
   {
     q: "J'ai besoin de savoir coder ?",
-    a: "Non. Zero code requis. Tout est explique pas a pas. Si tu sais utiliser un navigateur web, tu peux suivre."
+    a: "Non. Zero code requis. Tout est explique pas a pas avec des captures d'ecran. Si tu sais utiliser un navigateur web, tu peux suivre."
   },
   {
     q: "C'est quoi le format ?",
-    a: "Le guide gratuit est un PDF de 5 pages. Les ebooks premium sont des PDF avec templates JSON importables et prompts prets a l'emploi."
+    a: "PDF telechargeable immediatement apres paiement. Le guide N8N inclut aussi 10 templates JSON importables directement dans N8N."
   },
   {
     q: "Les prix vont augmenter ?",
-    a: "Oui. C'est une offre de lancement. Les prix augmentent dans 14 jours. Trouve Tes Clients passe a 39,90\u20AC, Automatise passe a 149\u20AC."
+    a: "Oui. C'est une offre de lancement. Les prix doublent dans 14 jours : Sites Web Express passe a 39,90EUR, Automatise passe a 99,90EUR."
   },
   {
     q: "Remboursement possible ?",
@@ -241,7 +187,11 @@ export const faq = [
     a: "Oui, 100%. Le paiement passe par Stripe. Aucune donnee bancaire n'est stockee sur ce site."
   },
   {
+    q: "Mises a jour incluses ?",
+    a: "Oui. Les mises a jour mineures sont incluses et envoyees par email."
+  },
+  {
     q: "Pourquoi prendre le bundle ?",
-    a: "Parce que les deux guides sont complementaires. Tu trouves tes clients avec le premier, puis tu automatises tout avec le deuxieme. Et tu economises 100\u20AC."
+    a: "Parce que les deux guides sont complementaires. Tu crees ton site avec le premier, puis tu automatises l'acquisition et la vente avec le deuxieme. Et tu economises 80EUR."
   }
 ];

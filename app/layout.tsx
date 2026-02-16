@@ -5,29 +5,30 @@ const siteUrl = "https://nash369.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "NASH369 — Profite de l'IA en 2026 pour gagner du temps et de l'argent",
+  title: "NASH369 — Ebook gratuit : lance ton business avec l'IA en 2026 | Indie Hacker FR",
   description:
-    "Guide gratuit : 5 systemes concrets pour automatiser ton business avec l'IA. Site pro en 5 min, reseaux sociaux en autopilot, lead gen, avis Google, CRM auto. Ebooks premium pour freelances, graphistes, vendeurs et solopreneurs.",
+    "Guide gratuit pour micro-createurs et indie hackers francais : cree un site pro en 5 min avec l'IA, automatise ton business avec N8N et Make. Ebooks PDF actionnables, zero code requis.",
   keywords: [
     "indie hacker francais",
-    "automatiser business ia",
-    "creer site ia claude",
-    "automatisation n8n make",
+    "micro createur",
     "solopreneur france",
-    "freelance automatisation",
-    "business en ligne 2026",
-    "site web hostinger ia",
-    "lead generation automatique",
-    "avis google automatises",
-    "crm notion automatise",
-    "ebook business ia",
+    "creer site ia",
+    "creer site web intelligence artificielle",
+    "automatiser business",
+    "automatisation n8n",
+    "automatisation make",
+    "ebook business en ligne",
+    "lancer business ia 2026",
+    "site web hostinger",
+    "claude ai site web",
     "no code france",
-    "side project monetiser",
-    "gagner argent ia 2026",
-    "workflow automatisation make n8n",
-    "graphiste freelance outils",
-    "tiktok shop automatisation",
-    "nash369"
+    "side project france",
+    "gagner argent en ligne france",
+    "vendre site web",
+    "workflow automatisation",
+    "business en ligne debutant",
+    "ebook solopreneur",
+    "monetiser ia"
   ],
   authors: [{ name: "NASH369" }],
   creator: "NASH369",
@@ -47,9 +48,9 @@ export const metadata: Metadata = {
     canonical: siteUrl
   },
   openGraph: {
-    title: "NASH369 — Profite de l'IA en 2026 pour gagner du temps et de l'argent",
+    title: "NASH369 — Lance ton business avec l'IA en 2026",
     description:
-      "Guide gratuit + ebooks premium : 5 systemes concrets pour automatiser ton business. Site en 5 min, leads auto, avis Google, CRM. Pour freelances et solopreneurs.",
+      "Guide gratuit + ebooks pour indie hackers FR : cree ton site en 5 min avec l'IA, automatise ton business avec N8N. Zero code.",
     url: siteUrl,
     siteName: "NASH369",
     locale: "fr_FR",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "NASH369 — Profite de l'IA en 2026"
+        alt: "NASH369 — Ebooks IA pour indie hackers francais"
       }
     ]
   },
@@ -67,9 +68,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     creator: "@nash369_",
     site: "@nash369_",
-    title: "NASH369 — Profite de l'IA en 2026",
+    title: "NASH369 — Lance ton business avec l'IA en 2026",
     description:
-      "Guide gratuit : 5 systemes pour automatiser ton business avec l'IA. Ebooks premium pour freelances et solopreneurs.",
+      "Guide gratuit pour micro-createurs FR. Cree ton site + automatise ton business. Zero code.",
     images: ["/og-image.png"]
   },
   category: "technology"
@@ -82,7 +83,7 @@ const jsonLdWebSite = {
   name: "NASH369",
   url: siteUrl,
   description:
-    "Ressources et ebooks pour freelances, graphistes et solopreneurs : 5 automatisations business avec l'IA, N8N et Make.",
+    "Ressources et ebooks pour indie hackers et micro-createurs francais : creation de sites web avec l'IA et automatisation business.",
   inLanguage: "fr",
   creator: {
     "@type": "Person",
@@ -101,9 +102,9 @@ const jsonLdProducts = {
       position: 1,
       item: {
         "@type": "Product",
-        name: "Trouve Tes Clients — Prospection, Closing, Marketing",
+        name: "Sites Web Express — Cree un site pro en 5 min avec Claude AI",
         description:
-          "Ebook PDF : 50 prospects en 1h, scripts DM/email, methode de closing en 15 min, pricing, template Notion.",
+          "Ebook PDF 22 pages : methode en 3 etapes pour creer un site professionnel avec l'IA Claude + hebergement Hostinger. 7 prompts prets a l'emploi.",
         offers: {
           "@type": "Offer",
           price: "19.90",
@@ -117,12 +118,12 @@ const jsonLdProducts = {
       position: 2,
       item: {
         "@type": "Product",
-        name: "Automatise Ton Business en 7 Jours",
+        name: "Automatise Ton Business en 7 Jours — Guide N8N",
         description:
-          "Ebook PDF + templates : site pro J1, 10 workflows N8N/Make J2-J6, templates JSON importables, prompts Claude optimises. Support email 30 jours.",
+          "Ebook PDF 25 pages : plan jour par jour J0-J7 pour automatiser ton business avec N8N. 10 templates JSON inclus.",
         offers: {
           "@type": "Offer",
-          price: "79.00",
+          price: "49.90",
           priceCurrency: "EUR",
           availability: "https://schema.org/InStock"
         }
@@ -133,12 +134,12 @@ const jsonLdProducts = {
       position: 3,
       item: {
         "@type": "Product",
-        name: "Bundle : Trouve Tes Clients + Automatise Ton Business",
+        name: "Bundle : Sites Web Express + Automatise Ton Business",
         description:
-          "Les deux ebooks reunis. Trouve tes clients + automatise tout. Le combo complet pour partir de zero.",
+          "Les deux ebooks reunis a prix reduit. Cree ton site et automatise ton business, le combo complet pour indie hackers.",
         offers: {
           "@type": "Offer",
-          price: "89.00",
+          price: "59.90",
           priceCurrency: "EUR",
           availability: "https://schema.org/InStock"
         }
@@ -153,42 +154,42 @@ const jsonLdFaq = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "C'est quoi exactement ?",
+      name: "Est-ce que je dois savoir coder ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Un guide gratuit de 5 pages qui te montre 5 automatisations concretes pour lancer ou optimiser ton business avec l'IA. Plus deux ebooks premium pour passer a l'action."
+        text: "Non. Les deux ebooks sont concus pour les debutants complets. Tu suis les etapes, tu copies les prompts ou les templates, et tu obtiens un resultat pro sans ecrire une ligne de code."
       }
     },
     {
       "@type": "Question",
-      name: "C'est pour qui ?",
+      name: "C'est quoi exactement le contenu des ebooks ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Graphistes, vendeurs TikTok/Insta, freelances, consultants, indie hackers, solopreneurs. Que tu debutes ou que t'aies deja un business."
+        text: "Ebook 1 (22 pages) : methode en 3 etapes pour creer un site avec l'IA Claude + Hostinger, 7 prompts prets a l'emploi. Ebook 2 (25 pages) : plan J0-J7 pour automatiser ton business avec N8N, 10 workflows JSON."
       }
     },
     {
       "@type": "Question",
-      name: "J'ai besoin de savoir coder ?",
+      name: "Pourquoi le prix va augmenter ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Non. Zero code requis. Tout est explique pas a pas. Si tu sais utiliser un navigateur web, tu peux suivre."
+        text: "C'est un tarif de lancement pour les premiers acheteurs. Dans 14 jours, les prix reviennent a leur valeur normale (39,90 EUR, 99,90 EUR, 119,90 EUR)."
       }
     },
     {
       "@type": "Question",
-      name: "Les prix vont augmenter ?",
+      name: "Je recois les ebooks comment ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Oui. C'est une offre de lancement. Les prix augmentent dans 14 jours. Trouve Tes Clients passe a 39,90 EUR, Automatise passe a 149 EUR."
+        text: "Immediatement apres paiement, tu recois un email avec le lien de telechargement du PDF. Tu peux le lire sur n'importe quel appareil."
       }
     },
     {
       "@type": "Question",
-      name: "Pourquoi prendre le bundle ?",
+      name: "Ca marche aussi pour un side-project ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Parce que les deux guides sont complementaires. Tu trouves tes clients avec le premier, puis tu automatises tout avec le deuxieme. Et tu economises 100 EUR."
+        text: "Oui. Que tu lances un side-project, une micro-entreprise ou que tu optimises un business existant, les methodes s'adaptent a toutes les tailles."
       }
     }
   ]
